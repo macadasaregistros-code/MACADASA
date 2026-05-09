@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/app"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/api/app"
+    },
+    {
+      "source": "/calidad",
+      "destination": "/api/calidad"
+    },
+    {
+      "source": "/health",
+      "destination": "/api/health"
+    }
+  ]
+}

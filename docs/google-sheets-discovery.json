@@ -1,0 +1,6961 @@
+{
+  "generatedAt": "2026-05-08T02:30:38.424Z",
+  "folderId": "1VFthVxp0UHCV2odU2ohHuRvcRoS3b_YU",
+  "recursive": true,
+  "spreadsheetsFound": 11,
+  "spreadsheets": [
+    {
+      "id": "1ovNkDw97InqUOfQ2SdYGq9UVhzLXTvpURogrCckYxro",
+      "name": "Copia de DB_AppPlanta",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1ovNkDw97InqUOfQ2SdYGq9UVhzLXTvpURogrCckYxro/edit?usp=drivesdk",
+      "modifiedTime": "2024-10-18T02:16:02.579Z",
+      "tabs": [
+        {
+          "sheetId": 1385783844,
+          "title": "Depreciaciones",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "DepreciacionID",
+            "Fecha",
+            "Descripcion",
+            "Categoria",
+            "Costo",
+            "VidaAños",
+            "PValordeSalvamento",
+            "ValordeSalvamento",
+            "Depreciacion",
+            "FinDepreciacion"
+          ],
+          "sampleRows": [
+            [
+              "DP001",
+              "01/01/2023",
+              "Silo",
+              "Maquinaria y Equipo",
+              "$ 60.000.000",
+              "10",
+              "20%",
+              "$ 12.000.000",
+              "$ 400.000,00",
+              "31/12/2032"
+            ],
+            [
+              "DP002",
+              "01/01/2023",
+              "Planta",
+              "Maquinaria y Equipo",
+              "$ 80.000.000",
+              "10",
+              "20%",
+              "$ 16.000.000",
+              "$ 533.333,33",
+              "31/12/2032"
+            ],
+            [
+              "DP003",
+              "01/01/2023",
+              "Tractor Ferguson",
+              "Otros Equipos",
+              "$ 30.000.000",
+              "8",
+              "30%",
+              "$ 9.000.000",
+              "$ 218.750,00",
+              "31/12/2030"
+            ],
+            [
+              "DP004",
+              "01/01/2023",
+              "Tractor Deer",
+              "Otros Equipos",
+              "$ 20.000.000",
+              "8",
+              "30%",
+              "$ 6.000.000",
+              "$ 145.833,33",
+              "31/12/2030"
+            ]
+          ]
+        },
+        {
+          "sheetId": 692744775,
+          "title": "TransportesMCDS",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TransporteMCDSID",
+            "Fecha",
+            "Mes",
+            "XID150_C1",
+            "KGS350_C1",
+            "Tractor_C1",
+            "AZN311_C1",
+            "XID150_C2",
+            "KGS350_C2",
+            "Tractor_C2",
+            "AZN311_C2",
+            "XID150_A1",
+            "KGS350_A1",
+            "Tractor_A1",
+            "AZN311_A1",
+            "XID150_A2",
+            "KGS350_A2",
+            "Tractor_A2",
+            "AZN311_A2"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ]
+          ]
+        },
+        {
+          "sheetId": 312514672,
+          "title": "Maquila x",
+          "index": 2,
+          "rowCount": 1000,
+          "columnCount": 24,
+          "headers": [
+            "MaquilaID",
+            "Fecha",
+            "Mes",
+            "Salarios",
+            "Tulas",
+            "Hilo",
+            "Energia",
+            "OrdenYAseo",
+            "TransporteAGranjas",
+            "Mantenimiento",
+            "Depreciacion",
+            "Arriendo",
+            "Imprevistos",
+            "Total",
+            "KgPresupuestos"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 4.790.000",
+              "$ 412.860",
+              "$ 34.405",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 575.120",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 117.478",
+              "$ 11.865.279",
+              "137.620"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 4.790.000",
+              "$ 415.608",
+              "$ 34.634",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 671.400",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 118.471",
+              "$ 11.965.530",
+              "138.536"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 4.790.000",
+              "$ 399.226",
+              "$ 33.269",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 435.720",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 115.936",
+              "$ 11.709.568",
+              "133.075"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 4.790.000",
+              "$ 396.208",
+              "$ 33.017",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 682.640",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 118.373",
+              "$ 11.955.654",
+              "132.069"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1072197731,
+          "title": "Maquila",
+          "index": 3,
+          "rowCount": 1000,
+          "columnCount": 20,
+          "headers": [
+            "MaquilaID",
+            "Fecha",
+            "Mes",
+            "Salarios",
+            "Tulas",
+            "Hilo",
+            "Energia",
+            "OrdenYAseo",
+            "Mantenimiento",
+            "Arriendo",
+            "KgPresupuestos"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 4.790.000",
+              "$ 412.860",
+              "$ 34.405",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "137.620"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 4.790.000",
+              "$ 415.608",
+              "$ 34.634",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "138.536"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 4.790.000",
+              "$ 399.226",
+              "$ 33.269",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "133.075"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 4.790.000",
+              "$ 396.208",
+              "$ 33.017",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "132.069"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1190791414,
+          "title": "Administracion",
+          "index": 4,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "AdministracionID",
+            "Fecha",
+            "Mes",
+            "Administrador",
+            "Internet",
+            "Gas",
+            "Agua",
+            "Celulares",
+            "Recibos",
+            "ComidaPerros",
+            "Certificacion",
+            "Papeleria",
+            "Otros",
+            "Total",
+            "KgPresupuestos",
+            "ValorPorKg"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "137.620",
+              "$ 30"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "138.536",
+              "$ 30"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "133.075",
+              "$ 31"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "132.069",
+              "$ 31"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1353679485,
+          "title": "PrecioVentaComercial",
+          "index": 5,
+          "rowCount": 1000,
+          "columnCount": 27,
+          "headers": [
+            "PrecioVentaComercialID",
+            "Fecha",
+            "TransporteBto",
+            "ItalcolPollaLevanteSinIva",
+            "ItalcolPollaLevanteConIva",
+            "ItalcolFase1SinIva",
+            "ItalcolFase1ConIva",
+            "ItalcolFase2SinIva",
+            "ItalcolFase2ConIva",
+            "ItalcolPolloEngordeSinIva",
+            "ItalcolPolloEngordeConIva",
+            "ContegralPollaLevanteSinIva",
+            "ContegralPollaLevanteConIva",
+            "ContegralFase1SinIva",
+            "ContegralFase1ConIva",
+            "ContegralFase2SinIva",
+            "ContegralFase2ConIva",
+            "ContegralPolloEngordeSinIva",
+            "ContegralPolloEngordeConIva",
+            "PollaLevanteSinIva",
+            "PollaLevanteConIva",
+            "Fase1SinIva",
+            "Fase1ConIva",
+            "Fase2SinIva",
+            "Fase2ConIva",
+            "PolloEngordeSinIva",
+            "PolloEngordeConIva"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 97.200,00",
+              "$ 102.060,00",
+              "$ 101.000,00",
+              "$ 106.050,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 97.200,00",
+              "$ 102.060,00",
+              "$ 95.316,19",
+              "$ 100.082,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 99.600,00",
+              "$ 104.460,00",
+              "$ 97.716,19",
+              "$ 102.482,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "02/03/2023",
+              "02/03/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 94.180,00",
+              "$ 98.889,00",
+              "$ 92.627,62",
+              "$ 97.259,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 94.180,00",
+              "$ 98.889,00",
+              "$ 92.627,62",
+              "$ 97.259,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 96.580,00",
+              "$ 101.289,00",
+              "$ 95.027,62",
+              "$ 99.659,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "01/06/2023",
+              "01/06/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "01/08/2023",
+              "01/08/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1493007169,
+          "title": "Produccion x",
+          "index": 6,
+          "rowCount": 998,
+          "columnCount": 36,
+          "headers": [
+            "ProduccionID",
+            "ProduccionFecha",
+            "Lote",
+            "ProductoID",
+            "Medicada",
+            "Formula",
+            "Baches",
+            "BtoPractico",
+            "#Bto Teorico",
+            "Responsable",
+            "Firma",
+            "Salida",
+            "Saldo",
+            "Kg MP",
+            "Total Precio MP Sin Iva",
+            "IvaMP",
+            "Maquila",
+            "Administracion",
+            "CP por Kg",
+            "MP + CP Con Iva",
+            "Costo Total Bto Con Iva",
+            "Italcol Con Iva",
+            "Contegral Con Iva",
+            "PV\n Con Iva",
+            "Utilidad\n Con Iva",
+            "Utilidad Bto\n Con Iva",
+            "IVA a Reclamar",
+            "Iva a Reclamar Bto",
+            "Ingresos Con Iva"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 1220325050,
+          "title": "ProduccionDetalle x",
+          "index": 7,
+          "rowCount": 999,
+          "columnCount": 25,
+          "headers": [
+            "ProduccionDetalleID",
+            "ProduccionID",
+            "ProduccionFecha",
+            "Baches",
+            "MateriaPrimaID",
+            "Cantidad",
+            "Precio MP Sin Iva",
+            "Iva",
+            "KgMPAcumPSub0"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 770773969,
+          "title": "Formulas",
+          "index": 8,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "FormulaID",
+            "ProductoID",
+            "Medicada",
+            "Fecha",
+            "FormulaNombre",
+            "FormulaDescripcion",
+            "FormulasPDF",
+            "Estado"
+          ],
+          "sampleRows": [
+            [
+              "Form001",
+              "F1",
+              "FALSE",
+              "29/06/2023",
+              "Ponedora Arranque Nutrexcol",
+              "Ponedora Arranque Nutrexcol - 6/2023",
+              "Formulas_Files_/Form001.FormulasPDF.161755.pdf",
+              "FALSE"
+            ],
+            [
+              "Form002",
+              "F1M",
+              "TRUE",
+              "29/06/2023",
+              "Ponedora Arranque Nutrexcol Medicada",
+              "Ponedora Arranque Nutrexcol Medicada - 6/2023",
+              "Formulas_Files_/Form001.FormulasPDF.161755.pdf",
+              "FALSE"
+            ],
+            [
+              "Form003",
+              "PL",
+              "FALSE",
+              "13/03/2024",
+              "Polla Levante Nutrexcol",
+              "Polla Levante Nutrexcol - 3/2024",
+              "Formulas_Files_/Form003.FormulasPDF.163255.pdf",
+              "FALSE"
+            ],
+            [
+              "Form004",
+              "PLM",
+              "TRUE",
+              "13/03/2024",
+              "Polla Levante Nutrexcol Medicada",
+              "Polla Levante Nutrexcol Medicada - 3/2024",
+              "Formulas_Files_/Form003.FormulasPDF.163255.pdf",
+              "FALSE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 882791504,
+          "title": "FormulasDetalle",
+          "index": 9,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "FormulaDetalleID",
+            "FormulaID",
+            "ProductoID",
+            "MateriaPrimaID",
+            "CantidadKG"
+          ],
+          "sampleRows": [
+            [
+              "Form001_1",
+              "Form001",
+              "F1",
+              "MA",
+              "272,465"
+            ],
+            [
+              "Form001_2",
+              "Form001",
+              "F1",
+              "TS",
+              "136,485"
+            ],
+            [
+              "Form001_3",
+              "Form001",
+              "F1",
+              "CAF",
+              "44,05"
+            ],
+            [
+              "Form001_4",
+              "Form001",
+              "F1",
+              "HA",
+              "27,5"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1020612179,
+          "title": "Entrada",
+          "index": 10,
+          "rowCount": 994,
+          "columnCount": 36,
+          "headers": [
+            "EntradaID",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "Hora",
+            "ProveedorID",
+            "ProveedorDetalleID",
+            "MateriaPrimaID",
+            "Lote",
+            "IngresoKg",
+            "TransportistaID",
+            "TransportistaDetalleID",
+            "TrayectoID",
+            "Placa",
+            "AceptableCondicion",
+            "TomaEnvioMuestra",
+            "CertificadoCalidadProveedor",
+            "Observacion",
+            "Responsable",
+            "Firma",
+            "FacturasDetalleIDMP",
+            "NumeroDeFactura",
+            "PrecioKgSinIva",
+            "PrecioKgConIva",
+            "FacturasDetalleIDTR",
+            "TransporteKg",
+            "DescargueKg",
+            "PrecioTotalKgSinIva",
+            "PrecioTotalKgConIva",
+            "KgAcumESub0",
+            "KgAjusteAdministrador",
+            "KgAcumESubf",
+            "KgRestantes"
+          ],
+          "sampleRows": [
+            [
+              "ENT0001",
+              "15/09/2024 12:05:39",
+              "14/06/2023",
+              "12:05:39",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro - 06/14/2023",
+              "13",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0001.Firma.170905.png",
+              "1bc1d633",
+              "FD10121",
+              "25800",
+              "27090",
+              "",
+              "",
+              "",
+              "25800",
+              "27090",
+              "0",
+              "0",
+              "13",
+              "0"
+            ],
+            [
+              "ENT0002",
+              "15/09/2024 12:16:18",
+              "25/08/2023",
+              "12:16:18",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro - 08/25/2023",
+              "50",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0002.Firma.171708.png",
+              "8bc5a808",
+              "FD10921",
+              "25800",
+              "27090",
+              "",
+              "",
+              "",
+              "25800",
+              "27090",
+              "13",
+              "0",
+              "63",
+              "25,2"
+            ],
+            [
+              "ENT0003",
+              "15/09/2024 12:17:38",
+              "13/02/2024",
+              "12:17:38",
+              "PCA",
+              "5",
+              "SIE",
+              "Soya Integral Extruida - 02/13/2024",
+              "418",
+              "TR1",
+              "44",
+              "TY19",
+              "XID150",
+              "Aceptable",
+              "TRUE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0003.Firma.171914.png",
+              "e25846cb",
+              "FES3178",
+              "2400",
+              "2520",
+              "",
+              "",
+              "",
+              "2400",
+              "2520",
+              "0",
+              "-418",
+              "0",
+              "0"
+            ],
+            [
+              "ENT0004",
+              "15/09/2024 12:20:34",
+              "09/03/2024",
+              "12:20:34",
+              "IT",
+              "22",
+              "MT",
+              "Mogolla De Trigo - 03/09/2024",
+              "365",
+              "TR1",
+              "37",
+              "TY3",
+              "XID150",
+              "Aceptable",
+              "FALSE",
+              "FALSE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0004.Firma.172409.png",
+              "1399856a",
+              "PAME150178",
+              "1240",
+              "1302",
+              "",
+              "",
+              "",
+              "1240",
+              "1302",
+              "0",
+              "-365",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 920860406,
+          "title": "Auditorias",
+          "index": 11,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "AuditoriasID",
+            "Nombre",
+            "AuditoriaVista",
+            "AuditoriaImagen"
+          ],
+          "sampleRows": [
+            [
+              "AU1",
+              "Materia Prima",
+              "AuditoriaMP",
+              "/Auditoria/AU1.AuditoriaImagen.164828.png"
+            ],
+            [
+              "AU2",
+              "Producto Terminado",
+              "AuditoriaPT",
+              "/Auditoria/AU2.AuditoriaImagen.164902.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2030759472,
+          "title": "AjusteAdministradorMP",
+          "index": 12,
+          "rowCount": 999,
+          "columnCount": 27,
+          "headers": [
+            "AjusteAdministradorMPID",
+            "AuditoriasID",
+            "AuditoriaMPFecha",
+            "MateriaPrimaID",
+            "EntradaID",
+            "Accion",
+            "Cantidad",
+            "PrecioTotalKgConIva",
+            "Total",
+            "Observacion"
+          ],
+          "sampleRows": [
+            [
+              "acacec4b",
+              "AU1",
+              "26/08/2024",
+              "FMD",
+              "ENT0006",
+              "Vendio",
+              "-2000",
+              "0",
+              "0"
+            ],
+            [
+              "a1ff54a7",
+              "AU1",
+              "11/09/2024",
+              "TS",
+              "ENT0026",
+              "Aparecio",
+              "1334,83",
+              "0",
+              "0"
+            ],
+            [
+              "7d94811d",
+              "AU1",
+              "26/09/2024",
+              "SIE",
+              "ENT0003",
+              "Se Perdio",
+              "-418",
+              "0",
+              "0"
+            ],
+            [
+              "c183e724",
+              "AU1",
+              "26/09/2024",
+              "HA",
+              "ENT0031",
+              "Aparecio",
+              "345,8",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 760978986,
+          "title": "AjusteAdministradorPT",
+          "index": 13,
+          "rowCount": 1000,
+          "columnCount": 25,
+          "headers": [
+            "AjusteAdministradorPTID",
+            "AuditoriasID",
+            "AuditoriaPTFecha",
+            "ProductoID",
+            "ProduccionID",
+            "Accion",
+            "Cantidad",
+            "Observacion"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 928182501,
+          "title": "Produccion",
+          "index": 14,
+          "rowCount": 998,
+          "columnCount": 15,
+          "headers": [
+            "ProduccionID",
+            "MarcaTiempo",
+            "ProduccionFecha",
+            "Plus",
+            "ProductoID",
+            "FormulaID",
+            "Lote",
+            "Baches",
+            "BtoPractico",
+            "#Bto Teorico",
+            "Responsable",
+            "Firma",
+            "Contador",
+            "BtoAjusteAdministrador",
+            "BtoRestantes"
+          ],
+          "sampleRows": [
+            [
+              "PROD0001",
+              "18/09/2024 20:19:00",
+              "03/07/2024",
+              "TRUE",
+              "F1M",
+              "Form002",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "32",
+              "403",
+              "400",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0001.Firma.011948.png",
+              "12",
+              "",
+              "0"
+            ],
+            [
+              "PROD0002",
+              "18/09/2024 20:22:26",
+              "04/07/2024",
+              "TRUE",
+              "F1M",
+              "Form002",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "30",
+              "377",
+              "375",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0002.Firma.012314.png",
+              "12",
+              "",
+              "0"
+            ],
+            [
+              "PROD0003",
+              "18/09/2024 20:23:14",
+              "04/07/2024",
+              "FALSE",
+              "F1",
+              "Form001",
+              "Ponedora Arranque Nutrexcol - 07/04/2024",
+              "2",
+              "26",
+              "25",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0003.Firma.012359.png",
+              "10",
+              "",
+              "0"
+            ],
+            [
+              "PROD0004",
+              "18/09/2024 20:23:50",
+              "11/07/2024",
+              "FALSE",
+              "F1",
+              "Form001",
+              "Ponedora Arranque Nutrexcol - 07/11/2024",
+              "24",
+              "301",
+              "300",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0004.Firma.012724.png",
+              "10",
+              "",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2123568729,
+          "title": "ProduccionDetalle",
+          "index": 15,
+          "rowCount": 999,
+          "columnCount": 15,
+          "headers": [
+            "ProduccionDetalleID",
+            "MarcaTiempo",
+            "ProduccionID",
+            "ProduccionFecha",
+            "MateriaPrimaID",
+            "KgMPAcumPSub0",
+            "KgSalida",
+            "KgMPAcumPSubf"
+          ],
+          "sampleRows": [
+            [
+              "PROD0001-1",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "MA",
+              "0",
+              "8718,88",
+              "8718,88"
+            ],
+            [
+              "PROD0001-2",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "TS",
+              "0",
+              "4367,52",
+              "4367,52"
+            ],
+            [
+              "PROD0001-3",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "CAF",
+              "0",
+              "1409,6",
+              "1409,6"
+            ],
+            [
+              "PROD0001-4",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "HA",
+              "0",
+              "880",
+              "880"
+            ]
+          ]
+        },
+        {
+          "sheetId": 532918754,
+          "title": "Salidas",
+          "index": 16,
+          "rowCount": 1001,
+          "columnCount": 25,
+          "headers": [
+            "SalidaID",
+            "MarcaTiempo",
+            "SalidaFecha",
+            "ProductoID",
+            "ProduccionID",
+            "Plus",
+            "Lote",
+            "NumeroDeBultos",
+            "Destino",
+            "PlacaVehiculo",
+            "AceptableCondicion",
+            "Observaciones",
+            "Entrega",
+            "FirmaEntrega",
+            "Recibe",
+            "FirmaRecibe"
+          ],
+          "sampleRows": [
+            [
+              "SAL0001",
+              "20/09/2024 16:28:56",
+              "03/07/2024",
+              "F1M",
+              "PROD0001",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "350",
+              "C",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0001.FirmaEntrega.213040.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0001.FirmaRecibe.213040.png"
+            ],
+            [
+              "SAL0002",
+              "20/09/2024 16:30:44",
+              "03/07/2024",
+              "F1M",
+              "PROD0001",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "53",
+              "A1",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0002.FirmaEntrega.213146.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0002.FirmaRecibe.213146.png"
+            ],
+            [
+              "SAL0003",
+              "20/09/2024 16:31:53",
+              "05/07/2024",
+              "F1M",
+              "PROD0002",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "200",
+              "A1",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0003.FirmaEntrega.213254.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0003.FirmaRecibe.213254.png"
+            ],
+            [
+              "SAL0004",
+              "20/09/2024 16:33:04",
+              "09/07/2024",
+              "F1M",
+              "PROD0002",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "177",
+              "C",
+              "KGS446",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0004.FirmaEntrega.213400.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0004.FirmaRecibe.213400.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 646647410,
+          "title": "Muestras",
+          "index": 17,
+          "rowCount": 1000,
+          "columnCount": 32,
+          "headers": [
+            "MuestraID",
+            "MarcaTiempo",
+            "MuestraFecha",
+            "TipoMuestra",
+            "MateriaPrimaID",
+            "EntradaID",
+            "ProductoID",
+            "ProduccionID",
+            "Laboratorio",
+            "Analisis",
+            "FotoGuia",
+            "FotoMuestra",
+            "RestultadoPDF",
+            "Resultado"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 477817435,
+          "title": "TablaCalendarioMes",
+          "index": 18,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE",
+      "name": "DB_AppClasificadora",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-08T01:30:43.494Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "Clasificadora",
+          "index": 0,
+          "rowCount": 4255,
+          "columnCount": 28,
+          "headers": [
+            "ClasificadoraID",
+            "MarcaTiempo",
+            "ClasificadoraFecha",
+            "UsuarioID",
+            "BodegaID",
+            "GalponID",
+            "LoteID",
+            "Semana",
+            "ItemID",
+            "Cantidad"
+          ],
+          "sampleRows": [
+            [
+              "CLAS0001_",
+              "14/10/2025 11:25:50",
+              "12/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "A1",
+              "23012024",
+              "91",
+              "B",
+              "291"
+            ],
+            [
+              "CLAS0002_",
+              "14/10/2025 11:26:34",
+              "12/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "A1",
+              "23012024",
+              "91",
+              "A",
+              "3630"
+            ],
+            [
+              "CLAS0003_",
+              "14/10/2025 11:26:53",
+              "12/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "A1",
+              "23012024",
+              "91",
+              "AA",
+              "3470"
+            ],
+            [
+              "CLAS0004_",
+              "14/10/2025 11:27:11",
+              "12/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "A1",
+              "23012024",
+              "91",
+              "EX",
+              "876"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1389312419,
+          "title": "EntradasC",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 19,
+          "headers": [
+            "EntradaCID",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "UsuarioID",
+            "BodegaID",
+            "CategoriaID",
+            "ItemID",
+            "Cantidad",
+            "PlacaVehiculo",
+            "AceptableCondicion",
+            "Observaciones",
+            "Responsable",
+            "Firma"
+          ],
+          "sampleRows": [
+            [
+              "ENT0004_",
+              "16/10/2025 13:36:43",
+              "16/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "C",
+              "CTAA",
+              "82",
+              "Smw207",
+              "TRUE",
+              "",
+              "Camilo Barragán",
+              "EntradasC_Images/ENT0004_.Firma.135532.png"
+            ],
+            [
+              "ENT0002_CC",
+              "25/03/2026 14:10:02",
+              "01/03/2026",
+              "mcds.clasificadoracuchiyuyos@gmail.com",
+              "CC",
+              "C",
+              "CTB",
+              "150",
+              "",
+              "TRUE",
+              "",
+              "Mauricio Muñoz",
+              "EntradasC_Images/ENT0002_CC.Firma.191043.png"
+            ],
+            [
+              "ENT0003_CC",
+              "25/03/2026 14:11:02",
+              "01/03/2026",
+              "mcds.clasificadoracuchiyuyos@gmail.com",
+              "CC",
+              "C",
+              "CTA",
+              "350",
+              "",
+              "TRUE",
+              "",
+              "Mauricio Muñoz",
+              "EntradasC_Images/ENT0003_CC.Firma.191127.png"
+            ],
+            [
+              "ENT0004_CC",
+              "25/03/2026 14:11:37",
+              "01/03/2026",
+              "mcds.clasificadoracuchiyuyos@gmail.com",
+              "CC",
+              "C",
+              "CTAA",
+              "100",
+              "",
+              "TRUE",
+              "",
+              "Mauricio Muñoz",
+              "EntradasC_Images/ENT0004_CC.Firma.191206.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 193444865,
+          "title": "SalidasC",
+          "index": 2,
+          "rowCount": 1000,
+          "columnCount": 22,
+          "headers": [
+            "SalidaCID",
+            "MarcaTiempo",
+            "SalidaFecha",
+            "UsuarioID",
+            "Destino",
+            "Entrega",
+            "FirmaEntrega",
+            "Recibe",
+            "FirmaRecibe",
+            "Contador",
+            "Comentario"
+          ],
+          "sampleRows": [
+            [
+              "SAL0001_CC",
+              "05/09/2024 9:17:42",
+              "05/09/2024",
+              "Clasificadora.Cuchiyuyos@gmail.com",
+              "Mcds",
+              "",
+              "",
+              "",
+              "",
+              "2"
+            ],
+            [
+              "SAL0002_CA",
+              "05/09/2024 9:23:37",
+              "05/09/2024",
+              "Clasificadora.Astromelio@gmail.com",
+              "Mcds",
+              "",
+              "",
+              "",
+              "",
+              "2"
+            ],
+            [
+              "f5c31998",
+              "14/10/2025 10:16:32",
+              "14/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "2"
+            ],
+            [
+              "ffac8488",
+              "14/10/2025 10:17:20",
+              "14/10/2025",
+              "mcds.clasificadoraastromelio@gmail.com",
+              "Mcds",
+              "",
+              "",
+              "",
+              "",
+              "2"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1649464246,
+          "title": "SalidaCDetalle",
+          "index": 3,
+          "rowCount": 1412,
+          "columnCount": 24,
+          "headers": [
+            "SalidaCDetalleID",
+            "SalidaCID",
+            "ItemID",
+            "Pacas",
+            "Huevos",
+            "Cantidad"
+          ],
+          "sampleRows": [
+            [
+              "SAL0001_CC1",
+              "SAL0001_CC",
+              "RT",
+              "2",
+              "8",
+              "68"
+            ],
+            [
+              "SAL0002_CA1",
+              "SAL0002_CA",
+              "C",
+              "1",
+              "1",
+              "31"
+            ],
+            [
+              "SAL0008_3",
+              "SAL0008_",
+              "AA",
+              "400",
+              "0",
+              "12000"
+            ],
+            [
+              "SAL0008_6",
+              "SAL0008_",
+              "BL",
+              "1",
+              "16",
+              "46"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1401587715,
+          "title": "TablaCalendario",
+          "index": 4,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+      "name": "DB_AppFacturas",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-07T23:20:33.804Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "Facturas",
+          "index": 0,
+          "rowCount": 999,
+          "columnCount": 35,
+          "headers": [
+            "FacturaID",
+            "MarcaTiempo",
+            "UsuarioID",
+            "NumeroDeFactura",
+            "FacturaFecha",
+            "TipoTransaccion",
+            "FechaVencimiento",
+            "RazonSocialID",
+            "PrecioFacturaSinIVA",
+            "FacturaIVA",
+            "PrecioFacturaConIVA",
+            "FacturaRetenciones",
+            "FacturaDescuento",
+            "FacturaTotalAPagar",
+            "FacturaPDF"
+          ],
+          "sampleRows": [
+            [
+              "FEV 1202",
+              "18/09/2024 9:17:26",
+              "mcds.facturas@gmail.com",
+              "FEV 1202",
+              "02/07/2024",
+              "Credito",
+              "02/07/2024",
+              "TR13",
+              "14208600",
+              "0",
+              "14208600",
+              "142086",
+              "",
+              "14066514",
+              "Facturas_Files_/FEV 1202.FacturaPDF.145339.pdf"
+            ],
+            [
+              "FD10121",
+              "19/09/2024 15:04:12",
+              "mcds.facturas@gmail.com",
+              "FD10121",
+              "14/06/2023",
+              "Credito",
+              "13/07/2023",
+              "NTX",
+              "2260000",
+              "64500",
+              "2324500",
+              "0",
+              "",
+              "2324500",
+              "Facturas_Files_/FD10121.FacturaPDF.200746.pdf"
+            ],
+            [
+              "FD10921",
+              "19/09/2024 15:07:48",
+              "mcds.facturas@gmail.com",
+              "FD10921",
+              "25/08/2023",
+              "Credito",
+              "23/09/2023",
+              "NTX",
+              "2260000",
+              "64500",
+              "2324500",
+              "0",
+              "",
+              "2324500",
+              "Facturas_Files_/FD10921.FacturaPDF.201138.pdf"
+            ],
+            [
+              "FES3178",
+              "19/09/2024 15:15:45",
+              "mcds.facturas@gmail.com",
+              "FES3178",
+              "13/02/2024",
+              "Credito",
+              "13/02/2024",
+              "PCA",
+              "19680000",
+              "984000",
+              "20664000",
+              "0",
+              "",
+              "20664000",
+              "Facturas_Files_/FES3178.FacturaPDF.202000.pdf"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1387189889,
+          "title": "FacturasDetalle",
+          "index": 1,
+          "rowCount": 995,
+          "columnCount": 35,
+          "headers": [
+            "FacturasDetalleID",
+            "FacturaID",
+            "CategoriaID",
+            "RazonSocialDetalleID",
+            "ItemID",
+            "Cantidad",
+            "Unidad",
+            "PrecioUndSinIva",
+            "IVAPorcentaje",
+            "PrecioUndConIva",
+            "IVA",
+            "PrecioTotalConIva",
+            "ReteFuentePorcentaje",
+            "ReteICAPorcentaje",
+            "RetencionFuente",
+            "ReteICA",
+            "ValorAPagar",
+            "Observacion",
+            "UnidadesRestantes"
+          ],
+          "sampleRows": [
+            [
+              "34fe73d5",
+              "FEV 1202",
+              "TR",
+              "58",
+              "TY7",
+              "34180",
+              "Kg",
+              "210",
+              "0%",
+              "210",
+              "0",
+              "7177800",
+              "1,00%",
+              "",
+              "71778",
+              "0",
+              "7106022",
+              "",
+              "0"
+            ],
+            [
+              "51f59f55",
+              "FEV 1202",
+              "TR",
+              "58",
+              "TY7",
+              "33480",
+              "Kg",
+              "210",
+              "0%",
+              "210",
+              "0",
+              "7030800",
+              "1,00%",
+              "",
+              "70308",
+              "0",
+              "6960492",
+              "",
+              "0"
+            ],
+            [
+              "722e8ee0",
+              "FD10121",
+              "MP",
+              "15",
+              "SX",
+              "100",
+              "Kg",
+              "9700",
+              "0%",
+              "9700",
+              "0",
+              "970000",
+              "",
+              "",
+              "0",
+              "0",
+              "970000",
+              "",
+              "0"
+            ],
+            [
+              "1bc1d633",
+              "FD10121",
+              "MP",
+              "16",
+              "EFX",
+              "50",
+              "Kg",
+              "25800",
+              "5%",
+              "27090",
+              "64500",
+              "1354500",
+              "",
+              "",
+              "0",
+              "0",
+              "1354500",
+              "",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1795511356,
+          "title": "Pagos",
+          "index": 2,
+          "rowCount": 998,
+          "columnCount": 26,
+          "headers": [
+            "PagoID",
+            "MarcaTiempo",
+            "UsuarioID",
+            "PagoFecha",
+            "RazonSocialID",
+            "Pago",
+            "QuienPaga",
+            "Observaciones",
+            "FotoComprobante",
+            "NumeroDeTransaccion",
+            "CentroCostoID"
+          ],
+          "sampleRows": [
+            [
+              "9a9f568b",
+              "18/09/2024 9:53:49",
+              "mcds.facturas@gmail.com",
+              "05/07/2024",
+              "TR13",
+              "14066514",
+              "Wilder Puentes",
+              "",
+              "Pagos_Images/9a9f568b.FotoComprobante.145752.jpg",
+              "787958751"
+            ],
+            [
+              "ffd94b31",
+              "19/09/2024 17:12:47",
+              "mcds.facturas@gmail.com",
+              "13/07/2023",
+              "NTX",
+              "2324500",
+              "Roberto Zuñiga",
+              "",
+              "Pagos_Images/ffd94b31.FotoComprobante.221642.jpg",
+              "7562802442"
+            ],
+            [
+              "7f3b1427",
+              "19/09/2024 17:22:30",
+              "mcds.facturas@gmail.com",
+              "21/09/2023",
+              "NTX",
+              "2324500",
+              "Roberto Zuñiga",
+              "Ese día se pago también la factura FD11068",
+              "Pagos_Images/7f3b1427.FotoComprobante.222441.jpg",
+              "425629269"
+            ],
+            [
+              "bfb10915",
+              "19/09/2024 17:34:05",
+              "mcds.facturas@gmail.com",
+              "08/02/2024",
+              "PCA",
+              "20664000",
+              "Roberto Zuñiga",
+              "El proveedor devuelve el excedente el 21-02-2024 a la cuenta de ahorros banco davivienda",
+              "Pagos_Images/bfb10915.FotoComprobante.224012.jpg",
+              "752974737"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1661255814,
+          "title": "PagosDetalle",
+          "index": 3,
+          "rowCount": 997,
+          "columnCount": 26,
+          "headers": [
+            "PagosDetalleID",
+            "PagoID",
+            "FacturaID",
+            "PagoFactura"
+          ],
+          "sampleRows": [
+            [
+              "9a9f568bD",
+              "9a9f568b",
+              "FEV 1202",
+              "14066514"
+            ],
+            [
+              "ffd94b31D",
+              "ffd94b31",
+              "FD10121",
+              "2324500"
+            ],
+            [
+              "7f3b1427D",
+              "7f3b1427",
+              "FD10921",
+              "2324500"
+            ],
+            [
+              "bfb10915D",
+              "bfb10915",
+              "FES3178",
+              "20664000"
+            ]
+          ]
+        },
+        {
+          "sheetId": 521933555,
+          "title": "IvaBimestre",
+          "index": 4,
+          "rowCount": 999,
+          "columnCount": 26,
+          "headers": [
+            "IvaBimestreID",
+            "Fecha"
+          ],
+          "sampleRows": [
+            [
+              "24-4",
+              "01/07/2024"
+            ],
+            [
+              "24-5",
+              "01/09/2024"
+            ],
+            [
+              "24-6",
+              "01/11/2024"
+            ],
+            [
+              "25-1",
+              "01/01/2025"
+            ]
+          ]
+        },
+        {
+          "sheetId": 721523752,
+          "title": "FlujoEfectivo",
+          "index": 5,
+          "rowCount": 1085,
+          "columnCount": 26,
+          "headers": [
+            "FlujoEfectivoID",
+            "MarcaTiempo",
+            "Fecha",
+            "CentroCostoID",
+            "TipoDeMovimiento",
+            "Concepto",
+            "Detalle",
+            "Valor",
+            "Beneficiario",
+            "FotoComprobante"
+          ],
+          "sampleRows": [
+            [
+              "fe041d81",
+              "12/12/2025 9:42:33",
+              "12/12/2025",
+              "MCDS",
+              "Ingreso",
+              "EFECTIVO",
+              "Efectivo banco jimena",
+              "4000000",
+              "ROBERTO"
+            ],
+            [
+              "bf2e6444",
+              "12/12/2025 11:17:12",
+              "12/12/2025",
+              "MCDS",
+              "Ingreso",
+              "EFECTIVO",
+              "Efectivo 6.30",
+              "2600000",
+              "ROBERTO"
+            ],
+            [
+              "607cd67e",
+              "12/12/2025 11:56:52",
+              "12/12/2025",
+              "MCDS",
+              "Ingreso",
+              "HUEVOS",
+              "Don jhon 310 pacas de a consignacion $290000",
+              "2500000",
+              "JIMENA"
+            ],
+            [
+              "f778ce29",
+              "12/12/2025 11:58:27",
+              "12/12/2025",
+              "CYY",
+              "Gasto",
+              "MANO DE OBRA",
+              "2 días vacunación",
+              "1900000",
+              "JIMENA"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1901493995,
+          "title": "Hoja 10",
+          "index": 6,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+      "name": "DB_AppGallinas",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-07T11:07:00.339Z",
+      "tabs": [
+        {
+          "sheetId": 1253174044,
+          "title": "Tabla",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaID",
+            "SemanaTabla",
+            "GAD",
+            "PesoGr",
+            "PP",
+            "HAA",
+            "PPMin",
+            "PPDif",
+            "HAAMin",
+            "HAADif"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "1",
+              "10",
+              "75",
+              "0,00%",
+              "0"
+            ],
+            [
+              "2",
+              "2",
+              "16",
+              "130",
+              "0,00%",
+              "0"
+            ],
+            [
+              "3",
+              "3",
+              "22",
+              "195",
+              "0,00%",
+              "0"
+            ],
+            [
+              "4",
+              "4",
+              "28",
+              "273",
+              "0,00%",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1927233940,
+          "title": "Vacunaciones",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 31,
+          "headers": [
+            "VacunacionID",
+            "MarcaTiempo",
+            "VacunacionFecha",
+            "UsuarioID",
+            "GranjaID",
+            "GalponID",
+            "LoteID",
+            "Semana",
+            "CategoriaID",
+            "ItemID",
+            "Laboratorio",
+            "Cepas",
+            "NombreComercial",
+            "Administracion",
+            "VacunaFoto",
+            "Veterinario",
+            "Observacion"
+          ],
+          "sampleRows": [
+            [
+              "32b2a294",
+              "10/02/2025 17:14:08",
+              "03/08/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "2",
+              "V",
+              "GB2",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "se usaron 11 litros de agua por cada 1000 aves"
+            ],
+            [
+              "f4c97823",
+              "10/02/2025 17:30:26",
+              "09/08/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "3",
+              "V",
+              "GB3",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "se usaron 14 litros de agua por cada 1000 aves"
+            ],
+            [
+              "045957df",
+              "10/02/2025 17:31:39",
+              "15/08/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "4",
+              "V",
+              "GB3",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "se usaron 16 litros de agua por cada 1000 aves"
+            ],
+            [
+              "73860cb3",
+              "10/02/2025 17:32:35",
+              "22/08/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "5",
+              "V",
+              "NB",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "se usaron 20 litros de agua por cada 1000 aves"
+            ]
+          ]
+        },
+        {
+          "sheetId": 381217904,
+          "title": "EntradasG",
+          "index": 2,
+          "rowCount": 1000,
+          "columnCount": 33,
+          "headers": [
+            "EntradaGID",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "UsuarioID",
+            "GranjaID",
+            "GalponID",
+            "BodegaID",
+            "CategoriaID",
+            "ItemID",
+            "TraspasosInventarioBultosID",
+            "TraspasosInventarioCCID",
+            "FacturaDetalleID",
+            "Cantidad",
+            "PlacaVehiculo",
+            "AceptableCondicion",
+            "Entrega",
+            "FirmaEntrega",
+            "Recibe",
+            "FirmaRecibe",
+            "Observaciones",
+            "NumeroDeFactura",
+            "PrecioConIva",
+            "FacturasDetalleIDTR",
+            "Transporte",
+            "PrecioTotalConIva"
+          ],
+          "sampleRows": [
+            [
+              "ENT_G0001_A2",
+              "06/02/2025 23:22:09",
+              "31/01/2025",
+              "Mcds.gallinas.A2@gmail.com",
+              "A",
+              "A2",
+              "A2",
+              "PC",
+              "F1",
+              "SAL0104",
+              "",
+              "",
+              "800",
+              "",
+              "FALSE",
+              "",
+              "",
+              "Giovanny Cifuentes",
+              "",
+              "prueba"
+            ],
+            [
+              "ENT_G0002_A2",
+              "06/02/2025 23:35:14",
+              "06/02/2025",
+              "Mcds.gallinas.A2@gmail.com",
+              "A",
+              "A2",
+              "A2",
+              "PC",
+              "F1",
+              "SAL0105",
+              "",
+              "",
+              "50",
+              "",
+              "",
+              "",
+              "",
+              "Giovanny Cifuentes"
+            ],
+            [
+              "ENT_G0003_A2",
+              "06/02/2025 23:38:11",
+              "06/02/2025",
+              "Mcds.gallinas.A2@gmail.com",
+              "A",
+              "A2",
+              "A2",
+              "PC",
+              "F1",
+              "SAL0111",
+              "",
+              "",
+              "999",
+              "",
+              "",
+              "",
+              "",
+              "Giovanny Cifuentes"
+            ],
+            [
+              "ENT_G0004_A2",
+              "09/02/2025 10:59:56",
+              "09/02/2025",
+              "Mcds.gallinas.A2@gmail.com",
+              "A",
+              "A2",
+              "A2",
+              "PC",
+              "F1",
+              "SAL0118",
+              "",
+              "",
+              "1000",
+              "",
+              "",
+              "",
+              "",
+              "Giovanny Cifuentes"
+            ]
+          ]
+        },
+        {
+          "sheetId": 0,
+          "title": "RegistroDiarioAMP",
+          "index": 3,
+          "rowCount": 3340,
+          "columnCount": 37,
+          "headers": [
+            "RegistroDiarioAMPID",
+            "MarcaTiempo",
+            "AMPFecha",
+            "UsuarioID",
+            "GranjaID",
+            "GalponID",
+            "LoteID",
+            "Semana",
+            "ItemID",
+            "AlimentoBtos",
+            "Mortalidad",
+            "Despaje",
+            "Sacrificio",
+            "Venta",
+            "MDV",
+            "Produccion",
+            "Calcio",
+            "Cisco",
+            "Observacion",
+            "GuiaPP",
+            "PP",
+            "Dia",
+            "SalidaDeAves"
+          ],
+          "sampleRows": [
+            [
+              "AMP0001_C2",
+              "26/01/2025 22:06:56",
+              "25/07/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "1",
+              "PL",
+              "3",
+              "8",
+              "",
+              "",
+              "",
+              "8",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "1"
+            ],
+            [
+              "AMP0002_C2",
+              "26/01/2025 22:06:56",
+              "26/07/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "1",
+              "PL",
+              "3",
+              "6",
+              "",
+              "",
+              "",
+              "6",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "2"
+            ],
+            [
+              "AMP0003_C2",
+              "26/01/2025 22:06:56",
+              "27/07/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "1",
+              "PL",
+              "3",
+              "5",
+              "",
+              "",
+              "",
+              "5",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "3"
+            ],
+            [
+              "AMP0004_C2",
+              "26/01/2025 22:06:56",
+              "28/07/2023",
+              "Mcds.Cuchiyuyos.C2@gmail.com",
+              "C",
+              "C2",
+              "25072023",
+              "1",
+              "PL",
+              "4,5",
+              "6",
+              "",
+              "",
+              "",
+              "6",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "4"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1368733864,
+          "title": "AjusteAdministradorAMP",
+          "index": 4,
+          "rowCount": 1000,
+          "columnCount": 18,
+          "headers": [
+            "RegistroDiarioAMPID",
+            "MarcaTiempo",
+            "AMPFecha",
+            "UsuarioID",
+            "GranjaID",
+            "GalponID",
+            "LoteID",
+            "Semana",
+            "ItemID",
+            "AlimentoBtos",
+            "Observacion"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 1793128579,
+          "title": "GraficoPPTabla",
+          "index": 5,
+          "rowCount": 1207,
+          "columnCount": 24,
+          "headers": [
+            "GraficoPPTablaID",
+            "SemanaTabla",
+            "PPTabla",
+            "GalponID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "18",
+              "0",
+              "C1"
+            ],
+            [
+              "2",
+              "18",
+              "0",
+              "C2"
+            ],
+            [
+              "3",
+              "18",
+              "0",
+              "A1"
+            ],
+            [
+              "4",
+              "18",
+              "0",
+              "A2"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1534055947,
+          "title": "Hoja 4",
+          "index": 6,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "SaldoAves",
+            "AlimentoAcum",
+            "MDVAcum",
+            "ProduccionAcum",
+            "GuiaPP",
+            "GuiaHAA",
+            "GuiaGAD",
+            "PP",
+            "HAA",
+            "GAD",
+            "GADAcum"
+          ],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+      "name": "DB_AppGerencia",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4/edit?usp=drivesdk",
+      "modifiedTime": "2026-04-11T21:35:55.880Z",
+      "tabs": [
+        {
+          "sheetId": 1370474372,
+          "title": "MateriasPrimas",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "MateriaPrimaID",
+            "MateriaPrimaNombre",
+            "MateriaPrimaIVA",
+            "MateriaPrimaImagen"
+          ],
+          "sampleRows": [
+            [
+              "MA",
+              "Maiz Amarillo",
+              "5%",
+              "/MateriasPrimas/MA.MateriaPrimaImagen.221605.png"
+            ],
+            [
+              "TS",
+              "Torta De Soya",
+              "5%",
+              "/MateriasPrimas/TS.MateriaPrimaImagen.221613.png"
+            ],
+            [
+              "SIE",
+              "Soya Integral Extruida",
+              "5%",
+              "/MateriasPrimas/SIE.MateriaPrimaImagen.224504.png"
+            ],
+            [
+              "HA",
+              "Harina De Arroz",
+              "5%",
+              "/MateriasPrimas/HA.MateriaPrimaImagen.222818.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1837865862,
+          "title": "Trayectos",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TrayectoID",
+            "Trayecto"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "Transporte (Quimbofish - PlantaMCDS)"
+            ],
+            [
+              "2",
+              "Transporte (La Despensa del Ganadero - PlantaMCDS)"
+            ],
+            [
+              "3",
+              "Transporte (Italcol Neiva - PlantaMCDS)"
+            ],
+            [
+              "4",
+              "Transporte (Purificación - PlantaMCDS)"
+            ]
+          ]
+        },
+        {
+          "sheetId": 72010127,
+          "title": "Proveedores",
+          "index": 2,
+          "rowCount": 992,
+          "columnCount": 25,
+          "headers": [
+            "ProveedorID",
+            "ProveedorNombre",
+            "ProoveedorImagen",
+            "Nit",
+            "Direccion",
+            "Telefono",
+            "EmailPaginaWeb"
+          ],
+          "sampleRows": [
+            [
+              "QF",
+              "Quimbo Fish S.A.S.",
+              "/ImagenesOtras/QF.ProoveedorImagen.225141.jpg",
+              "900588326-4",
+              "KM 14 VIA GARZON - GARZÓN - - Huila - CO",
+              "3183384405",
+              "quimbofishsas@gmail.com"
+            ],
+            [
+              "GESJ",
+              "Grupo Empresarial Santa Josefa S.A.S.",
+              "/ImagenesOtras/GESJ.ProoveedorImagen.225149.png",
+              "900379524-1",
+              "Carrera 15A No 121-12 of 421",
+              "3183503270",
+              "cesar.guzman@gesefa.com"
+            ],
+            [
+              "AVDG",
+              "Almacen Veterinario la Despensa del Ganadero",
+              "/ImagenesOtras/AVDG.ProoveedorImagen.225159.jpg",
+              "7700066-5",
+              "Carrera 10 No. 1 10 GARZON-HUILA - COLOMBIA",
+              "3112232041",
+              "ladespensadelganadero@hotmail.com"
+            ],
+            [
+              "IT",
+              "Italcol S.A",
+              "/ImagenesOtras/IT.ProoveedorImagen.225240.jpg",
+              "860026895-8",
+              "Planta Palermo KM2 Via Palermo",
+              "98874818",
+              "www.italcol.com"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1994075400,
+          "title": "ProveedoresDetalle",
+          "index": 3,
+          "rowCount": 999,
+          "columnCount": 20,
+          "headers": [
+            "ProveedorDetalleID",
+            "ProveedorID",
+            "MateriaPrimaID",
+            "IVA"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "QF",
+              "AP",
+              "19%"
+            ],
+            [
+              "2",
+              "GESJ",
+              "TS",
+              "5%"
+            ],
+            [
+              "3",
+              "AVDG",
+              "S",
+              "0%"
+            ],
+            [
+              "4",
+              "IT",
+              "TS",
+              "5%"
+            ]
+          ]
+        },
+        {
+          "sheetId": 709010871,
+          "title": "Transportistas",
+          "index": 4,
+          "rowCount": 989,
+          "columnCount": 25,
+          "headers": [
+            "TransportistaID",
+            "TransportistaNombre",
+            "IVARetefuente",
+            "Nit",
+            "Direccion",
+            "Telefono",
+            "EmailPaginaWeb"
+          ],
+          "sampleRows": [
+            [
+              "Trans1",
+              "Macadasa S.A.S",
+              "0%",
+              "901355052-5",
+              "Calle 2 # 2-28 - Garzón Huila",
+              "8330061",
+              "Macadasagarzon@gmail.com"
+            ],
+            [
+              "Trans2",
+              "Wilder Alexy Pulido",
+              "0%",
+              "72327132-0",
+              "Cl 7 Sur 12 128 - Tunja Boyacá",
+              "3178936933",
+              "gcontable.wilderp@gmail.com"
+            ],
+            [
+              "Trans3",
+              "Enrique Plazas",
+              "0%"
+            ],
+            [
+              "Trans4",
+              "Oscar Mora",
+              "0%"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1028024815,
+          "title": "TransportistasDetalle",
+          "index": 5,
+          "rowCount": 1000,
+          "columnCount": 19,
+          "headers": [
+            "TransportistaDetalleID",
+            "TransportistaID",
+            "TrayectoID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "2",
+              "1",
+              "2"
+            ],
+            [
+              "3",
+              "1",
+              "3"
+            ],
+            [
+              "4",
+              "1",
+              "8"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2029615920,
+          "title": "Productos",
+          "index": 6,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "ProductoID",
+            "ProductoNombre",
+            "ProductoImagen"
+          ],
+          "sampleRows": [
+            [
+              "PL",
+              "Polla Levante",
+              "/ImagenesApp/PL.ProductoImagen.230418.png"
+            ],
+            [
+              "F1",
+              "Fase 1",
+              "/ImagenesApp/F1.ProductoImagen.230431.png"
+            ],
+            [
+              "F2",
+              "Fase 2",
+              "/ImagenesApp/F2.ProductoImagen.230436.png"
+            ],
+            [
+              "PE",
+              "Pollo Engorde",
+              "/ImagenesApp/PE.ProductoImagen.230444.jpg"
+            ]
+          ]
+        },
+        {
+          "sheetId": 253641837,
+          "title": "Menu",
+          "index": 7,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "MenuID",
+            "MenuNombre",
+            "MenuAppID",
+            "MenuImagen"
+          ],
+          "sampleRows": [
+            [
+              "Fac",
+              "Facturas"
+            ],
+            [
+              "Inv",
+              "Inventario"
+            ],
+            [
+              "Plt",
+              "Planta"
+            ],
+            [
+              "Pll",
+              "Pollo"
+            ]
+          ]
+        },
+        {
+          "sheetId": 83061244,
+          "title": "TamañoHuevo",
+          "index": 8,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TamañoHuevoID",
+            "TamañoHuevoNombre",
+            "TamañoHuevoImagen"
+          ],
+          "sampleRows": [
+            [
+              "H",
+              "Huevo"
+            ],
+            [
+              "C",
+              "C"
+            ],
+            [
+              "B",
+              "B"
+            ],
+            [
+              "A",
+              "A"
+            ]
+          ]
+        },
+        {
+          "sheetId": 387765530,
+          "title": "Copia de CentrosCosto",
+          "index": 9,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "CentroCostoID",
+            "CentroCosto",
+            "DescripcionBreve"
+          ],
+          "sampleRows": [
+            [
+              "PLT",
+              "Planta",
+              "Fábrica de alimento"
+            ],
+            [
+              "CYY",
+              "Cuchiyuyos",
+              "Granja de ponedoras 1"
+            ],
+            [
+              "AST",
+              "Astromelio",
+              "Granja de ponedoras 2"
+            ],
+            [
+              "GDL",
+              "Guaduales",
+              "Granja de engorde 1"
+            ]
+          ]
+        },
+        {
+          "sheetId": 956630186,
+          "title": "Granjas",
+          "index": 10,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "GranjaID",
+            "GranjaNombre",
+            "GranjaImagen"
+          ],
+          "sampleRows": [
+            [
+              "C",
+              "Cuchiyuyos",
+              "Granjas_Images/C.GranjaImagen.183236.png"
+            ],
+            [
+              "A",
+              "Astromelio",
+              "Granjas_Images/A.GranjaImagen.183253.png"
+            ],
+            [
+              "G",
+              "Guaduales"
+            ],
+            [
+              "CH",
+              "Chontaduro",
+              "Granjas_Images/G.GranjaImagen.224726.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 161945829,
+          "title": "Galpones",
+          "index": 11,
+          "rowCount": 1000,
+          "columnCount": 27,
+          "headers": [
+            "GalponID",
+            "GranjaID",
+            "GalponNombre",
+            "GalponImagen",
+            "UsuarioID"
+          ],
+          "sampleRows": [
+            [
+              "C1",
+              "C",
+              "Galpon C1",
+              "Galpones_Images/C1.GalponImagen.022705.png",
+              "Mcds.Cuchiyuyos.C1@gmail.com"
+            ],
+            [
+              "C2",
+              "C",
+              "Galpon C2",
+              "Galpones_Images/C2.GalponImagen.022749.png",
+              "Mcds.Cuchiyuyos.C2@gmail.com"
+            ],
+            [
+              "A1",
+              "A",
+              "Galpon A1",
+              "Galpones_Images/A1.GalponImagen.022806.png",
+              "Mcds.Gallinas.A1@gmail.com"
+            ],
+            [
+              "A2",
+              "A",
+              "Galpon A2",
+              "Galpones_Images/A2.GalponImagen.022830.png",
+              "Mcds.Gallinas.A2@gmail.com"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1691035762,
+          "title": "Lotes",
+          "index": 12,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "LoteID",
+            "CategoriaID",
+            "GranjaID",
+            "GalponID",
+            "BodegaID",
+            "LoteNombre",
+            "FechaInicio",
+            "FechaFinalizacion",
+            "NumeroAvesInicial",
+            "Estado",
+            "UsuarioID"
+          ],
+          "sampleRows": [
+            [
+              "18112022",
+              "G",
+              "C",
+              "C1",
+              "C",
+              "G-C1",
+              "18/11/2022",
+              "",
+              "10200",
+              "FALSE",
+              "Mcds.Cuchiyuyos.C1@gmail.com"
+            ],
+            [
+              "25072023",
+              "G",
+              "C",
+              "C2",
+              "C",
+              "G-C2",
+              "25/07/2023",
+              "",
+              "12290",
+              "FALSE",
+              "Mcds.Cuchiyuyos.C2@gmail.com"
+            ],
+            [
+              "23012024",
+              "G",
+              "A",
+              "A1",
+              "A1",
+              "G-A1",
+              "23/1/2024",
+              "",
+              "12230",
+              "TRUE",
+              "Mcds.gallinas.A1@gmail.com"
+            ],
+            [
+              "14082024",
+              "G",
+              "A",
+              "A2",
+              "A2",
+              "G-A2",
+              "14/08/2024",
+              "",
+              "20400",
+              "TRUE",
+              "Mcds.gallinas.A2@gmail.com"
+            ]
+          ]
+        },
+        {
+          "sheetId": 445137793,
+          "title": "Bodegas",
+          "index": 13,
+          "rowCount": 997,
+          "columnCount": 27,
+          "headers": [
+            "BodegaID",
+            "CategoriaID",
+            "BodegaNombre",
+            "BodegaImagen",
+            "UsuarioID"
+          ],
+          "sampleRows": [
+            [
+              "P",
+              "PC,OC,MP",
+              "Planta",
+              "/ImagenesApp/P.BodegaImagen.221034.png"
+            ],
+            [
+              "C",
+              "PC,OC",
+              "Cuchiyuyos",
+              "/ImagenesApp/C.BodegaImagen.220659.png",
+              "Mcds.Cuchiyuyos.C1@gmail.com,Mcds.Cuchiyuyos.C2@gmail.com"
+            ],
+            [
+              "A1",
+              "PC,OC",
+              "Astromelio 1",
+              "/ImagenesApp/A1.BodegaImagen.225743.png",
+              "Mcds.Gallinas.A1@gmail.com"
+            ],
+            [
+              "A2",
+              "PC,OC",
+              "Astromelio 2",
+              "/ImagenesApp/A2.BodegaImagen.230634.png",
+              "Mcds.Gallinas.A2@gmail.com"
+            ]
+          ]
+        },
+        {
+          "sheetId": 194525488,
+          "title": "Categorias",
+          "index": 14,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "CategoriaID",
+            "CategoriaNombre",
+            "CategoriaImagen"
+          ],
+          "sampleRows": [
+            [
+              "MP",
+              "Materia Prima"
+            ],
+            [
+              "TR",
+              "Transportes"
+            ],
+            [
+              "PC",
+              "Planta de Concentrado"
+            ],
+            [
+              "CC",
+              "Calcio y Cisco"
+            ]
+          ]
+        },
+        {
+          "sheetId": 878474694,
+          "title": "Items",
+          "index": 15,
+          "rowCount": 1004,
+          "columnCount": 28,
+          "headers": [
+            "ItemID",
+            "CategoriaID",
+            "ItemDescripcion",
+            "ItemIVA",
+            "ItemImagen",
+            "Unidad",
+            "Observacion"
+          ],
+          "sampleRows": [
+            [
+              "MA",
+              "MP",
+              "Maiz Amarillo",
+              "5%",
+              "/MateriasPrimas/MA.MateriaPrimaImagen.221605.png",
+              "",
+              "aqui los posibles nombres"
+            ],
+            [
+              "TS",
+              "MP",
+              "Torta De Soya",
+              "5%",
+              "/MateriasPrimas/TS.MateriaPrimaImagen.221613.png",
+              "",
+              "aqui los posibles nombres"
+            ],
+            [
+              "SIE",
+              "MP",
+              "Soya Integral Extruida",
+              "5%",
+              "/MateriasPrimas/SIE.MateriaPrimaImagen.224504.png",
+              "",
+              "aqui los posibles nombres"
+            ],
+            [
+              "HA",
+              "MP",
+              "Harina De Arroz",
+              "5%",
+              "/MateriasPrimas/HA.MateriaPrimaImagen.222818.png",
+              "",
+              "aqui los posibles nombres"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2033459746,
+          "title": "RazonSocial",
+          "index": 16,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "RazonSocialID",
+            "CategoriaID",
+            "RazonSocialNombre",
+            "RazonSocialImagen",
+            "Nit",
+            "Direccion",
+            "Telefono",
+            "EmailPaginaWeb",
+            "NumeroCuenta",
+            "Total"
+          ],
+          "sampleRows": [
+            [
+              "QF",
+              "MP",
+              "Quimbo Fish S.A.S.",
+              "/ImagenesOtras/QF.ProoveedorImagen.225141.jpg",
+              "900588326-4",
+              "KM 14 VIA GARZON - GARZÓN - - Huila - CO",
+              "3183384405",
+              "quimbofishsas@gmail.com",
+              "",
+              "Total"
+            ],
+            [
+              "GESJ",
+              "MP",
+              "Grupo Empresarial Santa Josefa S.A.S.",
+              "/ImagenesOtras/GESJ.ProoveedorImagen.225149.png",
+              "900379524-1",
+              "Carrera 15A No 121-12 of 421",
+              "3183503270",
+              "cesar.guzman@gesefa.com",
+              "",
+              "Total"
+            ],
+            [
+              "AVDG",
+              "MP,PC",
+              "Almacen Veterinario la Despensa del Ganadero",
+              "/ImagenesOtras/AVDG.ProoveedorImagen.225159.jpg",
+              "7700066-5",
+              "Carrera 10 No. 1 10 GARZON-HUILA - COLOMBIA",
+              "3112232041",
+              "ladespensadelganadero@hotmail.com",
+              "",
+              "Total"
+            ],
+            [
+              "IT",
+              "MP,PC",
+              "Italcol S.A",
+              "/ImagenesOtras/IT.ProoveedorImagen.225240.jpg",
+              "860026895-8",
+              "Planta Palermo KM2 Via Palermo",
+              "98874818",
+              "www.italcol.com",
+              "123",
+              "Total"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1433116227,
+          "title": "RazonSocialDetalle",
+          "index": 17,
+          "rowCount": 1001,
+          "columnCount": 26,
+          "headers": [
+            "RazonSocialDetalleID",
+            "RazonSocialID",
+            "ItemID",
+            "CategoriaID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "AVDG",
+              "S",
+              "MP"
+            ],
+            [
+              "2",
+              "PCH",
+              "AP",
+              "MP"
+            ],
+            [
+              "3",
+              "QF",
+              "AP",
+              "MP"
+            ],
+            [
+              "4",
+              "SMX",
+              "FMD",
+              "MP"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1035187812,
+          "title": "TiposCosto",
+          "index": 18,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TiposCostoID",
+            "TipoCostoNombre",
+            "TipoCostoImagen",
+            "Descripcion"
+          ],
+          "sampleRows": [
+            [
+              "VERDES",
+              "EntradasConFactura",
+              "VERDES",
+              "Entradas Materia Prima y lo relacionado directamente. Items y transporte"
+            ],
+            [
+              "ROJAS",
+              "OtrosGastos",
+              "ROJAS",
+              "Gastos Hormiga. "
+            ],
+            [
+              "NEGRA",
+              "ServiciosSalarios",
+              "NEGRA",
+              "Costos regulares: mano de obra, servicios. "
+            ],
+            [
+              "GRISES",
+              "Reparaciones",
+              "GRISES",
+              "Inversiones y arreglos"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1582126828,
+          "title": "CentrosCosto",
+          "index": 19,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "CentroCostoID",
+            "CentroCosto",
+            "DescripcionBreve"
+          ],
+          "sampleRows": [
+            [
+              "PLT",
+              "Planta",
+              "Fábrica de alimento"
+            ],
+            [
+              "CYY",
+              "Cuchiyuyos",
+              "Granja de ponedoras 1"
+            ],
+            [
+              "AST",
+              "Astromelio",
+              "Granja de ponedoras 2"
+            ],
+            [
+              "CHT",
+              "Chontaduro",
+              "Granja de engorde"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1497516145,
+          "title": "TipoMovimientoFinancieroID",
+          "index": 20,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TipoMovimientoFinancieroID",
+            "MovimientoFinanciero",
+            "CategoriaMovimiento",
+            "EsAutomatico"
+          ],
+          "sampleRows": [
+            [
+              "",
+              "",
+              "Gasto Operativo"
+            ]
+          ]
+        },
+        {
+          "sheetId": 540164168,
+          "title": "Usuarios",
+          "index": 21,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "UsuarioID",
+            "CorreoElectronico",
+            "Nombre",
+            "UsuarioRol",
+            "CentroCosto",
+            "UsuarioImagen",
+            "UsuarioActivo",
+            "BodegaID"
+          ],
+          "sampleRows": [
+            [
+              "macadasa.registros@gmail.com",
+              "macadasa.registros@gmail.com",
+              "David Lamilla",
+              "ADMIN",
+              "",
+              "Usuarios_Images/macadasa.registros@gmail.com.UsuarioImagen.052909.png",
+              "TRUE"
+            ],
+            [
+              "samuelmacadasa@gmail.com",
+              "samuelmacadasa@gmail.com",
+              "Samuel Lamilla",
+              "ADMIN",
+              "",
+              "Usuarios_Images/samuelmacadasa@gmail.com.UsuarioImagen.052851.png",
+              "TRUE"
+            ],
+            [
+              "jimeramirenavia.jr@gmail.com",
+              "jimeramirenavia.jr@gmail.com",
+              "Jimena Ramirez",
+              "SUPERVISOR",
+              "",
+              "Usuarios_Images/US03.UsuarioImagen.052924.png",
+              "TRUE"
+            ],
+            [
+              "Mcds.Facturas@gmail.com",
+              "Mcds.Facturas@gmail.com",
+              "Roberto Zuñiga",
+              "FACTURAS",
+              "FACTURAS",
+              "Usuarios_Images/US04.UsuarioImagen.052621.png",
+              "TRUE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 682707301,
+          "title": "Reportes",
+          "index": 22,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 2040945942,
+          "title": "UltimoRegistro",
+          "index": 23,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "UltimoRegistroID",
+            "UsuarioID",
+            "TablaEntradas",
+            "TablaPrincipal",
+            "TablaSalidas",
+            "MarcaTiempo"
+          ],
+          "sampleRows": [
+            [
+              "macadasa.registros@gmail.com",
+              "macadasa.registros@gmail.com",
+              "",
+              "",
+              "",
+              "24/10/2024 20:49:28"
+            ],
+            [
+              "samuelmacadasa@gmail.com",
+              "samuelmacadasa@gmail.com",
+              "",
+              "",
+              "",
+              "16/09/2024 20:49:28"
+            ],
+            [
+              "jimeramirenavia.jr@gmail.com",
+              "jimeramirenavia.jr@gmail.com",
+              "",
+              "",
+              "",
+              "16/09/2024 20:49:28"
+            ],
+            [
+              "Mcds.Facturas@gmail.com",
+              "Mcds.Facturas@gmail.com",
+              "",
+              "Facturas",
+              "Pagos",
+              "16/09/2024 20:49:28"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2040855356,
+          "title": "McdsApps",
+          "index": 24,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "McdsAppsID",
+            "McdsAppsNombre",
+            "McdsAppsRuta",
+            "McdsAppsImagen"
+          ],
+          "sampleRows": [
+            [
+              "App01",
+              "Facturas",
+              "Facturas-2757578",
+              "McdsApps_Iconos/App01.McdsAppsImagen.140736.png"
+            ],
+            [
+              "App02",
+              "Inventario",
+              "Inventario-2757578",
+              "McdsApps_Iconos/App02.McdsAppsImagen.140754.png"
+            ],
+            [
+              "App03",
+              "Planta",
+              "PlantaConcentrado-2757578",
+              "McdsApps_Iconos/App03.McdsAppsImagen.140803.png"
+            ],
+            [
+              "App04",
+              "Pollo",
+              "",
+              "McdsApps_Iconos/App04.McdsAppsImagen.140810.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 972747545,
+          "title": "CostosTransacciones",
+          "index": 25,
+          "rowCount": 993,
+          "columnCount": 27,
+          "headers": [
+            "CostoTransaccionID",
+            "CategoriaID",
+            "ItemID",
+            "Costo",
+            "UltimaActualizacion"
+          ],
+          "sampleRows": [
+            [
+              "PL",
+              "PC",
+              "PL",
+              "72000",
+              "26/10/2024"
+            ],
+            [
+              "PLM",
+              "PC",
+              "PLM",
+              "73000",
+              "26/10/2024"
+            ],
+            [
+              "F1",
+              "PC",
+              "F1",
+              "75000",
+              "26/10/2024"
+            ],
+            [
+              "F1M",
+              "PC",
+              "F1M",
+              "76000",
+              "26/10/2024"
+            ]
+          ]
+        },
+        {
+          "sheetId": 561787536,
+          "title": "Documentos",
+          "index": 26,
+          "rowCount": 999,
+          "columnCount": 28,
+          "headers": [
+            "DocumentoID",
+            "TipoDocumento",
+            "Granja",
+            "NombreDocumento",
+            "Descripción",
+            "Fecha",
+            "ArchivoPDF",
+            "Documento",
+            "Imagen",
+            "Responsable",
+            "Observaciones"
+          ],
+          "sampleRows": [
+            [
+              "0da5811c",
+              "Libro",
+              "P",
+              "Libro BPMAA",
+              "",
+              "2025-01-01",
+              "Documentos_Files_/0da5811c.ArchivoPDF.215727.pdf",
+              "",
+              "Documentos_Images/0da5811c.Imagen.215727.jpg",
+              "Samuel Lamilla"
+            ]
+          ]
+        },
+        {
+          "sheetId": 941725305,
+          "title": "TablaCalendario",
+          "index": 27,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioID",
+            "Fecha"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "01/08/25"
+            ],
+            [
+              "2",
+              "02/08/25"
+            ],
+            [
+              "3",
+              "03/08/25"
+            ],
+            [
+              "4",
+              "04/08/25"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2140291339,
+          "title": "TablaCalendarioSemana",
+          "index": 28,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioSemanaID",
+            "FechaInicio",
+            "FechaFin"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "28/07/25",
+              "03/08/25"
+            ],
+            [
+              "2",
+              "04/08/25",
+              "10/08/25"
+            ],
+            [
+              "3",
+              "11/08/25",
+              "17/08/25"
+            ],
+            [
+              "4",
+              "18/08/25",
+              "24/08/25"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1574860312,
+          "title": "Z_Camaras",
+          "index": 29,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "CamaraID",
+            "FechaInstalacion",
+            "GranjaID",
+            "Ubicacion",
+            "FotoCamara",
+            "Modelo",
+            "QR",
+            "PIN",
+            "Contraseña",
+            "Detalle",
+            "Valor",
+            "InternetID"
+          ],
+          "sampleRows": [
+            [
+              "5c43135f",
+              "",
+              "A",
+              "Galpon A1",
+              "Z_Camaras_Images/5c43135f.FotoCamara.121040.jpg",
+              "C3TN 2K",
+              "Z_Camaras_Images/5c43135f.QR.151038.jpg",
+              "BG0190496",
+              "Astromelio.0061",
+              "Bidireccional, blanco y negro, IP67, 64GB. Iba a ser para la puerta. Pero no es muy buena de noche. $40usd",
+              "162000"
+            ],
+            [
+              "441a50f6",
+              "01/09/2025",
+              "A",
+              "Puerta Principal",
+              "Z_Camaras_Images/441a50f6.FotoCamara.121306.jpg",
+              "C3X",
+              "Z_Camaras_Images/441a50f6.QR.152115.jpg",
+              "BB5000538",
+              "Astromelio.0061",
+              "Bidireccional, visión nocturna a color, IP67, 1080p. $60usd",
+              "243000",
+              "56e38b2f"
+            ],
+            [
+              "3ab29134",
+              "",
+              "A",
+              "Bodega A1",
+              "Z_Camaras_Images/3ab29134.FotoCamara.043253.jpg",
+              "C6N",
+              "Z_Camaras_Images/3ab29134.QR.152352.jpg",
+              "BE5448158",
+              "Astromelio.0061",
+              "Interior, 1080p, 64GB. $22usd",
+              "89000",
+              "56e38b2f"
+            ],
+            [
+              "fd7439f1",
+              "",
+              "A",
+              "Bodega A2",
+              "Z_Camaras_Images/fd7439f1.FotoCamara.044205.jpg",
+              "C6N",
+              "Z_Camaras_Images/fd7439f1.QR.152623.jpg",
+              "BE5448048",
+              "Astromelio.0061",
+              "",
+              "89000"
+            ]
+          ]
+        },
+        {
+          "sheetId": 959533953,
+          "title": "Z_Internet",
+          "index": 30,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "InternetID",
+            "Fecha",
+            "GranjaID",
+            "Proveedor",
+            "VelocidadInternet",
+            "ContraseñaInternet",
+            "Valor"
+          ],
+          "sampleRows": [
+            [
+              "89b1f9a3",
+              "01/09/2025",
+              "A",
+              "Puente Planta",
+              "12 MB",
+              "Astromelio.0061",
+              "0"
+            ],
+            [
+              "bc978297",
+              "01/08/2025",
+              "P",
+              "Asonet",
+              "10 MB",
+              "123456789",
+              "110000"
+            ],
+            [
+              "56e38b2f",
+              "01/09/2025",
+              "A",
+              "Repetidor planta",
+              "12mg",
+              "Astromelio.0061",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1194575878,
+          "title": "Z_Perros",
+          "index": 31,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "PerroID",
+            "GranjaID",
+            "Ubicacion",
+            "Genero",
+            "Raza",
+            "Nombre",
+            "FechaNacimiento",
+            "FotoCara",
+            "FotoPerro",
+            "Puntuacion",
+            "Caracteristicas",
+            "MadreID",
+            "PadreID",
+            "Activo"
+          ],
+          "sampleRows": [
+            [
+              "ef09bd6c",
+              "A",
+              "Atras",
+              "TRUE",
+              "Criolla",
+              "Princesa",
+              "01/01/2021",
+              "Z_Perros_Images/ef09bd6c.FotoCara.140632.jpg",
+              "Z_Perros_Images/ef09bd6c.FotoPerro.140632.jpg",
+              "0",
+              "",
+              "",
+              "",
+              "TRUE"
+            ],
+            [],
+            [
+              "6551401a",
+              "A",
+              "Libre",
+              "FALSE",
+              "Border colli",
+              "MAX",
+              "01/06/2022",
+              "Z_Perros_Images/6551401a.FotoCara.125518.jpg",
+              "Z_Perros_Images/6551401a.FotoPerro.125518.jpg",
+              "9",
+              "Puro",
+              "",
+              "",
+              "TRUE"
+            ],
+            [
+              "f2593b38",
+              "CH",
+              "Suelta",
+              "TRUE",
+              "Criolla",
+              "Sombra",
+              "08/06/2022",
+              "Z_Perros_Images/f2593b38.FotoCara.132349.jpg",
+              "Z_Perros_Images/f2593b38.FotoPerro.132349.jpg",
+              "",
+              "Color negra, hija de Dingo , tamaño pequeño",
+              "",
+              "",
+              "TRUE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1560895999,
+          "title": "Z_PerrosPlanificacion",
+          "index": 32,
+          "rowCount": 1000,
+          "columnCount": 27,
+          "headers": [
+            "PerrosPlanificacionID",
+            "GranjaID",
+            "PerroID",
+            "Fecha",
+            "Injeccion",
+            "FotoDroga",
+            "ProximaInjeccion"
+          ],
+          "sampleRows": [
+            [
+              "7c70f678",
+              "CH",
+              "563bce51",
+              "10/12/2025",
+              "Anticon",
+              "Z_PerrosPlanificacion_Images/7c70f678.FotoDroga.145052.jpg",
+              "10/03/2026"
+            ],
+            [
+              "35f534d7",
+              "CH",
+              "c96400ba",
+              "24/01/2026",
+              "Anticon",
+              "Z_PerrosPlanificacion_Images/35f534d7.FotoDroga.145207.jpg",
+              "24/5/2026"
+            ],
+            [
+              "15d5a1ac",
+              "A",
+              "026728ae",
+              "07/11/2025",
+              "Anticon",
+              "",
+              "7/3/2026"
+            ],
+            [
+              "d91d07ab",
+              "A",
+              "9fcdfbbd",
+              "07/11/2025",
+              "Anticon",
+              "",
+              "7/3/2026"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+      "name": "DB_AppInventario",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-08T01:30:48.342Z",
+      "tabs": [
+        {
+          "sheetId": 708726182,
+          "title": "TiposTraspasoBultos",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TipoTraspasoBultoID",
+            "Descripcion"
+          ],
+          "sampleRows": [
+            [
+              "Prod",
+              "Produccion"
+            ],
+            [
+              "Tras",
+              "Traspaso"
+            ],
+            [
+              "HojM",
+              "HojadeManejo"
+            ],
+            [
+              "AjsP",
+              "AjustePlanta"
+            ]
+          ]
+        },
+        {
+          "sheetId": 42376298,
+          "title": "TiposTraspasoHuevos",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TiposTraspasoHuevosID",
+            "Descripcion"
+          ],
+          "sampleRows": [
+            [
+              "HojM",
+              "HojadeManejo"
+            ],
+            [
+              "ClsE",
+              "ClasificacionEntrada"
+            ],
+            [
+              "ClsS",
+              "ClasificacionSalida"
+            ],
+            [
+              "Tras",
+              "Traspaso"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1508879916,
+          "title": "TraspasosInventarioBultos",
+          "index": 2,
+          "rowCount": 2498,
+          "columnCount": 26,
+          "headers": [
+            "TraspasosInventarioBultosID",
+            "MarcaTiempo",
+            "Fecha",
+            "TipoTraspasoBultoID",
+            "Origen",
+            "Destino",
+            "ItemID",
+            "CantidadEnviada",
+            "CantidadRecibida",
+            "Validacion",
+            "ValorUnitario",
+            "ValorTotal"
+          ],
+          "sampleRows": [
+            [
+              "PROD0001",
+              "20/09/2024 16:31:53",
+              "20/09/2024",
+              "Prod",
+              "",
+              "P",
+              "F1M",
+              "",
+              "403"
+            ],
+            [
+              "PROD0002",
+              "20/09/2024 16:34:06",
+              "20/09/2024",
+              "Prod",
+              "",
+              "P",
+              "F1M",
+              "",
+              "377"
+            ],
+            [
+              "PROD0003",
+              "20/09/2024 16:35:10",
+              "20/09/2024",
+              "Prod",
+              "",
+              "P",
+              "F1",
+              "",
+              "26"
+            ],
+            [
+              "PROD0004",
+              "20/09/2024 16:38:22",
+              "20/09/2024",
+              "Prod",
+              "",
+              "P",
+              "F1",
+              "",
+              "301"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1902224207,
+          "title": "TraspasosInventarioHuevos",
+          "index": 3,
+          "rowCount": 10636,
+          "columnCount": 26,
+          "headers": [
+            "TraspasosInventarioHuevosID",
+            "MarcaTiempo",
+            "Fecha",
+            "TiposTraspasoHuevosID",
+            "Origen",
+            "Destino",
+            "ItemID",
+            "CantidadEnviada",
+            "CantidadRecibida",
+            "Validacion",
+            "ValorUnitario",
+            "ValorTotal"
+          ],
+          "sampleRows": [
+            [
+              "AMP0001_C1",
+              "02/09/2024 10:04:15",
+              "02/09/2024",
+              "HojM",
+              "",
+              "CC",
+              "H",
+              "750"
+            ],
+            [
+              "AMP0002_C1",
+              "02/09/2024 10:08:43",
+              "02/09/2024",
+              "HojM",
+              "",
+              "CC",
+              "H",
+              "790"
+            ],
+            [
+              "AMP0003_C1",
+              "02/09/2024 10:09:24",
+              "02/09/2024",
+              "HojM",
+              "",
+              "CC",
+              "H",
+              "810"
+            ],
+            [
+              "AMP0004_C1",
+              "02/09/2024 10:13:16",
+              "02/09/2024",
+              "HojM",
+              "",
+              "CC",
+              "H",
+              "795"
+            ]
+          ]
+        },
+        {
+          "sheetId": 757196508,
+          "title": "TraspasosInventarioCC",
+          "index": 4,
+          "rowCount": 5629,
+          "columnCount": 26,
+          "headers": [
+            "TraspasosInventarioCCID",
+            "MarcaTiempo",
+            "Fecha",
+            "TipoTraspasoCCID",
+            "Origen",
+            "Destino",
+            "ItemID",
+            "CantidadEnviada",
+            "CantidadRecibida",
+            "Validacion",
+            "ValorUnitario",
+            "ValorTotal"
+          ],
+          "sampleRows": [
+            [],
+            [
+              "ENT0002_CC",
+              "25/03/2026 14:10:43",
+              "25/03/2026",
+              "ClsE",
+              "",
+              "CC",
+              "CTB",
+              "15000"
+            ],
+            [],
+            [
+              "CLAS0002_CC",
+              "05/09/2024 9:12:41",
+              "05/09/2024",
+              "ClsS",
+              "CC",
+              "",
+              "CTB",
+              "74"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1851468440,
+          "title": "InventarioBultos",
+          "index": 5,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "InventarioBultoID",
+            "BodegaID",
+            "ItemID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "P",
+              "PL"
+            ],
+            [
+              "2",
+              "P",
+              "PLM"
+            ],
+            [
+              "3",
+              "P",
+              "F1"
+            ],
+            [
+              "4",
+              "P",
+              "F1M"
+            ]
+          ]
+        },
+        {
+          "sheetId": 910787886,
+          "title": "InventarioHuevos",
+          "index": 6,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "InventarioBultoID",
+            "BodegaID",
+            "ItemID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "CC",
+              "H"
+            ],
+            [
+              "2",
+              "CC",
+              "B"
+            ],
+            [
+              "3",
+              "CC",
+              "A"
+            ],
+            [
+              "4",
+              "CC",
+              "AA"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+      "name": "DB_AppMcds",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-07T23:33:15.388Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "EntradasM",
+          "index": 0,
+          "rowCount": 1652,
+          "columnCount": 19,
+          "headers": [
+            "EntradaMID",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "GranjaID",
+            "BodegaID",
+            "ItemID",
+            "TraspasosInventarioHuevosID",
+            "Pacas",
+            "Huevos",
+            "Cantidad",
+            "Observaciones"
+          ],
+          "sampleRows": [
+            [
+              "f59923d3",
+              "12/08/2025 10:29:52",
+              "12/08/2025",
+              "A",
+              "CA",
+              "RT",
+              "",
+              "8",
+              "8",
+              "248"
+            ],
+            [
+              "f59923d4",
+              "12/08/2025 10:29:52",
+              "12/08/2025",
+              "A",
+              "CA",
+              "J",
+              "",
+              "1",
+              "4",
+              "34"
+            ],
+            [
+              "f59923d5",
+              "12/08/2025 10:29:52",
+              "12/08/2025",
+              "A",
+              "CA",
+              "AA",
+              "",
+              "600",
+              "",
+              "18000"
+            ],
+            [
+              "f59923d6",
+              "12/08/2025 10:29:52",
+              "12/08/2025",
+              "A",
+              "CA",
+              "AA",
+              "",
+              "200",
+              "",
+              "6000"
+            ]
+          ]
+        },
+        {
+          "sheetId": 515557151,
+          "title": "InventarioHuevoM",
+          "index": 1,
+          "rowCount": 2325,
+          "columnCount": 27,
+          "headers": [
+            "InventarioHuevoMID",
+            "MarcaTiempo",
+            "InventarioFecha",
+            "InventarioHora",
+            "BodegaID",
+            "ItemID",
+            "Pacas",
+            "Huevos",
+            "Cantidad",
+            "Observaciones"
+          ],
+          "sampleRows": [
+            [
+              "d9843f31",
+              "12/08/2025 11:36:55",
+              "12/08/2025",
+              "11:36:55",
+              "Mcds",
+              "A",
+              "711",
+              "",
+              "21330"
+            ],
+            [
+              "582d2d1a",
+              "12/08/2025 11:38:42",
+              "12/08/2025",
+              "11:38:42",
+              "Mcds",
+              "AA",
+              "703",
+              "",
+              "21090"
+            ],
+            [
+              "f94c7563",
+              "12/08/2025 11:39:24",
+              "12/08/2025",
+              "11:39:24",
+              "Mcds",
+              "EX",
+              "256",
+              "0",
+              "7680"
+            ],
+            [
+              "80c5fc1c",
+              "12/08/2025 11:40:27",
+              "12/08/2025",
+              "11:40:27",
+              "Mcds",
+              "B",
+              "71",
+              "0",
+              "2130"
+            ]
+          ]
+        },
+        {
+          "sheetId": 219037394,
+          "title": "PesoPollo",
+          "index": 2,
+          "rowCount": 995,
+          "columnCount": 27,
+          "headers": [
+            "PesoPolloID",
+            "MarcaTiempo",
+            "PesoPolloFecha",
+            "GranjaID",
+            "ItemID",
+            "Cantidad",
+            "PesoPromedio",
+            "Canastillas",
+            "ProcesadoraAvesRecibo",
+            "PesoMacadasaHoja"
+          ],
+          "sampleRows": [
+            [
+              "3007c1f0",
+              "22/09/2025 15:32:24",
+              "01/08/2025",
+              "CH",
+              "P",
+              "100",
+              "2,76",
+              "",
+              "",
+              "PesoPollo_Images/3007c1f0.PesoMacadasaHoja.203620.jpg"
+            ],
+            [
+              "d0615bf6",
+              "22/09/2025 16:17:19",
+              "02/08/2025",
+              "CH",
+              "P",
+              "120",
+              "2,44",
+              "16"
+            ],
+            [
+              "49b597b1",
+              "22/09/2025 16:20:37",
+              "03/08/2025",
+              "CH",
+              "P",
+              "50",
+              "2,94",
+              "7"
+            ],
+            [
+              "e2bedc54",
+              "22/09/2025 16:21:30",
+              "05/08/2025",
+              "CH",
+              "P",
+              "100",
+              "3,11",
+              "13"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1129195675,
+          "title": "PesoPolloDetalle",
+          "index": 3,
+          "rowCount": 1029,
+          "columnCount": 26,
+          "headers": [
+            "PesoPolloDetalleID",
+            "PesoPolloID",
+            "Canastillas",
+            "PesoKG",
+            "Unidades"
+          ],
+          "sampleRows": [
+            [
+              "6122a181",
+              "3007c1f0",
+              "0",
+              "122,94",
+              "45"
+            ],
+            [
+              "b7ab18de",
+              "3007c1f0",
+              "0",
+              "141,4",
+              "55"
+            ],
+            [
+              "021d0ae9",
+              "d0615bf6",
+              "15",
+              "314,3",
+              "120"
+            ],
+            [
+              "b8954da9",
+              "49b597b1",
+              "6",
+              "154,4",
+              "50"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1270468763,
+          "title": "PesoPolloMenudenciaDetalle",
+          "index": 4,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "PesoPolloMenudenciaDetalleID",
+            "PesoPolloID",
+            "Canastillas",
+            "PesoKG"
+          ],
+          "sampleRows": [
+            [
+              "30baba2a",
+              "3007c1f0",
+              "0",
+              "11,84"
+            ],
+            [
+              "26a4f83e",
+              "d0615bf6",
+              "1",
+              "17,8"
+            ],
+            [
+              "cfb287e6",
+              "49b597b1",
+              "1",
+              "9,8"
+            ],
+            [
+              "8b6daa20",
+              "e2bedc54",
+              "1",
+              "17,4"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1520115074,
+          "title": "HojaDeGastos",
+          "index": 5,
+          "rowCount": 3766,
+          "columnCount": 30,
+          "headers": [
+            "HojaGastoID",
+            "MarcaTiempo",
+            "Fecha",
+            "CentroCostoID",
+            "TipoDeMovimiento",
+            "Concepto",
+            "Detalle",
+            "Valor",
+            "Beneficiario",
+            "Firma"
+          ],
+          "sampleRows": [
+            [
+              "22a12250",
+              "17/08/2025 10:42:55",
+              "01/08/2025",
+              "AST",
+              "Gasto",
+              "PAGO",
+              "1 Bto Azucar",
+              "180000"
+            ],
+            [
+              "22a12251",
+              "17/08/2025 10:43:33",
+              "01/08/2025",
+              "MCDS",
+              "Gasto",
+              "CARTONES",
+              "Cartones",
+              "11000"
+            ],
+            [
+              "22a12252",
+              "17/08/2025 10:44:03",
+              "01/08/2025",
+              "MCDS",
+              "Gasto",
+              "CARTONES",
+              "Cartones",
+              "7000"
+            ],
+            [
+              "22a12253",
+              "17/08/2025 10:44:41",
+              "01/08/2025",
+              "MCDS",
+              "Gasto",
+              "PAGO",
+              "1 Hachuela y 1 cuchiyo",
+              "90000"
+            ]
+          ]
+        },
+        {
+          "sheetId": 320120835,
+          "title": "CategoriaGastos",
+          "index": 6,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "CategoriaGastoID",
+            "CategoriaGastoNombre"
+          ],
+          "sampleRows": [
+            [
+              "G",
+              "Gasto"
+            ],
+            [
+              "I",
+              "Ingreso"
+            ],
+            [
+              "C",
+              "Caja"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1130057384,
+          "title": "Conceptos",
+          "index": 7,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "ConceptoID",
+            "CategoriaGastoID",
+            "ConceptoNombre",
+            "Detalle",
+            "Imagen",
+            "",
+            "",
+            "ConceptoID",
+            "CategoriaGastoID",
+            "ConceptoNombre"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "I",
+              "EFECTIVO",
+              "El Cierre a determinada Hora",
+              "",
+              "",
+              "",
+              "1",
+              "I",
+              "EFECTIVO"
+            ],
+            [
+              "2",
+              "I",
+              "HUEVOS",
+              "",
+              "",
+              "",
+              "",
+              "2",
+              "I",
+              "HUEVOS"
+            ],
+            [
+              "3",
+              "I",
+              "GALLINAZA",
+              "",
+              "",
+              "",
+              "",
+              "3",
+              "I",
+              "GALLINAZA"
+            ],
+            [
+              "4",
+              "I",
+              "POLLO",
+              "",
+              "",
+              "",
+              "",
+              "4",
+              "I",
+              "POLLO"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1350974726,
+          "title": "TablaCalendarioVentas",
+          "index": 8,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioVentasID",
+            "Fecha"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "01/08/25"
+            ],
+            [
+              "2",
+              "02/08/25"
+            ],
+            [
+              "3",
+              "03/08/25"
+            ],
+            [
+              "4",
+              "04/08/25"
+            ]
+          ]
+        },
+        {
+          "sheetId": 905861652,
+          "title": "TablaCalendarioVentasSemana",
+          "index": 9,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioVendasSemanaID",
+            "FechaInicio",
+            "FechaFin"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "28/07/25",
+              "03/08/25"
+            ],
+            [
+              "2",
+              "04/08/25",
+              "10/08/25"
+            ],
+            [
+              "3",
+              "11/08/25",
+              "17/08/25"
+            ],
+            [
+              "4",
+              "18/08/25",
+              "24/08/25"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2004908723,
+          "title": "TablaCalendarioDias",
+          "index": 10,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioDiasID",
+            "Dia",
+            "WeekDay"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "Lunes",
+              "2"
+            ],
+            [
+              "2",
+              "Martes",
+              "3"
+            ],
+            [
+              "3",
+              "miércoles",
+              "4"
+            ],
+            [
+              "4",
+              "jueves",
+              "5"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1391628941,
+          "title": "Precios",
+          "index": 11,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "PreciosID",
+            "ItemID",
+            "Precio",
+            "Nivel"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "J",
+              "24000",
+              "PUBLICO"
+            ],
+            [
+              "2",
+              "EX",
+              "16000",
+              "PUBLICO"
+            ],
+            [
+              "3",
+              "AA",
+              "14500",
+              "PUBLICO"
+            ],
+            [
+              "4",
+              "A",
+              "13500",
+              "PUBLICO"
+            ]
+          ]
+        },
+        {
+          "sheetId": 163605087,
+          "title": "Z_Promociones",
+          "index": 12,
+          "rowCount": 1000,
+          "columnCount": 30,
+          "headers": [
+            "PromocionID",
+            "Fecha",
+            "Dias",
+            "Producto",
+            "Promocion",
+            "Imagen",
+            "Descuento",
+            "Porcentaje",
+            "Cantidad",
+            "Ventas",
+            "Costo",
+            "Resultado",
+            "Comentarios"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "11/09/2025",
+              "4",
+              "HUEVO",
+              "Dos pacas de EXTRA -> Recibe media Gratis",
+              "Z_Promociones_Images/1.Imagen.151831.jpg",
+              "3000",
+              "20%",
+              "600",
+              "7200000",
+              "170000"
+            ],
+            [
+              "2",
+              "18/09/2025",
+              "4",
+              "HUEVO",
+              "2 Pacas por solo $20.000 (tipo A)",
+              "Z_Promociones_Images/2.Imagen.151850.jpg",
+              "2000",
+              "17%",
+              "1350",
+              "13500000",
+              "170000"
+            ],
+            [
+              "3",
+              "25/09/2025",
+              "4",
+              "HUEVO",
+              "TIENDAS 10 Pacas de A  \"10.000 ",
+              "Z_Promociones_Images/3.Imagen.152029.jpg",
+              "1000",
+              "9%",
+              "1364",
+              "13640000",
+              "170000"
+            ],
+            [
+              "4",
+              "09/10/2025",
+              "4",
+              "HUEVO",
+              "Lleva dos pacas de Huevo y la segunda te la agrandamos a Extra",
+              "Z_Promociones_Images/4.Imagen.152113.jpg",
+              "1500",
+              "11%",
+              "0",
+              "0",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+      "name": "DB_AppMercadeo",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-07T23:07:58.151Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "Estrategia1",
+          "index": 0,
+          "rowCount": 999,
+          "columnCount": 18,
+          "headers": [
+            "Estrategia1ID",
+            "MarcaTiempo",
+            "Fecha",
+            "NombreEstablecimiento",
+            "NombreCliente",
+            "Celular",
+            "Direccion",
+            "CanalDeVenta",
+            "ActualProveedor",
+            "Comentario",
+            "Codigo",
+            "Contactado",
+            "CompraFecha",
+            "CompraValor",
+            "Cliente",
+            "Locacion"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 860974559,
+          "title": "PrecioDetalle",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 27,
+          "headers": [
+            "PrecioDetalleID",
+            "Estrategia1ID",
+            "Tipo",
+            "CantidadSemanal",
+            "TamañoDePollo",
+            "ActualPrecioLb",
+            "PrecioLlamativoLb",
+            "PrecioOfertadoLb"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 1868790639,
+          "title": "Tiendas",
+          "index": 2,
+          "rowCount": 997,
+          "columnCount": 34,
+          "headers": [
+            "TiendaID",
+            "MarcaTiempo",
+            "Fecha",
+            "NombreEstablecimiento",
+            "NombreCliente",
+            "Celular",
+            "RUT",
+            "RUTPDF",
+            "Direccion",
+            "Barrio",
+            "Localizacion",
+            "TiendaQR",
+            "FotoTienda",
+            "TipoTienda",
+            "CantidadSemanal",
+            "CanalDeVenta",
+            "AutorizaMensaje",
+            "CompraEnMacadasa",
+            "ActualProveedor",
+            "Comentario",
+            "Pollo",
+            "NosAgregaron",
+            "QuienAgrego"
+          ],
+          "sampleRows": [
+            [
+              "T0001",
+              "25/07/2025 9:25:13",
+              "25/07/2025",
+              "Tienda cachiluna",
+              "Ana rubiela luna luna",
+              "3112626107",
+              "Tiendas_Images/T0011.RUT.143141.jpg",
+              "",
+              "Calle 10 #4e -06",
+              "Los andes",
+              "2.195439, -75.615879",
+              "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=T0001",
+              "Tiendas_Images/T0011.FotoTienda.143141.jpg",
+              "Tienda de Barrio",
+              "10",
+              "A Domicilio",
+              "TRUE",
+              "TRUE",
+              "Macadasa",
+              "La señora no tiene el conocimineto de el codigo",
+              "TRUE",
+              "FALSE"
+            ],
+            [
+              "T0002",
+              "25/07/2025 9:42:37",
+              "25/07/2025",
+              "Mercaya caitex",
+              "Eliana andrea caicedo",
+              "3222951437",
+              "",
+              "",
+              "Calle 11 nro 2-33",
+              "Villa del sol",
+              "2.196273, -75.617376",
+              "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=T0002",
+              "Tiendas_Images/T0002.FotoTienda.144803.jpg",
+              "Tienda de Barrio",
+              "20",
+              "En Local",
+              "TRUE",
+              "TRUE",
+              "Macadasa",
+              "El servicio muy bueno",
+              "TRUE",
+              "TRUE"
+            ],
+            [
+              "T0003",
+              "25/07/2025 9:53:04",
+              "25/07/2025",
+              "Were were inversion sas",
+              "Hector angel cuellar Elizalde",
+              "3224526311",
+              "",
+              "",
+              "Calle 11 nro 1e 69",
+              "Los laureles",
+              "2.196221, -75.617875",
+              "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=T0003",
+              "Tiendas_Images/T0003.FotoTienda.191824.jpg",
+              "SuperMercado",
+              "400",
+              "A Domicilio",
+              "TRUE",
+              "FALSE",
+              "San Sebastian",
+              "No prestaron el servicio a domicilio",
+              "TRUE",
+              "TRUE"
+            ],
+            [
+              "T0004",
+              "25/07/2025 10:03:41",
+              "25/07/2025",
+              "La victoria",
+              "Diana carolina cruz",
+              "3204436986",
+              "",
+              "",
+              "Calle 11 nro 1e-05",
+              "Los laureles",
+              "2.196245, -75.618478",
+              "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=T0004",
+              "Tiendas_Images/T0004.FotoTienda.150955.jpg",
+              "Tienda de Barrio",
+              "20",
+              "En Local",
+              "TRUE",
+              "FALSE",
+              "Ocacional en macadasa o en la galeria",
+              "El servicio es bueno en macadasa y a veces mando a comprar donde sea mas rapido y mirando donde sea mas economico",
+              "",
+              "FALSE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1796534568,
+          "title": "TiendasCompras",
+          "index": 3,
+          "rowCount": 4493,
+          "columnCount": 26,
+          "headers": [
+            "TiendaCompraID",
+            "TiendaID",
+            "MarcaTiempo",
+            "Fecha",
+            "Tipo",
+            "Cantidad",
+            "Estado"
+          ],
+          "sampleRows": [
+            [
+              "1668f7e2",
+              "T0150",
+              "10/11/2025 13:43:22",
+              "10/11/2025",
+              "AA",
+              "10",
+              "FALSE"
+            ],
+            [
+              "f5f3096c",
+              "T0087",
+              "12/11/2025 18:36:41",
+              "12/11/2025",
+              "A",
+              "5",
+              "FALSE"
+            ],
+            [
+              "cbef5ed2",
+              "T0074",
+              "13/11/2025 7:05:41",
+              "13/11/2025",
+              "A",
+              "10",
+              "FALSE"
+            ],
+            [
+              "319cca47",
+              "T0027",
+              "13/11/2025 10:52:09",
+              "13/11/2025",
+              "B",
+              "5",
+              "FALSE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 233419358,
+          "title": "TablaCalendarioSemana",
+          "index": 4,
+          "rowCount": 1012,
+          "columnCount": 26,
+          "headers": [
+            "TablaCalendarioSemanaID",
+            "FechaInicio",
+            "FechaFin",
+            "ItemID"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "28/07/25",
+              "03/08/25"
+            ],
+            [
+              "2",
+              "04/08/25",
+              "10/08/25"
+            ],
+            [
+              "3",
+              "11/08/25",
+              "17/08/25"
+            ],
+            [
+              "4",
+              "18/08/25",
+              "24/08/25"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1217865327,
+          "title": "Hoja 7",
+          "index": 5,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "1",
+            "28/07/25",
+            "03/08/25",
+            "B"
+          ],
+          "sampleRows": [
+            [
+              "2",
+              "28/07/25",
+              "03/08/25",
+              "A"
+            ],
+            [
+              "3",
+              "28/07/25",
+              "03/08/25",
+              "AA"
+            ],
+            [
+              "4",
+              "28/07/25",
+              "03/08/25",
+              "EX"
+            ],
+            [
+              "5",
+              "04/08/25",
+              "10/08/25",
+              "B"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+      "name": "DB_AppPlanta",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU/edit?usp=drivesdk",
+      "modifiedTime": "2026-05-05T21:21:39.022Z",
+      "tabs": [
+        {
+          "sheetId": 1385783844,
+          "title": "Depreciaciones",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "DepreciacionID",
+            "Fecha",
+            "Descripcion",
+            "Categoria",
+            "Costo",
+            "VidaAños",
+            "PValordeSalvamento",
+            "ValordeSalvamento",
+            "Depreciacion",
+            "FinDepreciacion"
+          ],
+          "sampleRows": [
+            [
+              "DP001",
+              "01/01/2023",
+              "Silo",
+              "Maquinaria y Equipo",
+              "$ 60.000.000",
+              "10",
+              "20%",
+              "$ 12.000.000",
+              "$ 400.000,00",
+              "31/12/2032"
+            ],
+            [
+              "DP002",
+              "01/01/2023",
+              "Planta",
+              "Maquinaria y Equipo",
+              "$ 80.000.000",
+              "10",
+              "20%",
+              "$ 16.000.000",
+              "$ 533.333,33",
+              "31/12/2032"
+            ],
+            [
+              "DP003",
+              "01/01/2023",
+              "Tractor Ferguson",
+              "Otros Equipos",
+              "$ 30.000.000",
+              "8",
+              "30%",
+              "$ 9.000.000",
+              "$ 218.750,00",
+              "31/12/2030"
+            ],
+            [
+              "DP004",
+              "01/01/2023",
+              "Tractor Deer",
+              "Otros Equipos",
+              "$ 20.000.000",
+              "8",
+              "30%",
+              "$ 6.000.000",
+              "$ 145.833,33",
+              "31/12/2030"
+            ]
+          ]
+        },
+        {
+          "sheetId": 692744775,
+          "title": "TransportesMCDS",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "TransporteMCDSID",
+            "Fecha",
+            "Mes",
+            "XID150_C1",
+            "KGS350_C1",
+            "Tractor_C1",
+            "AZN311_C1",
+            "XID150_C2",
+            "KGS350_C2",
+            "Tractor_C2",
+            "AZN311_C2",
+            "XID150_A1",
+            "KGS350_A1",
+            "Tractor_A1",
+            "AZN311_A1",
+            "XID150_A2",
+            "KGS350_A2",
+            "Tractor_A2",
+            "AZN311_A2"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 400",
+              "$ 600",
+              "",
+              "$ 1.000",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200",
+              "$ 80",
+              "$ 120",
+              "$ 120",
+              "$ 200"
+            ]
+          ]
+        },
+        {
+          "sheetId": 312514672,
+          "title": "Maquila x",
+          "index": 2,
+          "rowCount": 1000,
+          "columnCount": 24,
+          "headers": [
+            "MaquilaID",
+            "Fecha",
+            "Mes",
+            "Salarios",
+            "Tulas",
+            "Hilo",
+            "Energia",
+            "OrdenYAseo",
+            "TransporteAGranjas",
+            "Mantenimiento",
+            "Depreciacion",
+            "Arriendo",
+            "Imprevistos",
+            "Total",
+            "KgPresupuestos"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 4.790.000",
+              "$ 412.860",
+              "$ 34.405",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 575.120",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 117.478",
+              "$ 11.865.279",
+              "137.620"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 4.790.000",
+              "$ 415.608",
+              "$ 34.634",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 671.400",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 118.471",
+              "$ 11.965.530",
+              "138.536"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 4.790.000",
+              "$ 399.226",
+              "$ 33.269",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 435.720",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 115.936",
+              "$ 11.709.568",
+              "133.075"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 4.790.000",
+              "$ 396.208",
+              "$ 33.017",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 682.640",
+              "$ 1.500.000",
+              "$ 1.535.417",
+              "$ 2.000.000",
+              "$ 118.373",
+              "$ 11.955.654",
+              "132.069"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1072197731,
+          "title": "Maquila",
+          "index": 3,
+          "rowCount": 1000,
+          "columnCount": 20,
+          "headers": [
+            "MaquilaID",
+            "Fecha",
+            "Mes",
+            "Salarios",
+            "Tulas",
+            "Hilo",
+            "Energia",
+            "OrdenYAseo",
+            "Mantenimiento",
+            "Arriendo",
+            "KgPresupuestos"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 4.790.000",
+              "$ 412.860",
+              "$ 34.405",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "137.620"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 4.790.000",
+              "$ 415.608",
+              "$ 34.634",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "138.536"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 4.790.000",
+              "$ 399.226",
+              "$ 33.269",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "133.075"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 4.790.000",
+              "$ 396.208",
+              "$ 33.017",
+              "$ 650.000",
+              "$ 250.000",
+              "$ 1.500.000",
+              "$ 2.000.000",
+              "132.069"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1190791414,
+          "title": "Administracion",
+          "index": 4,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "AdministracionID",
+            "Fecha",
+            "Mes",
+            "Administrador",
+            "Internet",
+            "Gas",
+            "Agua",
+            "Celulares",
+            "Recibos",
+            "ComidaPerros",
+            "Certificacion",
+            "Papeleria",
+            "Otros",
+            "Total",
+            "KgPresupuestos",
+            "ValorPorKg"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "enero",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "137.620",
+              "$ 30"
+            ],
+            [
+              "01/02/2023",
+              "01/02/2023",
+              "febrero",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "138.536",
+              "$ 30"
+            ],
+            [
+              "01/03/2023",
+              "01/03/2023",
+              "marzo",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "133.075",
+              "$ 31"
+            ],
+            [
+              "01/04/2023",
+              "01/04/2023",
+              "abril",
+              "$ 3.325.000",
+              "$ 150.000",
+              "$ 0",
+              "$ 120.000",
+              "$ 0",
+              "$ 270.000",
+              "$ 80.000",
+              "$ 50.000",
+              "$ 60.000",
+              "$ 40.550",
+              "$ 4.095.550",
+              "132.069",
+              "$ 31"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1353679485,
+          "title": "PrecioVentaComercial",
+          "index": 5,
+          "rowCount": 1000,
+          "columnCount": 27,
+          "headers": [
+            "PrecioVentaComercialID",
+            "Fecha",
+            "TransporteBto",
+            "ItalcolPollaLevanteSinIva",
+            "ItalcolPollaLevanteConIva",
+            "ItalcolFase1SinIva",
+            "ItalcolFase1ConIva",
+            "ItalcolFase2SinIva",
+            "ItalcolFase2ConIva",
+            "ItalcolPolloEngordeSinIva",
+            "ItalcolPolloEngordeConIva",
+            "ContegralPollaLevanteSinIva",
+            "ContegralPollaLevanteConIva",
+            "ContegralFase1SinIva",
+            "ContegralFase1ConIva",
+            "ContegralFase2SinIva",
+            "ContegralFase2ConIva",
+            "ContegralPolloEngordeSinIva",
+            "ContegralPolloEngordeConIva",
+            "PollaLevanteSinIva",
+            "PollaLevanteConIva",
+            "Fase1SinIva",
+            "Fase1ConIva",
+            "Fase2SinIva",
+            "Fase2ConIva",
+            "PolloEngordeSinIva",
+            "PolloEngordeConIva"
+          ],
+          "sampleRows": [
+            [
+              "01/01/2023",
+              "01/01/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 97.200,00",
+              "$ 102.060,00",
+              "$ 101.000,00",
+              "$ 106.050,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 97.200,00",
+              "$ 102.060,00",
+              "$ 95.316,19",
+              "$ 100.082,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 99.600,00",
+              "$ 104.460,00",
+              "$ 97.716,19",
+              "$ 102.482,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "02/03/2023",
+              "02/03/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 94.180,00",
+              "$ 98.889,00",
+              "$ 92.627,62",
+              "$ 97.259,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 94.180,00",
+              "$ 98.889,00",
+              "$ 92.627,62",
+              "$ 97.259,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 96.580,00",
+              "$ 101.289,00",
+              "$ 95.027,62",
+              "$ 99.659,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "01/06/2023",
+              "01/06/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ],
+            [
+              "01/08/2023",
+              "01/08/2023",
+              "$ 2.400",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 80.952,38",
+              "$ 85.000,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ 85.419,05",
+              "$ 89.690,00",
+              "$ -",
+              "",
+              "$ 83.352,38",
+              "$ 87.400,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 87.819,05",
+              "$ 92.090,00",
+              "$ 2.400,00",
+              "$ 2.400,00"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1493007169,
+          "title": "Produccion x",
+          "index": 6,
+          "rowCount": 998,
+          "columnCount": 36,
+          "headers": [
+            "ProduccionID",
+            "ProduccionFecha",
+            "Lote",
+            "ProductoID",
+            "Medicada",
+            "Formula",
+            "Baches",
+            "BtoPractico",
+            "#Bto Teorico",
+            "Responsable",
+            "Firma",
+            "Salida",
+            "Saldo",
+            "Kg MP",
+            "Total Precio MP Sin Iva",
+            "IvaMP",
+            "Maquila",
+            "Administracion",
+            "CP por Kg",
+            "MP + CP Con Iva",
+            "Costo Total Bto Con Iva",
+            "Italcol Con Iva",
+            "Contegral Con Iva",
+            "PV\n Con Iva",
+            "Utilidad\n Con Iva",
+            "Utilidad Bto\n Con Iva",
+            "IVA a Reclamar",
+            "Iva a Reclamar Bto",
+            "Ingresos Con Iva"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 1220325050,
+          "title": "ProduccionDetalle x",
+          "index": 7,
+          "rowCount": 999,
+          "columnCount": 25,
+          "headers": [
+            "ProduccionDetalleID",
+            "ProduccionID",
+            "ProduccionFecha",
+            "Baches",
+            "MateriaPrimaID",
+            "Cantidad",
+            "Precio MP Sin Iva",
+            "Iva",
+            "KgMPAcumPSub0"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 770773969,
+          "title": "Formulas",
+          "index": 8,
+          "rowCount": 1000,
+          "columnCount": 28,
+          "headers": [
+            "FormulaID",
+            "ProductoID",
+            "Medicada",
+            "Fecha",
+            "FormulaNombre",
+            "FormulaDescripcion",
+            "FormulasPDF",
+            "Estado"
+          ],
+          "sampleRows": [
+            [
+              "Form001",
+              "F1",
+              "FALSE",
+              "29/06/2023",
+              "Ponedora Arranque Nutrexcol",
+              "Ponedora Arranque Nutrexcol - 6/2023",
+              "Formulas_Files_/Form001.FormulasPDF.161755.pdf",
+              "FALSE"
+            ],
+            [
+              "Form002",
+              "F1M",
+              "TRUE",
+              "29/06/2023",
+              "Ponedora Arranque Nutrexcol Medicada",
+              "Ponedora Arranque Nutrexcol Medicada - 6/2023",
+              "Formulas_Files_/Form001.FormulasPDF.161755.pdf",
+              "FALSE"
+            ],
+            [
+              "Form003",
+              "PL",
+              "FALSE",
+              "13/03/2024",
+              "Polla Levante Nutrexcol",
+              "Polla Levante Nutrexcol - 3/2024",
+              "Formulas_Files_/Form003.FormulasPDF.163255.pdf",
+              "FALSE"
+            ],
+            [
+              "Form004",
+              "PLM",
+              "TRUE",
+              "13/03/2024",
+              "Polla Levante Nutrexcol Medicada",
+              "Polla Levante Nutrexcol Medicada - 3/2024",
+              "Formulas_Files_/Form003.FormulasPDF.163255.pdf",
+              "FALSE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 882791504,
+          "title": "FormulasDetalle",
+          "index": 9,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "FormulaDetalleID",
+            "FormulaID",
+            "ProductoID",
+            "MateriaPrimaID",
+            "CantidadKG"
+          ],
+          "sampleRows": [
+            [
+              "Form001_1",
+              "Form001",
+              "F1",
+              "MA",
+              "272,465"
+            ],
+            [
+              "Form001_2",
+              "Form001",
+              "F1",
+              "TS",
+              "136,485"
+            ],
+            [
+              "Form001_3",
+              "Form001",
+              "F1",
+              "CAF",
+              "44,05"
+            ],
+            [
+              "Form001_4",
+              "Form001",
+              "F1",
+              "HA",
+              "27,5"
+            ]
+          ]
+        },
+        {
+          "sheetId": 1020612179,
+          "title": "Entrada",
+          "index": 10,
+          "rowCount": 990,
+          "columnCount": 36,
+          "headers": [
+            "EntradaID",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "Hora",
+            "ProveedorID",
+            "ProveedorDetalleID",
+            "MateriaPrimaID",
+            "Lote",
+            "IngresoKg",
+            "TransportistaID",
+            "TransportistaDetalleID",
+            "TrayectoID",
+            "Placa",
+            "AceptableCondicion",
+            "TomaEnvioMuestra",
+            "CertificadoCalidadProveedor",
+            "Observacion",
+            "Responsable",
+            "Firma",
+            "FacturasDetalleIDMP",
+            "NumeroDeFactura",
+            "PrecioKgSinIva",
+            "PrecioKgConIva",
+            "FacturasDetalleIDTR",
+            "TransporteKg",
+            "DescargueKg",
+            "PrecioTotalKgSinIva",
+            "PrecioTotalKgConIva",
+            "KgAcumESub0",
+            "KgAjusteAdministrador",
+            "KgAcumESubf",
+            "KgRestantes"
+          ],
+          "sampleRows": [
+            [
+              "ENT0001",
+              "15/09/2024 12:05:39",
+              "14/06/2023",
+              "12:05:39",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro max pro - 06/14/2023",
+              "13",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0001.Firma.170905.png",
+              "1bc1d633",
+              "FD10121",
+              "25800",
+              "27090",
+              "NTX-TY16",
+              "0",
+              "12",
+              "25812",
+              "27102",
+              "0",
+              "0",
+              "13",
+              "0"
+            ],
+            [
+              "ENT0002",
+              "15/09/2024 12:16:18",
+              "25/08/2023",
+              "12:16:18",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro max pro - 08/25/2023",
+              "50",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0002.Firma.171708.png",
+              "8bc5a808",
+              "FD10921",
+              "25800",
+              "27090",
+              "NTX-TY16",
+              "0",
+              "12",
+              "25812",
+              "27102",
+              "13",
+              "12,04",
+              "75,04",
+              "0"
+            ],
+            [
+              "ENT0003",
+              "15/09/2024 12:17:38",
+              "13/02/2024",
+              "12:17:38",
+              "PCA",
+              "5",
+              "SIE",
+              "Soya Integral Extruida - 02/13/2024",
+              "418",
+              "TR1",
+              "44",
+              "TY19",
+              "XID150",
+              "Aceptable",
+              "TRUE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0003.Firma.171914.png",
+              "e25846cb",
+              "FES3178",
+              "2400",
+              "2520",
+              "MCDS-TY19",
+              "220",
+              "10",
+              "2630",
+              "2750",
+              "0",
+              "-418",
+              "0",
+              "0"
+            ],
+            [
+              "ENT0004",
+              "15/09/2024 12:20:34",
+              "09/03/2024",
+              "12:20:34",
+              "IT",
+              "22",
+              "MT",
+              "Mogolla De Trigo - 03/09/2024",
+              "365",
+              "TR1",
+              "37",
+              "TY3",
+              "XID150",
+              "Aceptable",
+              "FALSE",
+              "FALSE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0004.Firma.172409.png",
+              "1399856a",
+              "PAME150178",
+              "1240",
+              "1302",
+              "MCDS-TY3",
+              "75",
+              "10",
+              "1325",
+              "1387",
+              "0",
+              "-365",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 920860406,
+          "title": "Auditorias",
+          "index": 11,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "AuditoriasID",
+            "Nombre",
+            "AuditoriaVista",
+            "AuditoriaImagen"
+          ],
+          "sampleRows": [
+            [
+              "AU1",
+              "Materia Prima",
+              "AuditoriaMP",
+              "/Auditoria/AU1.AuditoriaImagen.164828.png"
+            ],
+            [
+              "AU2",
+              "Producto Terminado",
+              "AuditoriaPT",
+              "/Auditoria/AU2.AuditoriaImagen.164902.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2030759472,
+          "title": "AjusteAdministradorMP",
+          "index": 12,
+          "rowCount": 998,
+          "columnCount": 27,
+          "headers": [
+            "AjusteAdministradorMPID",
+            "AuditoriasID",
+            "AuditoriaMPFecha",
+            "MateriaPrimaID",
+            "EntradaID",
+            "Accion",
+            "Cantidad",
+            "PrecioTotalKgConIva",
+            "Total",
+            "Observacion"
+          ],
+          "sampleRows": [
+            [
+              "acacec4b",
+              "AU1",
+              "26/08/2024",
+              "FMD",
+              "ENT0006",
+              "Vendio",
+              "-2000",
+              "0",
+              "0"
+            ],
+            [
+              "a1ff54a7",
+              "AU1",
+              "11/09/2024",
+              "TS",
+              "ENT0026",
+              "Aparecio",
+              "1334,83",
+              "0",
+              "0"
+            ],
+            [
+              "7d94811d",
+              "AU1",
+              "26/09/2024",
+              "SIE",
+              "ENT0003",
+              "Se Perdio",
+              "-418",
+              "0",
+              "0"
+            ],
+            [
+              "c183e724",
+              "AU1",
+              "26/09/2024",
+              "HA",
+              "ENT0031",
+              "Aparecio",
+              "345,8",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 760978986,
+          "title": "AjusteAdministradorPT",
+          "index": 13,
+          "rowCount": 1000,
+          "columnCount": 25,
+          "headers": [
+            "AjusteAdministradorPTID",
+            "AuditoriasID",
+            "AuditoriaPTFecha",
+            "ProductoID",
+            "ProduccionID",
+            "Accion",
+            "Cantidad",
+            "Observacion"
+          ],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 928182501,
+          "title": "Produccion",
+          "index": 14,
+          "rowCount": 998,
+          "columnCount": 15,
+          "headers": [
+            "ProduccionID",
+            "MarcaTiempo",
+            "ProduccionFecha",
+            "Plus",
+            "ProductoID",
+            "FormulaID",
+            "Lote",
+            "Baches",
+            "BtoPractico",
+            "#Bto Teorico",
+            "Responsable",
+            "Firma",
+            "Contador",
+            "BtoAjusteAdministrador",
+            "BtoRestantes"
+          ],
+          "sampleRows": [
+            [
+              "PROD0001",
+              "18/09/2024 20:19:00",
+              "03/07/2024",
+              "TRUE",
+              "F1M",
+              "Form002",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "32",
+              "403",
+              "400",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0001.Firma.011948.png",
+              "12",
+              "",
+              "0"
+            ],
+            [
+              "PROD0002",
+              "18/09/2024 20:22:26",
+              "04/07/2024",
+              "TRUE",
+              "F1M",
+              "Form002",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "30",
+              "377",
+              "375",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0002.Firma.012314.png",
+              "12",
+              "",
+              "0"
+            ],
+            [
+              "PROD0003",
+              "18/09/2024 20:23:14",
+              "04/07/2024",
+              "FALSE",
+              "F1",
+              "Form001",
+              "Ponedora Arranque Nutrexcol - 07/04/2024",
+              "2",
+              "26",
+              "25",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0003.Firma.012359.png",
+              "10",
+              "",
+              "0"
+            ],
+            [
+              "PROD0004",
+              "18/09/2024 20:23:50",
+              "11/07/2024",
+              "FALSE",
+              "F1",
+              "Form001",
+              "Ponedora Arranque Nutrexcol - 07/11/2024",
+              "24",
+              "301",
+              "300",
+              "ISIDRO CALDERON",
+              "/Firmas/PROD0004.Firma.012724.png",
+              "10",
+              "",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2123568729,
+          "title": "ProduccionDetalle",
+          "index": 15,
+          "rowCount": 3374,
+          "columnCount": 15,
+          "headers": [
+            "ProduccionDetalleID",
+            "MarcaTiempo",
+            "ProduccionID",
+            "ProduccionFecha",
+            "MateriaPrimaID",
+            "KgMPAcumPSub0",
+            "KgSalida",
+            "KgMPAcumPSubf"
+          ],
+          "sampleRows": [
+            [
+              "PROD0001-1",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "MA",
+              "0",
+              "8718,88",
+              "8718,88"
+            ],
+            [
+              "PROD0001-2",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "TS",
+              "0",
+              "4367,52",
+              "4367,52"
+            ],
+            [
+              "PROD0001-3",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "CAF",
+              "0",
+              "1409,6",
+              "1409,6"
+            ],
+            [
+              "PROD0001-4",
+              "18/09/2024 20:19:46",
+              "PROD0001",
+              "03/07/2024",
+              "HA",
+              "0",
+              "880",
+              "880"
+            ]
+          ]
+        },
+        {
+          "sheetId": 532918754,
+          "title": "Salidas",
+          "index": 16,
+          "rowCount": 1001,
+          "columnCount": 25,
+          "headers": [
+            "SalidaID",
+            "MarcaTiempo",
+            "SalidaFecha",
+            "ProductoID",
+            "ProduccionID",
+            "Plus",
+            "Lote",
+            "NumeroDeBultos",
+            "Destino",
+            "PlacaVehiculo",
+            "AceptableCondicion",
+            "Observaciones",
+            "Entrega",
+            "FirmaEntrega",
+            "Recibe",
+            "FirmaRecibe"
+          ],
+          "sampleRows": [
+            [
+              "SAL0001",
+              "20/09/2024 16:28:56",
+              "03/07/2024",
+              "F1M",
+              "PROD0001",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "350",
+              "C",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0001.FirmaEntrega.213040.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0001.FirmaRecibe.213040.png"
+            ],
+            [
+              "SAL0002",
+              "20/09/2024 16:30:44",
+              "03/07/2024",
+              "F1M",
+              "PROD0001",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/03/2024",
+              "53",
+              "A1",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0002.FirmaEntrega.213146.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0002.FirmaRecibe.213146.png"
+            ],
+            [
+              "SAL0003",
+              "20/09/2024 16:31:53",
+              "05/07/2024",
+              "F1M",
+              "PROD0002",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "200",
+              "A1",
+              "XID150",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0003.FirmaEntrega.213254.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0003.FirmaRecibe.213254.png"
+            ],
+            [
+              "SAL0004",
+              "20/09/2024 16:33:04",
+              "09/07/2024",
+              "F1M",
+              "PROD0002",
+              "TRUE",
+              "Ponedora Arranque Nutrexcol Medicada - 07/04/2024",
+              "177",
+              "C",
+              "KGS446",
+              "Aceptable",
+              "",
+              "ISIDRO CALDERON",
+              "/Firmas/SAL0004.FirmaEntrega.213400.png",
+              "Dario Cangrejo",
+              "/Firmas/SAL0004.FirmaRecibe.213400.png"
+            ]
+          ]
+        },
+        {
+          "sheetId": 646647410,
+          "title": "Muestras",
+          "index": 17,
+          "rowCount": 1000,
+          "columnCount": 32,
+          "headers": [
+            "MuestraID",
+            "MarcaTiempo",
+            "MuestraFecha",
+            "TipoMuestra",
+            "MateriaPrimaID",
+            "EntradaID",
+            "ProductoID",
+            "ProduccionID",
+            "Laboratorio",
+            "Analisis",
+            "FotoGuia",
+            "FotoMuestra",
+            "RestultadoPDF",
+            "Resultado"
+          ],
+          "sampleRows": [
+            [
+              "MUEST001",
+              "27/11/2024 10:30:27",
+              "27/11/2024",
+              "Producto Terminado",
+              "",
+              "",
+              "PL",
+              "Polla levante Quality - 11/21/2024",
+              "Quality",
+              "Bromatologico",
+              "",
+              "/ImagenesMuestras/MUEST001.FotoMuestra.153301.jpg",
+              "/Muestras_Resultados/MUEST001.RestultadoPDF.170959.pdf",
+              "TRUE"
+            ],
+            [
+              "MUEST002",
+              "27/11/2024 10:33:14",
+              "27/11/2024",
+              "Producto Terminado",
+              "",
+              "",
+              "F2",
+              "Polla Fase 2 Quality - 11/25/2024",
+              "Quality",
+              "Bromatologico",
+              "",
+              "/ImagenesMuestras/MUEST002.FotoMuestra.153338.jpg",
+              "/Muestras_Resultados/MUEST002.RestultadoPDF.171014.pdf",
+              "TRUE"
+            ],
+            [
+              "MUEST003",
+              "21/12/2024 11:28:00",
+              "27/11/2024",
+              "Materia Prima",
+              "TS",
+              "Torta De Soya - 11/18/2024",
+              "",
+              "",
+              "Quality",
+              "Bromatologico",
+              "",
+              "/ImagenesMuestras/MUEST003.FotoMuestra.163217.jpg",
+              "/Muestras_Resultados/MUEST003.RestultadoPDF.171032.pdf",
+              "TRUE"
+            ],
+            [
+              "MUEST004",
+              "21/12/2024 11:32:53",
+              "27/11/2024",
+              "Materia Prima",
+              "CAF",
+              "Carbonato De Calcio Fino - 11/19/2024",
+              "",
+              "",
+              "Quality",
+              "Bromatologico",
+              "",
+              "/ImagenesMuestras/MUEST004.FotoMuestra.163343.jpg",
+              "/Muestras_Resultados/MUEST004.RestultadoPDF.171040.pdf",
+              "TRUE"
+            ]
+          ]
+        },
+        {
+          "sheetId": 477817435,
+          "title": "TablaCalendarioMes",
+          "index": 18,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1yKPN2M0MgTLJKe1VEOwocvcl_jZNAZXjtXOTTEuS4oM",
+      "name": "DB_Entradas",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1yKPN2M0MgTLJKe1VEOwocvcl_jZNAZXjtXOTTEuS4oM/edit?usp=drivesdk",
+      "modifiedTime": "2024-10-19T13:32:44.907Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "Entradas",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 33,
+          "headers": [
+            "EntradaID",
+            "CentroCosto",
+            "MarcaTiempo",
+            "EntradaFecha",
+            "Hora",
+            "ProveedorID",
+            "ProveedorDetalleID",
+            "MateriaPrimaID",
+            "Lote",
+            "IngresoKg",
+            "TransportistaID",
+            "TransportistaDetalleID",
+            "TrayectoID",
+            "Placa",
+            "AceptableCondicion",
+            "TomaEnvioMuestra",
+            "CertificadoCalidadProveedor",
+            "Observacion",
+            "Responsable",
+            "Firma",
+            "FacturasDetalleIDMP",
+            "NumeroDeFactura",
+            "PrecioKgSinIva",
+            "PrecioKgConIva",
+            "FacturasDetalleIDTR",
+            "TransporteKg",
+            "DescargueKg",
+            "PrecioTotalKgSinIva",
+            "PrecioTotalKgConIva",
+            "KgAcumESub0",
+            "KgAjusteAdministrador",
+            "KgAcumESubf",
+            "KgRestantes"
+          ],
+          "sampleRows": [
+            [
+              "ENT0001",
+              "PLANTA",
+              "15/09/2024 12:05:39",
+              "14/06/2023",
+              "12:05:39",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro - 06/14/2023",
+              "13",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0001.Firma.170905.png",
+              "1bc1d633",
+              "FD10121",
+              "25800",
+              "27090",
+              "",
+              "",
+              "",
+              "25800",
+              "27090",
+              "0",
+              "0",
+              "13",
+              "0"
+            ],
+            [
+              "ENT0002",
+              "PLANTA",
+              "15/09/2024 12:16:18",
+              "25/08/2023",
+              "12:16:18",
+              "NTX",
+              "16",
+              "EFX",
+              "Effyxpro - 08/25/2023",
+              "50",
+              "NTX",
+              "74",
+              "TY16",
+              "KGS350",
+              "Aceptable",
+              "FALSE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0002.Firma.171708.png",
+              "8bc5a808",
+              "FD10921",
+              "25800",
+              "27090",
+              "",
+              "",
+              "",
+              "25800",
+              "27090",
+              "13",
+              "0",
+              "63",
+              "25,2"
+            ],
+            [
+              "ENT0003",
+              "PLANTA",
+              "15/09/2024 12:17:38",
+              "13/02/2024",
+              "12:17:38",
+              "PCA",
+              "5",
+              "SIE",
+              "Soya Integral Extruida - 02/13/2024",
+              "418",
+              "TR1",
+              "44",
+              "TY19",
+              "XID150",
+              "Aceptable",
+              "TRUE",
+              "TRUE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0003.Firma.171914.png",
+              "e25846cb",
+              "FES3178",
+              "2400",
+              "2520",
+              "",
+              "",
+              "",
+              "2400",
+              "2520",
+              "0",
+              "-418",
+              "0",
+              "0"
+            ],
+            [
+              "ENT0004",
+              "PLANTA",
+              "15/09/2024 12:20:34",
+              "09/03/2024",
+              "12:20:34",
+              "IT",
+              "22",
+              "MT",
+              "Mogolla De Trigo - 03/09/2024",
+              "365",
+              "TR1",
+              "37",
+              "TY3",
+              "XID150",
+              "Aceptable",
+              "FALSE",
+              "FALSE",
+              "Saldo en 01-07-2024",
+              "SAMUEL LAMILLA",
+              "/Firmas/ENT0004.Firma.172409.png",
+              "1399856a",
+              "PAME150178",
+              "1240",
+              "1302",
+              "",
+              "",
+              "",
+              "1240",
+              "1302",
+              "0",
+              "-365",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        {
+          "sheetId": 2097542662,
+          "title": "Traspasos",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 2029704162,
+          "title": "EntradasHormiga",
+          "index": 2,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        },
+        {
+          "sheetId": 96982321,
+          "title": "OtrosGastos",
+          "index": 3,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    },
+    {
+      "id": "1umbyx45Ek5b17H-TSHcEu3aiKoNj2WKwyS6TEi5dQpo",
+      "name": "DB:AppPollo",
+      "webViewLink": "https://docs.google.com/spreadsheets/d/1umbyx45Ek5b17H-TSHcEu3aiKoNj2WKwyS6TEi5dQpo/edit?usp=drivesdk",
+      "modifiedTime": "2026-01-29T20:31:47.503Z",
+      "tabs": [
+        {
+          "sheetId": 0,
+          "title": "Hoja 1",
+          "index": 0,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [
+            "Galpon",
+            "🔎",
+            "🏔️",
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9",
+            "S10",
+            "🚿"
+          ],
+          "sampleRows": [
+            [
+              "1",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full"
+            ],
+            [
+              "2",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Three Quarter"
+            ],
+            [
+              "3",
+              "Full",
+              "Full",
+              "Full"
+            ],
+            [
+              "4",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full",
+              "Full"
+            ]
+          ]
+        },
+        {
+          "sheetId": 160041482,
+          "title": "Hoja 2",
+          "index": 1,
+          "rowCount": 1000,
+          "columnCount": 26,
+          "headers": [],
+          "sampleRows": []
+        }
+      ]
+    }
+  ]
+}

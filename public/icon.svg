@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="MACADASA">
+  <rect width="128" height="128" rx="24" fill="#101820"/>
+  <path d="M24 92V36h18l22 34 22-34h18v56H86V63L70 88H58L42 63v29H24z" fill="#f4f6f5"/>
+  <path d="M24 100h80v8H24z" fill="#42a36f"/>
+</svg>

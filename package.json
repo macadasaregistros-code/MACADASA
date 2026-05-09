@@ -1,0 +1,40 @@
+{
+  "name": "macadasa-sync-sheets-supabase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "app:dev": "node scripts/run-tsx-with-system-ca.cjs scripts/serve-macadasa-dashboard.ts",
+    "db:migrate": "node --use-system-ca scripts/apply-supabase-migrations.cjs",
+    "discover:sheets": "node scripts/run-tsx-with-system-ca.cjs scripts/discover-google-sheets.ts",
+    "generate:sources": "node scripts/generate-sources-from-discovery.cjs",
+    "sync:sheets": "node scripts/run-tsx-with-system-ca.cjs scripts/sync-sheets-to-supabase.ts",
+    "sync:sheets:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/sync-sheets-to-supabase.ts --dry-run",
+    "transform:masters": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-raw-to-management.ts",
+    "transform:masters:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-raw-to-management.ts --dry-run",
+    "transform:inventory": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-inventory.ts",
+    "transform:inventory:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-inventory.ts --dry-run",
+    "transform:finance": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-finance.ts",
+    "transform:finance:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-finance.ts --dry-run",
+    "transform:feed": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-feed-plant.ts",
+    "transform:feed:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-feed-plant.ts --dry-run",
+    "transform:layer": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-layer-farms.ts",
+    "transform:layer:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-layer-farms.ts --dry-run",
+    "transform:egg": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-egg-grading.ts",
+    "transform:egg:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-egg-grading.ts --dry-run",
+    "transform:store": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-store-marketing.ts",
+    "transform:store:dry": "node scripts/run-tsx-with-system-ca.cjs scripts/transform-store-marketing.ts --dry-run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "dotenv": "^16.4.5",
+    "googleapis": "^144.0.0",
+    "pg": "^8.20.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
+}

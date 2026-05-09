@@ -1,0 +1,3403 @@
+[
+  {
+    "sourceName": "clasificadora_clasificadora",
+    "appName": "Clasificadora de Huevo",
+    "spreadsheetId": "1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE",
+    "sheetName": "Clasificadora",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ClasificadoraID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ClasificadoraID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "ClasificadoraID": "clasificadoraid",
+      "MarcaTiempo": "marcatiempo",
+      "ClasificadoraFecha": "clasificadorafecha",
+      "UsuarioID": "usuarioid",
+      "BodegaID": "bodegaid",
+      "GalponID": "galponid",
+      "LoteID": "loteid",
+      "Semana": "semana",
+      "ItemID": "itemid",
+      "Cantidad": "cantidad"
+    },
+    "typeMap": {
+      "ClasificadoraID": "text",
+      "MarcaTiempo": "datetime",
+      "ClasificadoraFecha": "date",
+      "UsuarioID": "text",
+      "BodegaID": "text",
+      "GalponID": "text",
+      "LoteID": "text",
+      "Semana": "number",
+      "ItemID": "text",
+      "Cantidad": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "clasificadora_entradasc",
+    "appName": "Clasificadora de Huevo",
+    "spreadsheetId": "1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE",
+    "sheetName": "EntradasC",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "EntradaCID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "EntradaCID"
+    ],
+    "attachmentColumns": [
+      "Firma"
+    ],
+    "columnMap": {
+      "EntradaCID": "entradacid",
+      "MarcaTiempo": "marcatiempo",
+      "EntradaFecha": "entradafecha",
+      "UsuarioID": "usuarioid",
+      "BodegaID": "bodegaid",
+      "CategoriaID": "categoriaid",
+      "ItemID": "itemid",
+      "Cantidad": "cantidad",
+      "PlacaVehiculo": "placavehiculo",
+      "AceptableCondicion": "aceptablecondicion",
+      "Observaciones": "observaciones",
+      "Responsable": "responsable",
+      "Firma": "firma"
+    },
+    "typeMap": {
+      "EntradaCID": "text",
+      "MarcaTiempo": "datetime",
+      "EntradaFecha": "date",
+      "UsuarioID": "text",
+      "BodegaID": "text",
+      "CategoriaID": "text",
+      "ItemID": "text",
+      "Cantidad": "number",
+      "PlacaVehiculo": "text",
+      "AceptableCondicion": "boolean",
+      "Observaciones": "text",
+      "Responsable": "text",
+      "Firma": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "clasificadora_salidacdetalle",
+    "appName": "Clasificadora de Huevo",
+    "spreadsheetId": "1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE",
+    "sheetName": "SalidaCDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "SalidaCDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "SalidaCDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "SalidaCDetalleID": "salidacdetalleid",
+      "SalidaCID": "salidacid",
+      "ItemID": "itemid",
+      "Pacas": "pacas",
+      "Huevos": "huevos",
+      "Cantidad": "cantidad"
+    },
+    "typeMap": {
+      "SalidaCDetalleID": "text",
+      "SalidaCID": "text",
+      "ItemID": "text",
+      "Pacas": "number",
+      "Huevos": "number",
+      "Cantidad": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "clasificadora_salidasc",
+    "appName": "Clasificadora de Huevo",
+    "spreadsheetId": "1WhlwUIcKcYp0JmZ72nuD-mllLMD_miJAn2GRrV-QfiE",
+    "sheetName": "SalidasC",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "SalidaCID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "SalidaCID"
+    ],
+    "attachmentColumns": [
+      "FirmaEntrega",
+      "FirmaRecibe"
+    ],
+    "columnMap": {
+      "SalidaCID": "salidacid",
+      "MarcaTiempo": "marcatiempo",
+      "SalidaFecha": "salidafecha",
+      "UsuarioID": "usuarioid",
+      "Destino": "destino",
+      "Entrega": "entrega",
+      "FirmaEntrega": "firmaentrega",
+      "Recibe": "recibe",
+      "FirmaRecibe": "firmarecibe",
+      "Contador": "contador",
+      "Comentario": "comentario"
+    },
+    "typeMap": {
+      "SalidaCID": "text",
+      "MarcaTiempo": "datetime",
+      "SalidaFecha": "date",
+      "UsuarioID": "text",
+      "Destino": "text",
+      "Entrega": "text",
+      "FirmaEntrega": "text",
+      "Recibe": "text",
+      "FirmaRecibe": "text",
+      "Contador": "number",
+      "Comentario": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_facturas",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "Facturas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "FacturaID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "FacturaID"
+    ],
+    "attachmentColumns": [
+      "FacturaPDF"
+    ],
+    "columnMap": {
+      "FacturaID": "facturaid",
+      "MarcaTiempo": "marcatiempo",
+      "UsuarioID": "usuarioid",
+      "NumeroDeFactura": "numerodefactura",
+      "FacturaFecha": "facturafecha",
+      "TipoTransaccion": "tipotransaccion",
+      "FechaVencimiento": "fechavencimiento",
+      "RazonSocialID": "razonsocialid",
+      "PrecioFacturaSinIVA": "preciofacturasiniva",
+      "FacturaIVA": "facturaiva",
+      "PrecioFacturaConIVA": "preciofacturaconiva",
+      "FacturaRetenciones": "facturaretenciones",
+      "FacturaDescuento": "facturadescuento",
+      "FacturaTotalAPagar": "facturatotalapagar",
+      "FacturaPDF": "facturapdf"
+    },
+    "typeMap": {
+      "FacturaID": "text",
+      "MarcaTiempo": "datetime",
+      "UsuarioID": "text",
+      "NumeroDeFactura": "text",
+      "FacturaFecha": "date",
+      "TipoTransaccion": "text",
+      "FechaVencimiento": "date",
+      "RazonSocialID": "text",
+      "PrecioFacturaSinIVA": "number",
+      "FacturaIVA": "number",
+      "PrecioFacturaConIVA": "number",
+      "FacturaRetenciones": "number",
+      "FacturaDescuento": "number",
+      "FacturaTotalAPagar": "number",
+      "FacturaPDF": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_facturasdetalle",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "FacturasDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "FacturasDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "FacturasDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "FacturasDetalleID": "facturasdetalleid",
+      "FacturaID": "facturaid",
+      "CategoriaID": "categoriaid",
+      "RazonSocialDetalleID": "razonsocialdetalleid",
+      "ItemID": "itemid",
+      "Cantidad": "cantidad",
+      "Unidad": "unidad",
+      "PrecioUndSinIva": "precioundsiniva",
+      "IVAPorcentaje": "ivaporcentaje",
+      "PrecioUndConIva": "precioundconiva",
+      "IVA": "iva",
+      "PrecioTotalConIva": "preciototalconiva",
+      "ReteFuentePorcentaje": "retefuenteporcentaje",
+      "ReteICAPorcentaje": "reteicaporcentaje",
+      "RetencionFuente": "retencionfuente",
+      "ReteICA": "reteica",
+      "ValorAPagar": "valorapagar",
+      "Observacion": "observacion",
+      "UnidadesRestantes": "unidadesrestantes"
+    },
+    "typeMap": {
+      "FacturasDetalleID": "text",
+      "FacturaID": "text",
+      "CategoriaID": "text",
+      "RazonSocialDetalleID": "text",
+      "ItemID": "text",
+      "Cantidad": "number",
+      "Unidad": "text",
+      "PrecioUndSinIva": "number",
+      "IVAPorcentaje": "number",
+      "PrecioUndConIva": "number",
+      "IVA": "number",
+      "PrecioTotalConIva": "number",
+      "ReteFuentePorcentaje": "number",
+      "ReteICAPorcentaje": "number",
+      "RetencionFuente": "number",
+      "ReteICA": "number",
+      "ValorAPagar": "number",
+      "Observacion": "text",
+      "UnidadesRestantes": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_flujoefectivo",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "FlujoEfectivo",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "FlujoEfectivoID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "FlujoEfectivoID"
+    ],
+    "attachmentColumns": [
+      "FotoComprobante"
+    ],
+    "columnMap": {
+      "FlujoEfectivoID": "flujoefectivoid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "CentroCostoID": "centrocostoid",
+      "TipoDeMovimiento": "tipodemovimiento",
+      "Concepto": "concepto",
+      "Detalle": "detalle",
+      "Valor": "valor",
+      "Beneficiario": "beneficiario",
+      "FotoComprobante": "fotocomprobante"
+    },
+    "typeMap": {
+      "FlujoEfectivoID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "CentroCostoID": "text",
+      "TipoDeMovimiento": "text",
+      "Concepto": "text",
+      "Detalle": "text",
+      "Valor": "number",
+      "Beneficiario": "text",
+      "FotoComprobante": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_ivabimestre",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "IvaBimestre",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "IvaBimestreID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "IvaBimestreID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "IvaBimestreID": "ivabimestreid",
+      "Fecha": "fecha"
+    },
+    "typeMap": {
+      "IvaBimestreID": "text",
+      "Fecha": "date"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_pagos",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "Pagos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PagoID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PagoID"
+    ],
+    "attachmentColumns": [
+      "FotoComprobante"
+    ],
+    "columnMap": {
+      "PagoID": "pagoid",
+      "MarcaTiempo": "marcatiempo",
+      "UsuarioID": "usuarioid",
+      "PagoFecha": "pagofecha",
+      "RazonSocialID": "razonsocialid",
+      "Pago": "pago",
+      "QuienPaga": "quienpaga",
+      "Observaciones": "observaciones",
+      "FotoComprobante": "fotocomprobante",
+      "NumeroDeTransaccion": "numerodetransaccion",
+      "CentroCostoID": "centrocostoid"
+    },
+    "typeMap": {
+      "PagoID": "text",
+      "MarcaTiempo": "datetime",
+      "UsuarioID": "text",
+      "PagoFecha": "date",
+      "RazonSocialID": "text",
+      "Pago": "number",
+      "QuienPaga": "text",
+      "Observaciones": "text",
+      "FotoComprobante": "text",
+      "NumeroDeTransaccion": "text",
+      "CentroCostoID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "facturas_pagosdetalle",
+    "appName": "Facturas",
+    "spreadsheetId": "1sTDeoezg4eO9WyC08onHiq3C2rFyt5vJEY_y5wixsHM",
+    "sheetName": "PagosDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PagosDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PagosDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PagosDetalleID": "pagosdetalleid",
+      "PagoID": "pagoid",
+      "FacturaID": "facturaid",
+      "PagoFactura": "pagofactura"
+    },
+    "typeMap": {
+      "PagosDetalleID": "text",
+      "PagoID": "text",
+      "FacturaID": "text",
+      "PagoFactura": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_ajusteadministradoramp",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "AjusteAdministradorAMP",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "RegistroDiarioAMPID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "RegistroDiarioAMPID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "RegistroDiarioAMPID": "registrodiarioampid",
+      "MarcaTiempo": "marcatiempo",
+      "AMPFecha": "ampfecha",
+      "UsuarioID": "usuarioid",
+      "GranjaID": "granjaid",
+      "GalponID": "galponid",
+      "LoteID": "loteid",
+      "Semana": "semana",
+      "ItemID": "itemid",
+      "AlimentoBtos": "alimentobtos",
+      "Observacion": "observacion"
+    },
+    "typeMap": {
+      "RegistroDiarioAMPID": "text",
+      "MarcaTiempo": "datetime",
+      "AMPFecha": "date",
+      "UsuarioID": "text",
+      "GranjaID": "text",
+      "GalponID": "text",
+      "LoteID": "text",
+      "Semana": "number",
+      "ItemID": "text",
+      "AlimentoBtos": "number",
+      "Observacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_entradasg",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "EntradasG",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "EntradaGID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "EntradaGID"
+    ],
+    "attachmentColumns": [
+      "FirmaEntrega",
+      "FirmaRecibe"
+    ],
+    "columnMap": {
+      "EntradaGID": "entradagid",
+      "MarcaTiempo": "marcatiempo",
+      "EntradaFecha": "entradafecha",
+      "UsuarioID": "usuarioid",
+      "GranjaID": "granjaid",
+      "GalponID": "galponid",
+      "BodegaID": "bodegaid",
+      "CategoriaID": "categoriaid",
+      "ItemID": "itemid",
+      "TraspasosInventarioBultosID": "traspasosinventariobultosid",
+      "TraspasosInventarioCCID": "traspasosinventarioccid",
+      "FacturaDetalleID": "facturadetalleid",
+      "Cantidad": "cantidad",
+      "PlacaVehiculo": "placavehiculo",
+      "AceptableCondicion": "aceptablecondicion",
+      "Entrega": "entrega",
+      "FirmaEntrega": "firmaentrega",
+      "Recibe": "recibe",
+      "FirmaRecibe": "firmarecibe",
+      "Observaciones": "observaciones",
+      "NumeroDeFactura": "numerodefactura",
+      "PrecioConIva": "precioconiva",
+      "FacturasDetalleIDTR": "facturasdetalleidtr",
+      "Transporte": "transporte",
+      "PrecioTotalConIva": "preciototalconiva"
+    },
+    "typeMap": {
+      "EntradaGID": "text",
+      "MarcaTiempo": "datetime",
+      "EntradaFecha": "date",
+      "UsuarioID": "text",
+      "GranjaID": "text",
+      "GalponID": "text",
+      "BodegaID": "text",
+      "CategoriaID": "text",
+      "ItemID": "text",
+      "TraspasosInventarioBultosID": "text",
+      "TraspasosInventarioCCID": "text",
+      "FacturaDetalleID": "text",
+      "Cantidad": "number",
+      "PlacaVehiculo": "text",
+      "AceptableCondicion": "boolean",
+      "Entrega": "text",
+      "FirmaEntrega": "text",
+      "Recibe": "text",
+      "FirmaRecibe": "text",
+      "Observaciones": "text",
+      "NumeroDeFactura": "text",
+      "PrecioConIva": "number",
+      "FacturasDetalleIDTR": "text",
+      "Transporte": "number",
+      "PrecioTotalConIva": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_graficopptabla",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "GraficoPPTabla",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "GraficoPPTablaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "GraficoPPTablaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "GraficoPPTablaID": "graficopptablaid",
+      "SemanaTabla": "semanatabla",
+      "PPTabla": "pptabla",
+      "GalponID": "galponid"
+    },
+    "typeMap": {
+      "GraficoPPTablaID": "text",
+      "SemanaTabla": "number",
+      "PPTabla": "text",
+      "GalponID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_registrodiarioamp",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "RegistroDiarioAMP",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "RegistroDiarioAMPID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "RegistroDiarioAMPID"
+    ],
+    "attachmentColumns": [
+      "GuiaPP"
+    ],
+    "columnMap": {
+      "RegistroDiarioAMPID": "registrodiarioampid",
+      "MarcaTiempo": "marcatiempo",
+      "AMPFecha": "ampfecha",
+      "UsuarioID": "usuarioid",
+      "GranjaID": "granjaid",
+      "GalponID": "galponid",
+      "LoteID": "loteid",
+      "Semana": "semana",
+      "ItemID": "itemid",
+      "AlimentoBtos": "alimentobtos",
+      "Mortalidad": "mortalidad",
+      "Despaje": "despaje",
+      "Sacrificio": "sacrificio",
+      "Venta": "venta",
+      "MDV": "mdv",
+      "Produccion": "produccion",
+      "Calcio": "calcio",
+      "Cisco": "cisco",
+      "Observacion": "observacion",
+      "GuiaPP": "guiapp",
+      "PP": "pp",
+      "Dia": "dia",
+      "SalidaDeAves": "salidadeaves"
+    },
+    "typeMap": {
+      "RegistroDiarioAMPID": "text",
+      "MarcaTiempo": "datetime",
+      "AMPFecha": "date",
+      "UsuarioID": "text",
+      "GranjaID": "text",
+      "GalponID": "text",
+      "LoteID": "text",
+      "Semana": "number",
+      "ItemID": "text",
+      "AlimentoBtos": "number",
+      "Mortalidad": "number",
+      "Despaje": "text",
+      "Sacrificio": "text",
+      "Venta": "text",
+      "MDV": "number",
+      "Produccion": "number",
+      "Calcio": "number",
+      "Cisco": "number",
+      "Observacion": "text",
+      "GuiaPP": "text",
+      "PP": "text",
+      "Dia": "number",
+      "SalidaDeAves": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_tabla",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "Tabla",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaID": "tablaid",
+      "SemanaTabla": "semanatabla",
+      "GAD": "gad",
+      "PesoGr": "pesogr",
+      "PP": "pp",
+      "HAA": "haa",
+      "PPMin": "ppmin",
+      "PPDif": "ppdif",
+      "HAAMin": "haamin",
+      "HAADif": "haadif"
+    },
+    "typeMap": {
+      "TablaID": "text",
+      "SemanaTabla": "number",
+      "GAD": "text",
+      "PesoGr": "number",
+      "PP": "text",
+      "HAA": "text",
+      "PPMin": "text",
+      "PPDif": "text",
+      "HAAMin": "text",
+      "HAADif": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gallinas_vacunaciones",
+    "appName": "Granjas de Postura",
+    "spreadsheetId": "1xggovV-o-lt9VjWk82LNDNaX_PFSuEMj365e9oHN5gQ",
+    "sheetName": "Vacunaciones",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "VacunacionID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "VacunacionID"
+    ],
+    "attachmentColumns": [
+      "VacunaFoto"
+    ],
+    "columnMap": {
+      "VacunacionID": "vacunacionid",
+      "MarcaTiempo": "marcatiempo",
+      "VacunacionFecha": "vacunacionfecha",
+      "UsuarioID": "usuarioid",
+      "GranjaID": "granjaid",
+      "GalponID": "galponid",
+      "LoteID": "loteid",
+      "Semana": "semana",
+      "CategoriaID": "categoriaid",
+      "ItemID": "itemid",
+      "Laboratorio": "laboratorio",
+      "Cepas": "cepas",
+      "NombreComercial": "nombrecomercial",
+      "Administracion": "administracion",
+      "VacunaFoto": "vacunafoto",
+      "Veterinario": "veterinario",
+      "Observacion": "observacion"
+    },
+    "typeMap": {
+      "VacunacionID": "text",
+      "MarcaTiempo": "datetime",
+      "VacunacionFecha": "date",
+      "UsuarioID": "text",
+      "GranjaID": "text",
+      "GalponID": "text",
+      "LoteID": "text",
+      "Semana": "number",
+      "CategoriaID": "text",
+      "ItemID": "text",
+      "Laboratorio": "text",
+      "Cepas": "text",
+      "NombreComercial": "text",
+      "Administracion": "text",
+      "VacunaFoto": "text",
+      "Veterinario": "text",
+      "Observacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_bodegas",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Bodegas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "BodegaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "BodegaID"
+    ],
+    "attachmentColumns": [
+      "BodegaImagen"
+    ],
+    "columnMap": {
+      "BodegaID": "bodegaid",
+      "CategoriaID": "categoriaid",
+      "BodegaNombre": "bodeganombre",
+      "BodegaImagen": "bodegaimagen",
+      "UsuarioID": "usuarioid"
+    },
+    "typeMap": {
+      "BodegaID": "text",
+      "CategoriaID": "text",
+      "BodegaNombre": "text",
+      "BodegaImagen": "text",
+      "UsuarioID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_categorias",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Categorias",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CategoriaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CategoriaID"
+    ],
+    "attachmentColumns": [
+      "CategoriaImagen"
+    ],
+    "columnMap": {
+      "CategoriaID": "categoriaid",
+      "CategoriaNombre": "categorianombre",
+      "CategoriaImagen": "categoriaimagen"
+    },
+    "typeMap": {
+      "CategoriaID": "text",
+      "CategoriaNombre": "text",
+      "CategoriaImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_centroscosto",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "CentrosCosto",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CentroCostoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CentroCostoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "CentroCostoID": "centrocostoid",
+      "CentroCosto": "centrocosto",
+      "DescripcionBreve": "descripcionbreve"
+    },
+    "typeMap": {
+      "CentroCostoID": "text",
+      "CentroCosto": "number",
+      "DescripcionBreve": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_copia_de_centroscosto",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Copia de CentrosCosto",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CentroCostoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CentroCostoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "CentroCostoID": "centrocostoid",
+      "CentroCosto": "centrocosto",
+      "DescripcionBreve": "descripcionbreve"
+    },
+    "typeMap": {
+      "CentroCostoID": "text",
+      "CentroCosto": "number",
+      "DescripcionBreve": "text"
+    },
+    "isActive": false
+  },
+  {
+    "sourceName": "gerencia_costostransacciones",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "CostosTransacciones",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CostoTransaccionID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CostoTransaccionID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "CostoTransaccionID": "costotransaccionid",
+      "CategoriaID": "categoriaid",
+      "ItemID": "itemid",
+      "Costo": "costo",
+      "UltimaActualizacion": "ultimaactualizacion"
+    },
+    "typeMap": {
+      "CostoTransaccionID": "text",
+      "CategoriaID": "text",
+      "ItemID": "text",
+      "Costo": "number",
+      "UltimaActualizacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_documentos",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Documentos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "DocumentoID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "DocumentoID"
+    ],
+    "attachmentColumns": [
+      "ArchivoPDF",
+      "Imagen"
+    ],
+    "columnMap": {
+      "DocumentoID": "documentoid",
+      "TipoDocumento": "tipodocumento",
+      "Granja": "granja",
+      "NombreDocumento": "nombredocumento",
+      "Descripción": "descripcion",
+      "Fecha": "fecha",
+      "ArchivoPDF": "archivopdf",
+      "Documento": "documento",
+      "Imagen": "imagen",
+      "Responsable": "responsable",
+      "Observaciones": "observaciones"
+    },
+    "typeMap": {
+      "DocumentoID": "text",
+      "TipoDocumento": "text",
+      "Granja": "text",
+      "NombreDocumento": "text",
+      "Descripción": "text",
+      "Fecha": "date",
+      "ArchivoPDF": "text",
+      "Documento": "text",
+      "Imagen": "text",
+      "Responsable": "text",
+      "Observaciones": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_galpones",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Galpones",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "GalponID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "GalponID"
+    ],
+    "attachmentColumns": [
+      "GalponImagen"
+    ],
+    "columnMap": {
+      "GalponID": "galponid",
+      "GranjaID": "granjaid",
+      "GalponNombre": "galponnombre",
+      "GalponImagen": "galponimagen",
+      "UsuarioID": "usuarioid"
+    },
+    "typeMap": {
+      "GalponID": "text",
+      "GranjaID": "text",
+      "GalponNombre": "text",
+      "GalponImagen": "text",
+      "UsuarioID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_granjas",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Granjas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "GranjaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "GranjaID"
+    ],
+    "attachmentColumns": [
+      "GranjaImagen"
+    ],
+    "columnMap": {
+      "GranjaID": "granjaid",
+      "GranjaNombre": "granjanombre",
+      "GranjaImagen": "granjaimagen"
+    },
+    "typeMap": {
+      "GranjaID": "text",
+      "GranjaNombre": "text",
+      "GranjaImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_items",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Items",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ItemID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ItemID"
+    ],
+    "attachmentColumns": [
+      "ItemImagen"
+    ],
+    "columnMap": {
+      "ItemID": "itemid",
+      "CategoriaID": "categoriaid",
+      "ItemDescripcion": "itemdescripcion",
+      "ItemIVA": "itemiva",
+      "ItemImagen": "itemimagen",
+      "Unidad": "unidad",
+      "Observacion": "observacion"
+    },
+    "typeMap": {
+      "ItemID": "text",
+      "CategoriaID": "text",
+      "ItemDescripcion": "text",
+      "ItemIVA": "number",
+      "ItemImagen": "text",
+      "Unidad": "text",
+      "Observacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_lotes",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Lotes",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "LoteID",
+    "updatedAtColumn": "FechaInicio",
+    "headerRow": 1,
+    "requiredColumns": [
+      "LoteID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "LoteID": "loteid",
+      "CategoriaID": "categoriaid",
+      "GranjaID": "granjaid",
+      "GalponID": "galponid",
+      "BodegaID": "bodegaid",
+      "LoteNombre": "lotenombre",
+      "FechaInicio": "fechainicio",
+      "FechaFinalizacion": "fechafinalizacion",
+      "NumeroAvesInicial": "numeroavesinicial",
+      "Estado": "estado",
+      "UsuarioID": "usuarioid"
+    },
+    "typeMap": {
+      "LoteID": "text",
+      "CategoriaID": "text",
+      "GranjaID": "text",
+      "GalponID": "text",
+      "BodegaID": "text",
+      "LoteNombre": "text",
+      "FechaInicio": "date",
+      "FechaFinalizacion": "date",
+      "NumeroAvesInicial": "text",
+      "Estado": "text",
+      "UsuarioID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_materiasprimas",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "MateriasPrimas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "MateriaPrimaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "MateriaPrimaID"
+    ],
+    "attachmentColumns": [
+      "MateriaPrimaImagen"
+    ],
+    "columnMap": {
+      "MateriaPrimaID": "materiaprimaid",
+      "MateriaPrimaNombre": "materiaprimanombre",
+      "MateriaPrimaIVA": "materiaprimaiva",
+      "MateriaPrimaImagen": "materiaprimaimagen"
+    },
+    "typeMap": {
+      "MateriaPrimaID": "text",
+      "MateriaPrimaNombre": "text",
+      "MateriaPrimaIVA": "number",
+      "MateriaPrimaImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_mcdsapps",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "McdsApps",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "McdsAppsID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "McdsAppsID"
+    ],
+    "attachmentColumns": [
+      "McdsAppsRuta",
+      "McdsAppsImagen"
+    ],
+    "columnMap": {
+      "McdsAppsID": "mcdsappsid",
+      "McdsAppsNombre": "mcdsappsnombre",
+      "McdsAppsRuta": "mcdsappsruta",
+      "McdsAppsImagen": "mcdsappsimagen"
+    },
+    "typeMap": {
+      "McdsAppsID": "text",
+      "McdsAppsNombre": "text",
+      "McdsAppsRuta": "text",
+      "McdsAppsImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_menu",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Menu",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "MenuID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "MenuID"
+    ],
+    "attachmentColumns": [
+      "MenuImagen"
+    ],
+    "columnMap": {
+      "MenuID": "menuid",
+      "MenuNombre": "menunombre",
+      "MenuAppID": "menuappid",
+      "MenuImagen": "menuimagen"
+    },
+    "typeMap": {
+      "MenuID": "text",
+      "MenuNombre": "text",
+      "MenuAppID": "text",
+      "MenuImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_productos",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Productos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProductoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProductoID"
+    ],
+    "attachmentColumns": [
+      "ProductoImagen"
+    ],
+    "columnMap": {
+      "ProductoID": "productoid",
+      "ProductoNombre": "productonombre",
+      "ProductoImagen": "productoimagen"
+    },
+    "typeMap": {
+      "ProductoID": "text",
+      "ProductoNombre": "text",
+      "ProductoImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_proveedores",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Proveedores",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProveedorID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProveedorID"
+    ],
+    "attachmentColumns": [
+      "ProoveedorImagen"
+    ],
+    "columnMap": {
+      "ProveedorID": "proveedorid",
+      "ProveedorNombre": "proveedornombre",
+      "ProoveedorImagen": "prooveedorimagen",
+      "Nit": "nit",
+      "Direccion": "direccion",
+      "Telefono": "telefono",
+      "EmailPaginaWeb": "emailpaginaweb"
+    },
+    "typeMap": {
+      "ProveedorID": "text",
+      "ProveedorNombre": "text",
+      "ProoveedorImagen": "text",
+      "Nit": "text",
+      "Direccion": "text",
+      "Telefono": "text",
+      "EmailPaginaWeb": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_proveedoresdetalle",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "ProveedoresDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProveedorDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProveedorDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "ProveedorDetalleID": "proveedordetalleid",
+      "ProveedorID": "proveedorid",
+      "MateriaPrimaID": "materiaprimaid",
+      "IVA": "iva"
+    },
+    "typeMap": {
+      "ProveedorDetalleID": "text",
+      "ProveedorID": "text",
+      "MateriaPrimaID": "text",
+      "IVA": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_razonsocial",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "RazonSocial",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "RazonSocialID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "RazonSocialID"
+    ],
+    "attachmentColumns": [
+      "RazonSocialImagen"
+    ],
+    "columnMap": {
+      "RazonSocialID": "razonsocialid",
+      "CategoriaID": "categoriaid",
+      "RazonSocialNombre": "razonsocialnombre",
+      "RazonSocialImagen": "razonsocialimagen",
+      "Nit": "nit",
+      "Direccion": "direccion",
+      "Telefono": "telefono",
+      "EmailPaginaWeb": "emailpaginaweb",
+      "NumeroCuenta": "numerocuenta",
+      "Total": "total"
+    },
+    "typeMap": {
+      "RazonSocialID": "text",
+      "CategoriaID": "text",
+      "RazonSocialNombre": "text",
+      "RazonSocialImagen": "text",
+      "Nit": "text",
+      "Direccion": "text",
+      "Telefono": "text",
+      "EmailPaginaWeb": "text",
+      "NumeroCuenta": "text",
+      "Total": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_razonsocialdetalle",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "RazonSocialDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "RazonSocialDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "RazonSocialDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "RazonSocialDetalleID": "razonsocialdetalleid",
+      "RazonSocialID": "razonsocialid",
+      "ItemID": "itemid",
+      "CategoriaID": "categoriaid"
+    },
+    "typeMap": {
+      "RazonSocialDetalleID": "text",
+      "RazonSocialID": "text",
+      "ItemID": "text",
+      "CategoriaID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_tablacalendario",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TablaCalendario",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioID": "tablacalendarioid",
+      "Fecha": "fecha"
+    },
+    "typeMap": {
+      "TablaCalendarioID": "text",
+      "Fecha": "date"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_tablacalendariosemana",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TablaCalendarioSemana",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioSemanaID",
+    "updatedAtColumn": "FechaInicio",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioSemanaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioSemanaID": "tablacalendariosemanaid",
+      "FechaInicio": "fechainicio",
+      "FechaFin": "fechafin"
+    },
+    "typeMap": {
+      "TablaCalendarioSemanaID": "text",
+      "FechaInicio": "date",
+      "FechaFin": "date"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_tamanohuevo",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TamañoHuevo",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TamañoHuevoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TamañoHuevoID"
+    ],
+    "attachmentColumns": [
+      "TamañoHuevoImagen"
+    ],
+    "columnMap": {
+      "TamañoHuevoID": "tamanohuevoid",
+      "TamañoHuevoNombre": "tamanohuevonombre",
+      "TamañoHuevoImagen": "tamanohuevoimagen"
+    },
+    "typeMap": {
+      "TamañoHuevoID": "text",
+      "TamañoHuevoNombre": "number",
+      "TamañoHuevoImagen": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_tipomovimientofinancieroid",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TipoMovimientoFinancieroID",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TipoMovimientoFinancieroID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TipoMovimientoFinancieroID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TipoMovimientoFinancieroID": "tipomovimientofinancieroid",
+      "MovimientoFinanciero": "movimientofinanciero",
+      "CategoriaMovimiento": "categoriamovimiento",
+      "EsAutomatico": "esautomatico"
+    },
+    "typeMap": {
+      "TipoMovimientoFinancieroID": "text",
+      "MovimientoFinanciero": "text",
+      "CategoriaMovimiento": "text",
+      "EsAutomatico": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_tiposcosto",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TiposCosto",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TiposCostoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TiposCostoID"
+    ],
+    "attachmentColumns": [
+      "TipoCostoImagen"
+    ],
+    "columnMap": {
+      "TiposCostoID": "tiposcostoid",
+      "TipoCostoNombre": "tipocostonombre",
+      "TipoCostoImagen": "tipocostoimagen",
+      "Descripcion": "descripcion"
+    },
+    "typeMap": {
+      "TiposCostoID": "text",
+      "TipoCostoNombre": "number",
+      "TipoCostoImagen": "number",
+      "Descripcion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_transportistas",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Transportistas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TransportistaID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TransportistaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TransportistaID": "transportistaid",
+      "TransportistaNombre": "transportistanombre",
+      "IVARetefuente": "ivaretefuente",
+      "Nit": "nit",
+      "Direccion": "direccion",
+      "Telefono": "telefono",
+      "EmailPaginaWeb": "emailpaginaweb"
+    },
+    "typeMap": {
+      "TransportistaID": "text",
+      "TransportistaNombre": "text",
+      "IVARetefuente": "number",
+      "Nit": "text",
+      "Direccion": "text",
+      "Telefono": "text",
+      "EmailPaginaWeb": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_transportistasdetalle",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "TransportistasDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TransportistaDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TransportistaDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TransportistaDetalleID": "transportistadetalleid",
+      "TransportistaID": "transportistaid",
+      "TrayectoID": "trayectoid"
+    },
+    "typeMap": {
+      "TransportistaDetalleID": "text",
+      "TransportistaID": "text",
+      "TrayectoID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_trayectos",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Trayectos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TrayectoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TrayectoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TrayectoID": "trayectoid",
+      "Trayecto": "trayecto"
+    },
+    "typeMap": {
+      "TrayectoID": "text",
+      "Trayecto": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_ultimoregistro",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "UltimoRegistro",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "UltimoRegistroID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "UltimoRegistroID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "UltimoRegistroID": "ultimoregistroid",
+      "UsuarioID": "usuarioid",
+      "TablaEntradas": "tablaentradas",
+      "TablaPrincipal": "tablaprincipal",
+      "TablaSalidas": "tablasalidas",
+      "MarcaTiempo": "marcatiempo"
+    },
+    "typeMap": {
+      "UltimoRegistroID": "text",
+      "UsuarioID": "text",
+      "TablaEntradas": "text",
+      "TablaPrincipal": "text",
+      "TablaSalidas": "text",
+      "MarcaTiempo": "datetime"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_usuarios",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Usuarios",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "UsuarioID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "UsuarioID"
+    ],
+    "attachmentColumns": [
+      "UsuarioImagen"
+    ],
+    "columnMap": {
+      "UsuarioID": "usuarioid",
+      "CorreoElectronico": "correoelectronico",
+      "Nombre": "nombre",
+      "UsuarioRol": "usuariorol",
+      "CentroCosto": "centrocosto",
+      "UsuarioImagen": "usuarioimagen",
+      "UsuarioActivo": "usuarioactivo",
+      "BodegaID": "bodegaid"
+    },
+    "typeMap": {
+      "UsuarioID": "text",
+      "CorreoElectronico": "text",
+      "Nombre": "text",
+      "UsuarioRol": "text",
+      "CentroCosto": "number",
+      "UsuarioImagen": "text",
+      "UsuarioActivo": "text",
+      "BodegaID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_z_camaras",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Z_Camaras",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CamaraID",
+    "updatedAtColumn": "FechaInstalacion",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CamaraID"
+    ],
+    "attachmentColumns": [
+      "FotoCamara",
+      "QR"
+    ],
+    "columnMap": {
+      "CamaraID": "camaraid",
+      "FechaInstalacion": "fechainstalacion",
+      "GranjaID": "granjaid",
+      "Ubicacion": "ubicacion",
+      "FotoCamara": "fotocamara",
+      "Modelo": "modelo",
+      "QR": "qr",
+      "PIN": "pin",
+      "Contraseña": "contrasena",
+      "Detalle": "detalle",
+      "Valor": "valor",
+      "InternetID": "internetid"
+    },
+    "typeMap": {
+      "CamaraID": "text",
+      "FechaInstalacion": "date",
+      "GranjaID": "text",
+      "Ubicacion": "text",
+      "FotoCamara": "text",
+      "Modelo": "text",
+      "QR": "text",
+      "PIN": "text",
+      "Contraseña": "text",
+      "Detalle": "text",
+      "Valor": "number",
+      "InternetID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_z_internet",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Z_Internet",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "InternetID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "InternetID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "InternetID": "internetid",
+      "Fecha": "fecha",
+      "GranjaID": "granjaid",
+      "Proveedor": "proveedor",
+      "VelocidadInternet": "velocidadinternet",
+      "ContraseñaInternet": "contrasenainternet",
+      "Valor": "valor"
+    },
+    "typeMap": {
+      "InternetID": "text",
+      "Fecha": "date",
+      "GranjaID": "text",
+      "Proveedor": "text",
+      "VelocidadInternet": "text",
+      "ContraseñaInternet": "text",
+      "Valor": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_z_perros",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Z_Perros",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PerroID",
+    "updatedAtColumn": "FechaNacimiento",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PerroID"
+    ],
+    "attachmentColumns": [
+      "FotoCara",
+      "FotoPerro"
+    ],
+    "columnMap": {
+      "PerroID": "perroid",
+      "GranjaID": "granjaid",
+      "Ubicacion": "ubicacion",
+      "Genero": "genero",
+      "Raza": "raza",
+      "Nombre": "nombre",
+      "FechaNacimiento": "fechanacimiento",
+      "FotoCara": "fotocara",
+      "FotoPerro": "fotoperro",
+      "Puntuacion": "puntuacion",
+      "Caracteristicas": "caracteristicas",
+      "MadreID": "madreid",
+      "PadreID": "padreid",
+      "Activo": "activo"
+    },
+    "typeMap": {
+      "PerroID": "text",
+      "GranjaID": "text",
+      "Ubicacion": "text",
+      "Genero": "text",
+      "Raza": "text",
+      "Nombre": "text",
+      "FechaNacimiento": "date",
+      "FotoCara": "text",
+      "FotoPerro": "text",
+      "Puntuacion": "text",
+      "Caracteristicas": "text",
+      "MadreID": "text",
+      "PadreID": "text",
+      "Activo": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "gerencia_z_perrosplanificacion",
+    "appName": "Gerencia",
+    "spreadsheetId": "1KV2C8BVG5YHl08DP98Ed6nJLzgl1SJ8jAtlVtkAh4n4",
+    "sheetName": "Z_PerrosPlanificacion",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PerrosPlanificacionID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PerrosPlanificacionID"
+    ],
+    "attachmentColumns": [
+      "FotoDroga"
+    ],
+    "columnMap": {
+      "PerrosPlanificacionID": "perrosplanificacionid",
+      "GranjaID": "granjaid",
+      "PerroID": "perroid",
+      "Fecha": "fecha",
+      "Injeccion": "injeccion",
+      "FotoDroga": "fotodroga",
+      "ProximaInjeccion": "proximainjeccion"
+    },
+    "typeMap": {
+      "PerrosPlanificacionID": "text",
+      "GranjaID": "text",
+      "PerroID": "text",
+      "Fecha": "date",
+      "Injeccion": "text",
+      "FotoDroga": "text",
+      "ProximaInjeccion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_inventariobultos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "InventarioBultos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "InventarioBultoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "InventarioBultoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "InventarioBultoID": "inventariobultoid",
+      "BodegaID": "bodegaid",
+      "ItemID": "itemid"
+    },
+    "typeMap": {
+      "InventarioBultoID": "text",
+      "BodegaID": "text",
+      "ItemID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_inventariohuevos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "InventarioHuevos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "InventarioBultoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "InventarioBultoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "InventarioBultoID": "inventariobultoid",
+      "BodegaID": "bodegaid",
+      "ItemID": "itemid"
+    },
+    "typeMap": {
+      "InventarioBultoID": "text",
+      "BodegaID": "text",
+      "ItemID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_tipostraspasobultos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "TiposTraspasoBultos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TipoTraspasoBultoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TipoTraspasoBultoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TipoTraspasoBultoID": "tipotraspasobultoid",
+      "Descripcion": "descripcion"
+    },
+    "typeMap": {
+      "TipoTraspasoBultoID": "text",
+      "Descripcion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_tipostraspasohuevos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "TiposTraspasoHuevos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TiposTraspasoHuevosID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TiposTraspasoHuevosID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TiposTraspasoHuevosID": "tipostraspasohuevosid",
+      "Descripcion": "descripcion"
+    },
+    "typeMap": {
+      "TiposTraspasoHuevosID": "text",
+      "Descripcion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_traspasosinventariobultos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "TraspasosInventarioBultos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TraspasosInventarioBultosID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TraspasosInventarioBultosID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TraspasosInventarioBultosID": "traspasosinventariobultosid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "TipoTraspasoBultoID": "tipotraspasobultoid",
+      "Origen": "origen",
+      "Destino": "destino",
+      "ItemID": "itemid",
+      "CantidadEnviada": "cantidadenviada",
+      "CantidadRecibida": "cantidadrecibida",
+      "Validacion": "validacion",
+      "ValorUnitario": "valorunitario",
+      "ValorTotal": "valortotal"
+    },
+    "typeMap": {
+      "TraspasosInventarioBultosID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "TipoTraspasoBultoID": "text",
+      "Origen": "text",
+      "Destino": "text",
+      "ItemID": "text",
+      "CantidadEnviada": "number",
+      "CantidadRecibida": "number",
+      "Validacion": "text",
+      "ValorUnitario": "number",
+      "ValorTotal": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_traspasosinventariocc",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "TraspasosInventarioCC",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TraspasosInventarioCCID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TraspasosInventarioCCID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TraspasosInventarioCCID": "traspasosinventarioccid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "TipoTraspasoCCID": "tipotraspasoccid",
+      "Origen": "origen",
+      "Destino": "destino",
+      "ItemID": "itemid",
+      "CantidadEnviada": "cantidadenviada",
+      "CantidadRecibida": "cantidadrecibida",
+      "Validacion": "validacion",
+      "ValorUnitario": "valorunitario",
+      "ValorTotal": "valortotal"
+    },
+    "typeMap": {
+      "TraspasosInventarioCCID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "TipoTraspasoCCID": "text",
+      "Origen": "text",
+      "Destino": "text",
+      "ItemID": "text",
+      "CantidadEnviada": "number",
+      "CantidadRecibida": "number",
+      "Validacion": "text",
+      "ValorUnitario": "number",
+      "ValorTotal": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "inventario_traspasosinventariohuevos",
+    "appName": "Inventario General",
+    "spreadsheetId": "1vMIP0WxkgrHw4MFeZKJ9VPKiHXUWm-Lwa4rJghA8wzY",
+    "sheetName": "TraspasosInventarioHuevos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TraspasosInventarioHuevosID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TraspasosInventarioHuevosID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TraspasosInventarioHuevosID": "traspasosinventariohuevosid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "TiposTraspasoHuevosID": "tipostraspasohuevosid",
+      "Origen": "origen",
+      "Destino": "destino",
+      "ItemID": "itemid",
+      "CantidadEnviada": "cantidadenviada",
+      "CantidadRecibida": "cantidadrecibida",
+      "Validacion": "validacion",
+      "ValorUnitario": "valorunitario",
+      "ValorTotal": "valortotal"
+    },
+    "typeMap": {
+      "TraspasosInventarioHuevosID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "TiposTraspasoHuevosID": "text",
+      "Origen": "text",
+      "Destino": "text",
+      "ItemID": "text",
+      "CantidadEnviada": "number",
+      "CantidadRecibida": "number",
+      "Validacion": "text",
+      "ValorUnitario": "number",
+      "ValorTotal": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_categoriagastos",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "CategoriaGastos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "CategoriaGastoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "CategoriaGastoID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "CategoriaGastoID": "categoriagastoid",
+      "CategoriaGastoNombre": "categoriagastonombre"
+    },
+    "typeMap": {
+      "CategoriaGastoID": "text",
+      "CategoriaGastoNombre": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_conceptos",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "Conceptos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ConceptoID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ConceptoID"
+    ],
+    "attachmentColumns": [
+      "Imagen"
+    ],
+    "columnMap": {
+      "ConceptoID": "conceptoid",
+      "CategoriaGastoID": "categoriagastoid",
+      "ConceptoNombre": "conceptonombre",
+      "Detalle": "detalle",
+      "Imagen": "imagen"
+    },
+    "typeMap": {
+      "ConceptoID": "text",
+      "CategoriaGastoID": "text",
+      "ConceptoNombre": "text",
+      "Detalle": "text",
+      "Imagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_entradasm",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "EntradasM",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "EntradaMID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "EntradaMID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "EntradaMID": "entradamid",
+      "MarcaTiempo": "marcatiempo",
+      "EntradaFecha": "entradafecha",
+      "GranjaID": "granjaid",
+      "BodegaID": "bodegaid",
+      "ItemID": "itemid",
+      "TraspasosInventarioHuevosID": "traspasosinventariohuevosid",
+      "Pacas": "pacas",
+      "Huevos": "huevos",
+      "Cantidad": "cantidad",
+      "Observaciones": "observaciones"
+    },
+    "typeMap": {
+      "EntradaMID": "text",
+      "MarcaTiempo": "datetime",
+      "EntradaFecha": "date",
+      "GranjaID": "text",
+      "BodegaID": "text",
+      "ItemID": "text",
+      "TraspasosInventarioHuevosID": "text",
+      "Pacas": "number",
+      "Huevos": "number",
+      "Cantidad": "number",
+      "Observaciones": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_hojadegastos",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "HojaDeGastos",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "HojaGastoID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "HojaGastoID"
+    ],
+    "attachmentColumns": [
+      "Firma"
+    ],
+    "columnMap": {
+      "HojaGastoID": "hojagastoid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "CentroCostoID": "centrocostoid",
+      "TipoDeMovimiento": "tipodemovimiento",
+      "Concepto": "concepto",
+      "Detalle": "detalle",
+      "Valor": "valor",
+      "Beneficiario": "beneficiario",
+      "Firma": "firma"
+    },
+    "typeMap": {
+      "HojaGastoID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "CentroCostoID": "text",
+      "TipoDeMovimiento": "text",
+      "Concepto": "text",
+      "Detalle": "text",
+      "Valor": "number",
+      "Beneficiario": "text",
+      "Firma": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_inventariohuevom",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "InventarioHuevoM",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "InventarioHuevoMID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "InventarioHuevoMID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "InventarioHuevoMID": "inventariohuevomid",
+      "MarcaTiempo": "marcatiempo",
+      "InventarioFecha": "inventariofecha",
+      "InventarioHora": "inventariohora",
+      "BodegaID": "bodegaid",
+      "ItemID": "itemid",
+      "Pacas": "pacas",
+      "Huevos": "huevos",
+      "Cantidad": "cantidad",
+      "Observaciones": "observaciones"
+    },
+    "typeMap": {
+      "InventarioHuevoMID": "text",
+      "MarcaTiempo": "datetime",
+      "InventarioFecha": "date",
+      "InventarioHora": "text",
+      "BodegaID": "text",
+      "ItemID": "text",
+      "Pacas": "number",
+      "Huevos": "number",
+      "Cantidad": "number",
+      "Observaciones": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_pesopollo",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "PesoPollo",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PesoPolloID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PesoPolloID"
+    ],
+    "attachmentColumns": [
+      "ProcesadoraAvesRecibo"
+    ],
+    "columnMap": {
+      "PesoPolloID": "pesopolloid",
+      "MarcaTiempo": "marcatiempo",
+      "PesoPolloFecha": "pesopollofecha",
+      "GranjaID": "granjaid",
+      "ItemID": "itemid",
+      "Cantidad": "cantidad",
+      "PesoPromedio": "pesopromedio",
+      "Canastillas": "canastillas",
+      "ProcesadoraAvesRecibo": "procesadoraavesrecibo",
+      "PesoMacadasaHoja": "pesomacadasahoja"
+    },
+    "typeMap": {
+      "PesoPolloID": "text",
+      "MarcaTiempo": "datetime",
+      "PesoPolloFecha": "date",
+      "GranjaID": "text",
+      "ItemID": "text",
+      "Cantidad": "number",
+      "PesoPromedio": "number",
+      "Canastillas": "text",
+      "ProcesadoraAvesRecibo": "text",
+      "PesoMacadasaHoja": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_pesopollodetalle",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "PesoPolloDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PesoPolloDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PesoPolloDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PesoPolloDetalleID": "pesopollodetalleid",
+      "PesoPolloID": "pesopolloid",
+      "Canastillas": "canastillas",
+      "PesoKG": "pesokg",
+      "Unidades": "unidades"
+    },
+    "typeMap": {
+      "PesoPolloDetalleID": "text",
+      "PesoPolloID": "text",
+      "Canastillas": "text",
+      "PesoKG": "number",
+      "Unidades": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_pesopollomenudenciadetalle",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "PesoPolloMenudenciaDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PesoPolloMenudenciaDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PesoPolloMenudenciaDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PesoPolloMenudenciaDetalleID": "pesopollomenudenciadetalleid",
+      "PesoPolloID": "pesopolloid",
+      "Canastillas": "canastillas",
+      "PesoKG": "pesokg"
+    },
+    "typeMap": {
+      "PesoPolloMenudenciaDetalleID": "text",
+      "PesoPolloID": "text",
+      "Canastillas": "text",
+      "PesoKG": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_precios",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "Precios",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PreciosID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PreciosID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PreciosID": "preciosid",
+      "ItemID": "itemid",
+      "Precio": "precio",
+      "Nivel": "nivel"
+    },
+    "typeMap": {
+      "PreciosID": "text",
+      "ItemID": "text",
+      "Precio": "number",
+      "Nivel": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_tablacalendariodias",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "TablaCalendarioDias",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioDiasID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioDiasID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioDiasID": "tablacalendariodiasid",
+      "Dia": "dia",
+      "WeekDay": "weekday"
+    },
+    "typeMap": {
+      "TablaCalendarioDiasID": "text",
+      "Dia": "number",
+      "WeekDay": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_tablacalendarioventas",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "TablaCalendarioVentas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioVentasID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioVentasID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioVentasID": "tablacalendarioventasid",
+      "Fecha": "fecha"
+    },
+    "typeMap": {
+      "TablaCalendarioVentasID": "text",
+      "Fecha": "date"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_tablacalendarioventassemana",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "TablaCalendarioVentasSemana",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioVendasSemanaID",
+    "updatedAtColumn": "FechaInicio",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioVendasSemanaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioVendasSemanaID": "tablacalendariovendassemanaid",
+      "FechaInicio": "fechainicio",
+      "FechaFin": "fechafin"
+    },
+    "typeMap": {
+      "TablaCalendarioVendasSemanaID": "text",
+      "FechaInicio": "date",
+      "FechaFin": "date"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mcds_z_promociones",
+    "appName": "MCDS",
+    "spreadsheetId": "1RLrjTwXTExcXHjcaxMAP0CaLmjkggWSaKxxYl6aO7b8",
+    "sheetName": "Z_Promociones",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PromocionID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PromocionID"
+    ],
+    "attachmentColumns": [
+      "Imagen"
+    ],
+    "columnMap": {
+      "PromocionID": "promocionid",
+      "Fecha": "fecha",
+      "Dias": "dias",
+      "Producto": "producto",
+      "Promocion": "promocion",
+      "Imagen": "imagen",
+      "Descuento": "descuento",
+      "Porcentaje": "porcentaje",
+      "Cantidad": "cantidad",
+      "Ventas": "ventas",
+      "Costo": "costo",
+      "Resultado": "resultado",
+      "Comentarios": "comentarios"
+    },
+    "typeMap": {
+      "PromocionID": "text",
+      "Fecha": "date",
+      "Dias": "number",
+      "Producto": "text",
+      "Promocion": "text",
+      "Imagen": "text",
+      "Descuento": "number",
+      "Porcentaje": "text",
+      "Cantidad": "number",
+      "Ventas": "text",
+      "Costo": "number",
+      "Resultado": "text",
+      "Comentarios": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mercadeo_estrategia1",
+    "appName": "Mercadeo y Clientes",
+    "spreadsheetId": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+    "sheetName": "Estrategia1",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "Estrategia1ID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "Estrategia1ID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "Estrategia1ID": "estrategia1id",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "NombreEstablecimiento": "nombreestablecimiento",
+      "NombreCliente": "nombrecliente",
+      "Celular": "celular",
+      "Direccion": "direccion",
+      "CanalDeVenta": "canaldeventa",
+      "ActualProveedor": "actualproveedor",
+      "Comentario": "comentario",
+      "Codigo": "codigo",
+      "Contactado": "contactado",
+      "CompraFecha": "comprafecha",
+      "CompraValor": "compravalor",
+      "Cliente": "cliente",
+      "Locacion": "locacion"
+    },
+    "typeMap": {
+      "Estrategia1ID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "NombreEstablecimiento": "text",
+      "NombreCliente": "text",
+      "Celular": "text",
+      "Direccion": "text",
+      "CanalDeVenta": "text",
+      "ActualProveedor": "text",
+      "Comentario": "text",
+      "Codigo": "text",
+      "Contactado": "boolean",
+      "CompraFecha": "date",
+      "CompraValor": "number",
+      "Cliente": "text",
+      "Locacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mercadeo_preciodetalle",
+    "appName": "Mercadeo y Clientes",
+    "spreadsheetId": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+    "sheetName": "PrecioDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PrecioDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PrecioDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PrecioDetalleID": "preciodetalleid",
+      "Estrategia1ID": "estrategia1id",
+      "Tipo": "tipo",
+      "CantidadSemanal": "cantidadsemanal",
+      "TamañoDePollo": "tamanodepollo",
+      "ActualPrecioLb": "actualpreciolb",
+      "PrecioLlamativoLb": "preciollamativolb",
+      "PrecioOfertadoLb": "precioofertadolb"
+    },
+    "typeMap": {
+      "PrecioDetalleID": "text",
+      "Estrategia1ID": "text",
+      "Tipo": "text",
+      "CantidadSemanal": "number",
+      "TamañoDePollo": "text",
+      "ActualPrecioLb": "number",
+      "PrecioLlamativoLb": "number",
+      "PrecioOfertadoLb": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mercadeo_tablacalendariosemana",
+    "appName": "Mercadeo y Clientes",
+    "spreadsheetId": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+    "sheetName": "TablaCalendarioSemana",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TablaCalendarioSemanaID",
+    "updatedAtColumn": "FechaInicio",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TablaCalendarioSemanaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TablaCalendarioSemanaID": "tablacalendariosemanaid",
+      "FechaInicio": "fechainicio",
+      "FechaFin": "fechafin",
+      "ItemID": "itemid"
+    },
+    "typeMap": {
+      "TablaCalendarioSemanaID": "text",
+      "FechaInicio": "date",
+      "FechaFin": "date",
+      "ItemID": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mercadeo_tiendas",
+    "appName": "Mercadeo y Clientes",
+    "spreadsheetId": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+    "sheetName": "Tiendas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TiendaID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TiendaID"
+    ],
+    "attachmentColumns": [
+      "RUT",
+      "RUTPDF",
+      "TiendaQR",
+      "FotoTienda"
+    ],
+    "columnMap": {
+      "TiendaID": "tiendaid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "NombreEstablecimiento": "nombreestablecimiento",
+      "NombreCliente": "nombrecliente",
+      "Celular": "celular",
+      "RUT": "rut",
+      "RUTPDF": "rutpdf",
+      "Direccion": "direccion",
+      "Barrio": "barrio",
+      "Localizacion": "localizacion",
+      "TiendaQR": "tiendaqr",
+      "FotoTienda": "fototienda",
+      "TipoTienda": "tipotienda",
+      "CantidadSemanal": "cantidadsemanal",
+      "CanalDeVenta": "canaldeventa",
+      "AutorizaMensaje": "autorizamensaje",
+      "CompraEnMacadasa": "compraenmacadasa",
+      "ActualProveedor": "actualproveedor",
+      "Comentario": "comentario",
+      "Pollo": "pollo",
+      "NosAgregaron": "nosagregaron",
+      "QuienAgrego": "quienagrego"
+    },
+    "typeMap": {
+      "TiendaID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "NombreEstablecimiento": "text",
+      "NombreCliente": "text",
+      "Celular": "text",
+      "RUT": "text",
+      "RUTPDF": "text",
+      "Direccion": "text",
+      "Barrio": "text",
+      "Localizacion": "text",
+      "TiendaQR": "text",
+      "FotoTienda": "text",
+      "TipoTienda": "text",
+      "CantidadSemanal": "number",
+      "CanalDeVenta": "text",
+      "AutorizaMensaje": "text",
+      "CompraEnMacadasa": "number",
+      "ActualProveedor": "text",
+      "Comentario": "text",
+      "Pollo": "text",
+      "NosAgregaron": "boolean",
+      "QuienAgrego": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "mercadeo_tiendascompras",
+    "appName": "Mercadeo y Clientes",
+    "spreadsheetId": "1_uT7WCLrNZDqkGzn5xS8xG_SIFUZCGDHSr4xOjTsSkc",
+    "sheetName": "TiendasCompras",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TiendaCompraID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TiendaCompraID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TiendaCompraID": "tiendacompraid",
+      "TiendaID": "tiendaid",
+      "MarcaTiempo": "marcatiempo",
+      "Fecha": "fecha",
+      "Tipo": "tipo",
+      "Cantidad": "cantidad",
+      "Estado": "estado"
+    },
+    "typeMap": {
+      "TiendaCompraID": "text",
+      "TiendaID": "text",
+      "MarcaTiempo": "datetime",
+      "Fecha": "date",
+      "Tipo": "text",
+      "Cantidad": "number",
+      "Estado": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_administracion",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Administracion",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "AdministracionID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "AdministracionID"
+    ],
+    "attachmentColumns": [
+      "Recibos"
+    ],
+    "columnMap": {
+      "AdministracionID": "administracionid",
+      "Fecha": "fecha",
+      "Mes": "mes",
+      "Administrador": "administrador",
+      "Internet": "internet",
+      "Gas": "gas",
+      "Agua": "agua",
+      "Celulares": "celulares",
+      "Recibos": "recibos",
+      "ComidaPerros": "comidaperros",
+      "Certificacion": "certificacion",
+      "Papeleria": "papeleria",
+      "Otros": "otros",
+      "Total": "total",
+      "KgPresupuestos": "kgpresupuestos",
+      "ValorPorKg": "valorporkg"
+    },
+    "typeMap": {
+      "AdministracionID": "text",
+      "Fecha": "date",
+      "Mes": "text",
+      "Administrador": "text",
+      "Internet": "text",
+      "Gas": "text",
+      "Agua": "text",
+      "Celulares": "text",
+      "Recibos": "text",
+      "ComidaPerros": "text",
+      "Certificacion": "text",
+      "Papeleria": "text",
+      "Otros": "text",
+      "Total": "number",
+      "KgPresupuestos": "number",
+      "ValorPorKg": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_ajusteadministradormp",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "AjusteAdministradorMP",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "AjusteAdministradorMPID",
+    "updatedAtColumn": "AuditoriaMPFecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "AjusteAdministradorMPID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "AjusteAdministradorMPID": "ajusteadministradormpid",
+      "AuditoriasID": "auditoriasid",
+      "AuditoriaMPFecha": "auditoriampfecha",
+      "MateriaPrimaID": "materiaprimaid",
+      "EntradaID": "entradaid",
+      "Accion": "accion",
+      "Cantidad": "cantidad",
+      "PrecioTotalKgConIva": "preciototalkgconiva",
+      "Total": "total",
+      "Observacion": "observacion"
+    },
+    "typeMap": {
+      "AjusteAdministradorMPID": "text",
+      "AuditoriasID": "text",
+      "AuditoriaMPFecha": "date",
+      "MateriaPrimaID": "text",
+      "EntradaID": "text",
+      "Accion": "text",
+      "Cantidad": "number",
+      "PrecioTotalKgConIva": "number",
+      "Total": "number",
+      "Observacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_ajusteadministradorpt",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "AjusteAdministradorPT",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "AjusteAdministradorPTID",
+    "updatedAtColumn": "AuditoriaPTFecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "AjusteAdministradorPTID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "AjusteAdministradorPTID": "ajusteadministradorptid",
+      "AuditoriasID": "auditoriasid",
+      "AuditoriaPTFecha": "auditoriaptfecha",
+      "ProductoID": "productoid",
+      "ProduccionID": "produccionid",
+      "Accion": "accion",
+      "Cantidad": "cantidad",
+      "Observacion": "observacion"
+    },
+    "typeMap": {
+      "AjusteAdministradorPTID": "text",
+      "AuditoriasID": "text",
+      "AuditoriaPTFecha": "date",
+      "ProductoID": "text",
+      "ProduccionID": "text",
+      "Accion": "text",
+      "Cantidad": "number",
+      "Observacion": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_auditorias",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Auditorias",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "AuditoriasID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "AuditoriasID"
+    ],
+    "attachmentColumns": [
+      "AuditoriaImagen"
+    ],
+    "columnMap": {
+      "AuditoriasID": "auditoriasid",
+      "Nombre": "nombre",
+      "AuditoriaVista": "auditoriavista",
+      "AuditoriaImagen": "auditoriaimagen"
+    },
+    "typeMap": {
+      "AuditoriasID": "text",
+      "Nombre": "text",
+      "AuditoriaVista": "text",
+      "AuditoriaImagen": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_depreciaciones",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Depreciaciones",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "DepreciacionID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "DepreciacionID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "DepreciacionID": "depreciacionid",
+      "Fecha": "fecha",
+      "Descripcion": "descripcion",
+      "Categoria": "categoria",
+      "Costo": "costo",
+      "VidaAños": "vidaanos",
+      "PValordeSalvamento": "pvalordesalvamento",
+      "ValordeSalvamento": "valordesalvamento",
+      "Depreciacion": "depreciacion",
+      "FinDepreciacion": "findepreciacion"
+    },
+    "typeMap": {
+      "DepreciacionID": "text",
+      "Fecha": "date",
+      "Descripcion": "text",
+      "Categoria": "text",
+      "Costo": "number",
+      "VidaAños": "number",
+      "PValordeSalvamento": "number",
+      "ValordeSalvamento": "number",
+      "Depreciacion": "number",
+      "FinDepreciacion": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_entrada",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Entrada",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "EntradaID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "EntradaID"
+    ],
+    "attachmentColumns": [
+      "CertificadoCalidadProveedor",
+      "Firma"
+    ],
+    "columnMap": {
+      "EntradaID": "entradaid",
+      "MarcaTiempo": "marcatiempo",
+      "EntradaFecha": "entradafecha",
+      "Hora": "hora",
+      "ProveedorID": "proveedorid",
+      "ProveedorDetalleID": "proveedordetalleid",
+      "MateriaPrimaID": "materiaprimaid",
+      "Lote": "lote",
+      "IngresoKg": "ingresokg",
+      "TransportistaID": "transportistaid",
+      "TransportistaDetalleID": "transportistadetalleid",
+      "TrayectoID": "trayectoid",
+      "Placa": "placa",
+      "AceptableCondicion": "aceptablecondicion",
+      "TomaEnvioMuestra": "tomaenviomuestra",
+      "CertificadoCalidadProveedor": "certificadocalidadproveedor",
+      "Observacion": "observacion",
+      "Responsable": "responsable",
+      "Firma": "firma",
+      "FacturasDetalleIDMP": "facturasdetalleidmp",
+      "NumeroDeFactura": "numerodefactura",
+      "PrecioKgSinIva": "preciokgsiniva",
+      "PrecioKgConIva": "preciokgconiva",
+      "FacturasDetalleIDTR": "facturasdetalleidtr",
+      "TransporteKg": "transportekg",
+      "DescargueKg": "descarguekg",
+      "PrecioTotalKgSinIva": "preciototalkgsiniva",
+      "PrecioTotalKgConIva": "preciototalkgconiva",
+      "KgAcumESub0": "kgacumesub0",
+      "KgAjusteAdministrador": "kgajusteadministrador",
+      "KgAcumESubf": "kgacumesubf",
+      "KgRestantes": "kgrestantes"
+    },
+    "typeMap": {
+      "EntradaID": "text",
+      "MarcaTiempo": "datetime",
+      "EntradaFecha": "date",
+      "Hora": "text",
+      "ProveedorID": "text",
+      "ProveedorDetalleID": "text",
+      "MateriaPrimaID": "text",
+      "Lote": "text",
+      "IngresoKg": "number",
+      "TransportistaID": "text",
+      "TransportistaDetalleID": "text",
+      "TrayectoID": "text",
+      "Placa": "text",
+      "AceptableCondicion": "boolean",
+      "TomaEnvioMuestra": "text",
+      "CertificadoCalidadProveedor": "text",
+      "Observacion": "text",
+      "Responsable": "text",
+      "Firma": "text",
+      "FacturasDetalleIDMP": "text",
+      "NumeroDeFactura": "text",
+      "PrecioKgSinIva": "number",
+      "PrecioKgConIva": "number",
+      "FacturasDetalleIDTR": "text",
+      "TransporteKg": "number",
+      "DescargueKg": "number",
+      "PrecioTotalKgSinIva": "number",
+      "PrecioTotalKgConIva": "number",
+      "KgAcumESub0": "number",
+      "KgAjusteAdministrador": "number",
+      "KgAcumESubf": "number",
+      "KgRestantes": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_formulas",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Formulas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "FormulaID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "FormulaID"
+    ],
+    "attachmentColumns": [
+      "FormulasPDF"
+    ],
+    "columnMap": {
+      "FormulaID": "formulaid",
+      "ProductoID": "productoid",
+      "Medicada": "medicada",
+      "Fecha": "fecha",
+      "FormulaNombre": "formulanombre",
+      "FormulaDescripcion": "formuladescripcion",
+      "FormulasPDF": "formulaspdf",
+      "Estado": "estado"
+    },
+    "typeMap": {
+      "FormulaID": "text",
+      "ProductoID": "text",
+      "Medicada": "text",
+      "Fecha": "date",
+      "FormulaNombre": "text",
+      "FormulaDescripcion": "text",
+      "FormulasPDF": "text",
+      "Estado": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_formulasdetalle",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "FormulasDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "FormulaDetalleID",
+    "headerRow": 1,
+    "requiredColumns": [
+      "FormulaDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "FormulaDetalleID": "formuladetalleid",
+      "FormulaID": "formulaid",
+      "ProductoID": "productoid",
+      "MateriaPrimaID": "materiaprimaid",
+      "CantidadKG": "cantidadkg"
+    },
+    "typeMap": {
+      "FormulaDetalleID": "text",
+      "FormulaID": "text",
+      "ProductoID": "text",
+      "MateriaPrimaID": "text",
+      "CantidadKG": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_maquila",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Maquila",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "MaquilaID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "MaquilaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "MaquilaID": "maquilaid",
+      "Fecha": "fecha",
+      "Mes": "mes",
+      "Salarios": "salarios",
+      "Tulas": "tulas",
+      "Hilo": "hilo",
+      "Energia": "energia",
+      "OrdenYAseo": "ordenyaseo",
+      "Mantenimiento": "mantenimiento",
+      "Arriendo": "arriendo",
+      "KgPresupuestos": "kgpresupuestos"
+    },
+    "typeMap": {
+      "MaquilaID": "text",
+      "Fecha": "date",
+      "Mes": "text",
+      "Salarios": "text",
+      "Tulas": "text",
+      "Hilo": "text",
+      "Energia": "text",
+      "OrdenYAseo": "text",
+      "Mantenimiento": "text",
+      "Arriendo": "text",
+      "KgPresupuestos": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_maquila_x",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Maquila x",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "MaquilaID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "MaquilaID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "MaquilaID": "maquilaid",
+      "Fecha": "fecha",
+      "Mes": "mes",
+      "Salarios": "salarios",
+      "Tulas": "tulas",
+      "Hilo": "hilo",
+      "Energia": "energia",
+      "OrdenYAseo": "ordenyaseo",
+      "TransporteAGranjas": "transporteagranjas",
+      "Mantenimiento": "mantenimiento",
+      "Depreciacion": "depreciacion",
+      "Arriendo": "arriendo",
+      "Imprevistos": "imprevistos",
+      "Total": "total",
+      "KgPresupuestos": "kgpresupuestos"
+    },
+    "typeMap": {
+      "MaquilaID": "text",
+      "Fecha": "date",
+      "Mes": "text",
+      "Salarios": "text",
+      "Tulas": "text",
+      "Hilo": "text",
+      "Energia": "text",
+      "OrdenYAseo": "text",
+      "TransporteAGranjas": "number",
+      "Mantenimiento": "text",
+      "Depreciacion": "number",
+      "Arriendo": "text",
+      "Imprevistos": "text",
+      "Total": "number",
+      "KgPresupuestos": "number"
+    },
+    "isActive": false
+  },
+  {
+    "sourceName": "planta_muestras",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Muestras",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "MuestraID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "MuestraID"
+    ],
+    "attachmentColumns": [
+      "FotoGuia",
+      "FotoMuestra",
+      "RestultadoPDF"
+    ],
+    "columnMap": {
+      "MuestraID": "muestraid",
+      "MarcaTiempo": "marcatiempo",
+      "MuestraFecha": "muestrafecha",
+      "TipoMuestra": "tipomuestra",
+      "MateriaPrimaID": "materiaprimaid",
+      "EntradaID": "entradaid",
+      "ProductoID": "productoid",
+      "ProduccionID": "produccionid",
+      "Laboratorio": "laboratorio",
+      "Analisis": "analisis",
+      "FotoGuia": "fotoguia",
+      "FotoMuestra": "fotomuestra",
+      "RestultadoPDF": "restultadopdf",
+      "Resultado": "resultado"
+    },
+    "typeMap": {
+      "MuestraID": "text",
+      "MarcaTiempo": "datetime",
+      "MuestraFecha": "date",
+      "TipoMuestra": "text",
+      "MateriaPrimaID": "text",
+      "EntradaID": "text",
+      "ProductoID": "text",
+      "ProduccionID": "text",
+      "Laboratorio": "text",
+      "Analisis": "text",
+      "FotoGuia": "text",
+      "FotoMuestra": "text",
+      "RestultadoPDF": "text",
+      "Resultado": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_precioventacomercial",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "PrecioVentaComercial",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "PrecioVentaComercialID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "PrecioVentaComercialID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "PrecioVentaComercialID": "precioventacomercialid",
+      "Fecha": "fecha",
+      "TransporteBto": "transportebto",
+      "ItalcolPollaLevanteSinIva": "italcolpollalevantesiniva",
+      "ItalcolPollaLevanteConIva": "italcolpollalevanteconiva",
+      "ItalcolFase1SinIva": "italcolfase1siniva",
+      "ItalcolFase1ConIva": "italcolfase1coniva",
+      "ItalcolFase2SinIva": "italcolfase2siniva",
+      "ItalcolFase2ConIva": "italcolfase2coniva",
+      "ItalcolPolloEngordeSinIva": "italcolpolloengordesiniva",
+      "ItalcolPolloEngordeConIva": "italcolpolloengordeconiva",
+      "ContegralPollaLevanteSinIva": "contegralpollalevantesiniva",
+      "ContegralPollaLevanteConIva": "contegralpollalevanteconiva",
+      "ContegralFase1SinIva": "contegralfase1siniva",
+      "ContegralFase1ConIva": "contegralfase1coniva",
+      "ContegralFase2SinIva": "contegralfase2siniva",
+      "ContegralFase2ConIva": "contegralfase2coniva",
+      "ContegralPolloEngordeSinIva": "contegralpolloengordesiniva",
+      "ContegralPolloEngordeConIva": "contegralpolloengordeconiva",
+      "PollaLevanteSinIva": "pollalevantesiniva",
+      "PollaLevanteConIva": "pollalevanteconiva",
+      "Fase1SinIva": "fase1siniva",
+      "Fase1ConIva": "fase1coniva",
+      "Fase2SinIva": "fase2siniva",
+      "Fase2ConIva": "fase2coniva",
+      "PolloEngordeSinIva": "polloengordesiniva",
+      "PolloEngordeConIva": "polloengordeconiva"
+    },
+    "typeMap": {
+      "PrecioVentaComercialID": "text",
+      "Fecha": "date",
+      "TransporteBto": "number",
+      "ItalcolPollaLevanteSinIva": "number",
+      "ItalcolPollaLevanteConIva": "number",
+      "ItalcolFase1SinIva": "number",
+      "ItalcolFase1ConIva": "number",
+      "ItalcolFase2SinIva": "number",
+      "ItalcolFase2ConIva": "number",
+      "ItalcolPolloEngordeSinIva": "number",
+      "ItalcolPolloEngordeConIva": "number",
+      "ContegralPollaLevanteSinIva": "number",
+      "ContegralPollaLevanteConIva": "number",
+      "ContegralFase1SinIva": "number",
+      "ContegralFase1ConIva": "number",
+      "ContegralFase2SinIva": "number",
+      "ContegralFase2ConIva": "number",
+      "ContegralPolloEngordeSinIva": "number",
+      "ContegralPolloEngordeConIva": "number",
+      "PollaLevanteSinIva": "number",
+      "PollaLevanteConIva": "number",
+      "Fase1SinIva": "number",
+      "Fase1ConIva": "number",
+      "Fase2SinIva": "number",
+      "Fase2ConIva": "number",
+      "PolloEngordeSinIva": "number",
+      "PolloEngordeConIva": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_produccion",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Produccion",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProduccionID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProduccionID"
+    ],
+    "attachmentColumns": [
+      "Firma"
+    ],
+    "columnMap": {
+      "ProduccionID": "produccionid",
+      "MarcaTiempo": "marcatiempo",
+      "ProduccionFecha": "produccionfecha",
+      "Plus": "plus",
+      "ProductoID": "productoid",
+      "FormulaID": "formulaid",
+      "Lote": "lote",
+      "Baches": "baches",
+      "BtoPractico": "btopractico",
+      "#Bto Teorico": "bto_teorico",
+      "Responsable": "responsable",
+      "Firma": "firma",
+      "Contador": "contador",
+      "BtoAjusteAdministrador": "btoajusteadministrador",
+      "BtoRestantes": "btorestantes"
+    },
+    "typeMap": {
+      "ProduccionID": "text",
+      "MarcaTiempo": "datetime",
+      "ProduccionFecha": "date",
+      "Plus": "text",
+      "ProductoID": "text",
+      "FormulaID": "text",
+      "Lote": "text",
+      "Baches": "number",
+      "BtoPractico": "number",
+      "#Bto Teorico": "number",
+      "Responsable": "text",
+      "Firma": "text",
+      "Contador": "number",
+      "BtoAjusteAdministrador": "number",
+      "BtoRestantes": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_produccion_x",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Produccion x",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProduccionID",
+    "updatedAtColumn": "ProduccionFecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProduccionID"
+    ],
+    "attachmentColumns": [
+      "Firma"
+    ],
+    "columnMap": {
+      "ProduccionID": "produccionid",
+      "ProduccionFecha": "produccionfecha",
+      "Lote": "lote",
+      "ProductoID": "productoid",
+      "Medicada": "medicada",
+      "Formula": "formula",
+      "Baches": "baches",
+      "BtoPractico": "btopractico",
+      "#Bto Teorico": "bto_teorico",
+      "Responsable": "responsable",
+      "Firma": "firma",
+      "Salida": "salida",
+      "Saldo": "saldo",
+      "Kg MP": "kg_mp",
+      "Total Precio MP Sin Iva": "total_precio_mp_sin_iva",
+      "IvaMP": "ivamp",
+      "Maquila": "maquila",
+      "Administracion": "administracion",
+      "CP por Kg": "cp_por_kg",
+      "MP + CP Con Iva": "mp_cp_con_iva",
+      "Costo Total Bto Con Iva": "costo_total_bto_con_iva",
+      "Italcol Con Iva": "italcol_con_iva",
+      "Contegral Con Iva": "contegral_con_iva",
+      "PV\n Con Iva": "pv_con_iva",
+      "Utilidad\n Con Iva": "utilidad_con_iva",
+      "Utilidad Bto\n Con Iva": "utilidad_bto_con_iva",
+      "IVA a Reclamar": "iva_a_reclamar",
+      "Iva a Reclamar Bto": "iva_a_reclamar_bto",
+      "Ingresos Con Iva": "ingresos_con_iva"
+    },
+    "typeMap": {
+      "ProduccionID": "text",
+      "ProduccionFecha": "date",
+      "Lote": "text",
+      "ProductoID": "text",
+      "Medicada": "text",
+      "Formula": "text",
+      "Baches": "number",
+      "BtoPractico": "number",
+      "#Bto Teorico": "number",
+      "Responsable": "text",
+      "Firma": "text",
+      "Salida": "text",
+      "Saldo": "number",
+      "Kg MP": "number",
+      "Total Precio MP Sin Iva": "number",
+      "IvaMP": "number",
+      "Maquila": "text",
+      "Administracion": "text",
+      "CP por Kg": "number",
+      "MP + CP Con Iva": "number",
+      "Costo Total Bto Con Iva": "number",
+      "Italcol Con Iva": "number",
+      "Contegral Con Iva": "number",
+      "PV\n Con Iva": "number",
+      "Utilidad\n Con Iva": "number",
+      "Utilidad Bto\n Con Iva": "number",
+      "IVA a Reclamar": "number",
+      "Iva a Reclamar Bto": "number",
+      "Ingresos Con Iva": "number"
+    },
+    "isActive": false
+  },
+  {
+    "sourceName": "planta_producciondetalle",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "ProduccionDetalle",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProduccionDetalleID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProduccionDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "ProduccionDetalleID": "producciondetalleid",
+      "MarcaTiempo": "marcatiempo",
+      "ProduccionID": "produccionid",
+      "ProduccionFecha": "produccionfecha",
+      "MateriaPrimaID": "materiaprimaid",
+      "KgMPAcumPSub0": "kgmpacumpsub0",
+      "KgSalida": "kgsalida",
+      "KgMPAcumPSubf": "kgmpacumpsubf"
+    },
+    "typeMap": {
+      "ProduccionDetalleID": "text",
+      "MarcaTiempo": "datetime",
+      "ProduccionID": "text",
+      "ProduccionFecha": "date",
+      "MateriaPrimaID": "text",
+      "KgMPAcumPSub0": "number",
+      "KgSalida": "number",
+      "KgMPAcumPSubf": "number"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_producciondetalle_x",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "ProduccionDetalle x",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "ProduccionDetalleID",
+    "updatedAtColumn": "ProduccionFecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "ProduccionDetalleID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "ProduccionDetalleID": "producciondetalleid",
+      "ProduccionID": "produccionid",
+      "ProduccionFecha": "produccionfecha",
+      "Baches": "baches",
+      "MateriaPrimaID": "materiaprimaid",
+      "Cantidad": "cantidad",
+      "Precio MP Sin Iva": "precio_mp_sin_iva",
+      "Iva": "iva",
+      "KgMPAcumPSub0": "kgmpacumpsub0"
+    },
+    "typeMap": {
+      "ProduccionDetalleID": "text",
+      "ProduccionID": "text",
+      "ProduccionFecha": "date",
+      "Baches": "number",
+      "MateriaPrimaID": "text",
+      "Cantidad": "number",
+      "Precio MP Sin Iva": "number",
+      "Iva": "number",
+      "KgMPAcumPSub0": "number"
+    },
+    "isActive": false
+  },
+  {
+    "sourceName": "planta_salidas",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "Salidas",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "SalidaID",
+    "updatedAtColumn": "MarcaTiempo",
+    "headerRow": 1,
+    "requiredColumns": [
+      "SalidaID"
+    ],
+    "attachmentColumns": [
+      "FirmaEntrega",
+      "FirmaRecibe"
+    ],
+    "columnMap": {
+      "SalidaID": "salidaid",
+      "MarcaTiempo": "marcatiempo",
+      "SalidaFecha": "salidafecha",
+      "ProductoID": "productoid",
+      "ProduccionID": "produccionid",
+      "Plus": "plus",
+      "Lote": "lote",
+      "NumeroDeBultos": "numerodebultos",
+      "Destino": "destino",
+      "PlacaVehiculo": "placavehiculo",
+      "AceptableCondicion": "aceptablecondicion",
+      "Observaciones": "observaciones",
+      "Entrega": "entrega",
+      "FirmaEntrega": "firmaentrega",
+      "Recibe": "recibe",
+      "FirmaRecibe": "firmarecibe"
+    },
+    "typeMap": {
+      "SalidaID": "text",
+      "MarcaTiempo": "datetime",
+      "SalidaFecha": "date",
+      "ProductoID": "text",
+      "ProduccionID": "text",
+      "Plus": "text",
+      "Lote": "text",
+      "NumeroDeBultos": "number",
+      "Destino": "text",
+      "PlacaVehiculo": "text",
+      "AceptableCondicion": "boolean",
+      "Observaciones": "text",
+      "Entrega": "text",
+      "FirmaEntrega": "text",
+      "Recibe": "text",
+      "FirmaRecibe": "text"
+    },
+    "isActive": true
+  },
+  {
+    "sourceName": "planta_transportesmcds",
+    "appName": "Planta de Concentrado",
+    "spreadsheetId": "1l6SYfxqqqwGLaXWLoJpmYo4BMd1CP84A7NQt4Cy7lsU",
+    "sheetName": "TransportesMCDS",
+    "targetTable": "raw_appsheet_records",
+    "primaryKeyColumn": "TransporteMCDSID",
+    "updatedAtColumn": "Fecha",
+    "headerRow": 1,
+    "requiredColumns": [
+      "TransporteMCDSID"
+    ],
+    "attachmentColumns": [],
+    "columnMap": {
+      "TransporteMCDSID": "transportemcdsid",
+      "Fecha": "fecha",
+      "Mes": "mes",
+      "XID150_C1": "xid150_c1",
+      "KGS350_C1": "kgs350_c1",
+      "Tractor_C1": "tractor_c1",
+      "AZN311_C1": "azn311_c1",
+      "XID150_C2": "xid150_c2",
+      "KGS350_C2": "kgs350_c2",
+      "Tractor_C2": "tractor_c2",
+      "AZN311_C2": "azn311_c2",
+      "XID150_A1": "xid150_a1",
+      "KGS350_A1": "kgs350_a1",
+      "Tractor_A1": "tractor_a1",
+      "AZN311_A1": "azn311_a1",
+      "XID150_A2": "xid150_a2",
+      "KGS350_A2": "kgs350_a2",
+      "Tractor_A2": "tractor_a2",
+      "AZN311_A2": "azn311_a2"
+    },
+    "typeMap": {
+      "TransporteMCDSID": "text",
+      "Fecha": "date",
+      "Mes": "text",
+      "XID150_C1": "text",
+      "KGS350_C1": "number",
+      "Tractor_C1": "text",
+      "AZN311_C1": "text",
+      "XID150_C2": "text",
+      "KGS350_C2": "number",
+      "Tractor_C2": "text",
+      "AZN311_C2": "text",
+      "XID150_A1": "text",
+      "KGS350_A1": "number",
+      "Tractor_A1": "text",
+      "AZN311_A1": "text",
+      "XID150_A2": "text",
+      "KGS350_A2": "number",
+      "Tractor_A2": "text",
+      "AZN311_A2": "text"
+    },
+    "isActive": true
+  }
+]
