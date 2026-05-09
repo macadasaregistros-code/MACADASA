@@ -27,6 +27,7 @@ Crear `.env` desde `.env.example`. No subir secretos al repositorio.
 
 ```text
 SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_URL=
 SUPABASE_SERVICE_ROLE_KEY=
 GOOGLE_SERVICE_ACCOUNT_EMAIL=
 GOOGLE_PRIVATE_KEY=
@@ -66,6 +67,7 @@ El proyecto incluye funciones serverless en `api/` y `vercel.json` para servir:
 En Vercel se deben configurar como Environment Variables:
 
 - `SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_URL` como respaldo si Vercel ya la tiene configurada
 - `SUPABASE_SERVICE_ROLE_KEY`
 
 Las credenciales de Google solo son necesarias en Vercel si se van a correr sincronizaciones desde funciones/cron. Para despliegue inicial del panel gerencial, basta con Supabase.

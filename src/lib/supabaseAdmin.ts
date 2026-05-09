@@ -22,7 +22,7 @@ export function getSupabaseAdminClient(): SupabaseClient {
     return cachedClient;
   }
 
-  const supabaseUrl = getRequiredEnv("SUPABASE_URL");
+  const supabaseUrl = process.env.SUPABASE_URL?.trim() || getRequiredEnv("NEXT_PUBLIC_SUPABASE_URL");
   const serviceRoleKey = getRequiredEnv("SUPABASE_SERVICE_ROLE_KEY");
 
   cachedClient = createClient(supabaseUrl, serviceRoleKey, {
