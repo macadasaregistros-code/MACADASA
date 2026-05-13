@@ -21,6 +21,14 @@ Calidad de datos:
 http://127.0.0.1:3100/calidad
 ```
 
+Validacion raw de datos originales:
+
+```text
+http://127.0.0.1:3100/validacion
+```
+
+Usuario: `gerencia`. La contrasena sale de `MACADASA_VALIDATION_PASSWORD`.
+
 ## Variables
 
 Crear `.env` desde `.env.example`. No subir secretos al repositorio.
@@ -33,6 +41,7 @@ GOOGLE_SERVICE_ACCOUNT_EMAIL=
 GOOGLE_PRIVATE_KEY=
 SUPABASE_DB_URL=
 GOOGLE_DRIVE_FOLDER_ID=
+MACADASA_VALIDATION_PASSWORD=
 ```
 
 `SUPABASE_SERVICE_ROLE_KEY`, `GOOGLE_PRIVATE_KEY` y `SUPABASE_DB_URL` son solo para servidor, scripts y despliegue seguro.
@@ -59,9 +68,11 @@ El proyecto incluye funciones serverless en `api/` y `vercel.json` para servir:
 
 - `/`
 - `/calidad`
+- `/validacion`
 - `/health`
 - `/api/dashboard-data`
 - `/api/quality-data`
+- `/api/validation/*`
 - `/api/export/*.csv`
 
 En Vercel se deben configurar como Environment Variables:
@@ -69,5 +80,6 @@ En Vercel se deben configurar como Environment Variables:
 - `SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_URL` como respaldo si Vercel ya la tiene configurada
 - `SUPABASE_SERVICE_ROLE_KEY`
+- `MACADASA_VALIDATION_PASSWORD`
 
 Las credenciales de Google solo son necesarias en Vercel si se van a correr sincronizaciones desde funciones/cron. Para despliegue inicial del panel gerencial, basta con Supabase.

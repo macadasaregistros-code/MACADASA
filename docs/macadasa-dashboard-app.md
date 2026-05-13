@@ -2,6 +2,8 @@
 
 Esta es la primera version local del panel gerencial MACADASA. Lee solamente vistas KPI y tablas normalizadas en Supabase; no lee Google Sheets ni `raw_data` directamente.
 
+La excepcion controlada es `/validacion`, una seccion protegida para revisar los registros raw tal como llegaron desde AppSheet/Google Sheets.
+
 ## Ejecutar
 
 ```bash
@@ -25,6 +27,14 @@ Pagina de calidad de datos:
 ```text
 http://127.0.0.1:3100/calidad
 ```
+
+Pagina de validacion raw:
+
+```text
+http://127.0.0.1:3100/validacion
+```
+
+Usuario: `gerencia`. Contrasena: variable `MACADASA_VALIDATION_PASSWORD`.
 
 JSON de calidad de datos:
 
@@ -51,6 +61,14 @@ http://127.0.0.1:3100/api/export/finance_documents.csv
 http://127.0.0.1:3100/api/export/store_daily.csv
 ```
 
+La validacion raw tambien permite exportar por fuente desde:
+
+```text
+http://127.0.0.1:3100/api/validation/export.csv?source=FUENTE
+```
+
+El limite es 25,000 filas por exportacion. Si una fuente supera ese limite, usar el filtro `q`.
+
 ## Vistas usadas
 
 - `v_kpi_postura_lote_resumen`
@@ -67,12 +85,16 @@ http://127.0.0.1:3100/api/export/store_daily.csv
 - `v_quality_overdue_financial_documents`
 - `v_quality_vaccinations_missing_item`
 - `v_quality_raw_attachments_not_promoted`
+- `v_raw_validation_sources`
+- `v_raw_validation_records`
 
 ## Seguridad
 
 El servidor usa `SUPABASE_SERVICE_ROLE_KEY` solo del lado servidor. Esa clave no se envia al navegador.
 
-Sin login esta bien para uso local o red privada. Si se despliega en Vercel, proteger antes con Vercel Deployment Protection, password server-side o Supabase Auth.
+`/validacion`, `/validacion/fuente` y `/api/validation/*` usan HTTP Basic Auth. El usuario fijo es `gerencia`; la contrasena se configura con `MACADASA_VALIDATION_PASSWORD`. Si esa variable falta, esas rutas responden `503` y no entregan datos raw.
+
+El panel principal puede seguir sin login mientras sea uso gerencial controlado, pero la validacion raw queda protegida porque muestra los datos originales.
 
 ## PWA
 

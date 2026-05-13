@@ -233,7 +233,8 @@ export function renderDashboard(data: DashboardData): string {
     ["Finanzas", "finanzas"],
     ["Tienda", "tienda"],
     ["Alertas", "alertas"],
-    ["Calidad", "/calidad"]
+    ["Calidad", "/calidad"],
+    ["Validacion", "/validacion"]
   ];
 
   return `<!doctype html>
@@ -276,6 +277,7 @@ export function renderDashboard(data: DashboardData): string {
           </div>
           <div class="actions">
             <a class="ghost-button" href="/calidad">Calidad</a>
+            <a class="ghost-button" href="/validacion">Validacion</a>
             <a class="ghost-button" href="/api/dashboard-data">JSON</a>
           </div>
         </header>

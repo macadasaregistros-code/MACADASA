@@ -13,6 +13,18 @@
       "destination": "/api/calidad"
     },
     {
+      "source": "/validacion",
+      "destination": "/api/validacion"
+    },
+    {
+      "source": "/validacion/fuente",
+      "destination": "/api/validacion/fuente"
+    },
+    {
+      "source": "/api/validation/export.csv",
+      "destination": "/api/validation/export"
+    },
+    {
       "source": "/health",
       "destination": "/api/health"
     }

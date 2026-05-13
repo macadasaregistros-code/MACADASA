@@ -18,6 +18,13 @@ export function rowsToCsv(rows: Array<Record<string, unknown>>): string {
   }
 
   const columns = [...new Set(rows.flatMap((row) => Object.keys(row)))];
+  return rowsToCsvWithColumns(rows, columns);
+}
+
+export function rowsToCsvWithColumns(
+  rows: Array<Record<string, unknown>>,
+  columns: string[]
+): string {
   const lines = [
     columns.map(csvEscape).join(","),
     ...rows.map((row) => columns.map((column) => csvEscape(row[column])).join(","))

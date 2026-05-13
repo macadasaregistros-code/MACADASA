@@ -2,11 +2,18 @@ import { createServer, type IncomingMessage, type ServerResponse } from "node:ht
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { config } from "dotenv";
-import { rowsToCsv } from "../src/appServer/csv";
+import { rowsToCsv, rowsToCsvWithColumns } from "../src/appServer/csv";
 import { getDashboardData } from "../src/appServer/dashboardData";
 import { getExportRows, getQualityData } from "../src/appServer/qualityData";
+import {
+  getRawValidationExport,
+  getRawValidationRecords,
+  getRawValidationSources
+} from "../src/appServer/rawValidationData";
 import { renderDashboard, renderError } from "../src/appServer/renderDashboard";
 import { renderQuality } from "../src/appServer/renderQuality";
+import { renderRawValidationRecords, renderRawValidationSources } from "../src/appServer/renderValidation";
+import { checkValidationAuth } from "../src/appServer/validationAuth";
 
 config();
 
@@ -23,10 +30,17 @@ const mimeTypes: Record<string, string> = {
   ".webmanifest": "application/manifest+json; charset=utf-8"
 };
 
-function send(response: ServerResponse, statusCode: number, body: string | Buffer, contentType: string): void {
+function send(
+  response: ServerResponse,
+  statusCode: number,
+  body: string | Buffer,
+  contentType: string,
+  headers: Record<string, string> = {}
+): void {
   response.writeHead(statusCode, {
     "Cache-Control": "no-store",
-    "Content-Type": contentType
+    "Content-Type": contentType,
+    ...headers
   });
   response.end(body);
 }
@@ -48,6 +62,27 @@ function sendDownload(
 
 function notFound(response: ServerResponse): void {
   send(response, 404, "Not found", "text/plain; charset=utf-8");
+}
+
+function queryValue(searchParams: URLSearchParams, name: string): string | null {
+  return searchParams.get(name);
+}
+
+function requireValidationAuth(request: IncomingMessage, response: ServerResponse): boolean {
+  const result = checkValidationAuth(request.headers);
+
+  if (result.ok) {
+    return true;
+  }
+
+  send(
+    response,
+    result.statusCode,
+    result.body,
+    "text/plain; charset=utf-8",
+    result.headers ?? {}
+  );
+  return false;
 }
 
 function resolvePublicPath(urlPath: string): string | null {
@@ -130,6 +165,82 @@ async function handleRequest(request: IncomingMessage, response: ServerResponse)
     return;
   }
 
+  if (urlPath === "/api/validation/sources") {
+    if (!requireValidationAuth(request, response)) {
+      return;
+    }
+
+    try {
+      const sources = await getRawValidationSources();
+      send(
+        response,
+        200,
+        JSON.stringify({ generatedAt: new Date().toISOString(), sources }, null, 2),
+        "application/json; charset=utf-8"
+      );
+    } catch (error) {
+      send(
+        response,
+        500,
+        JSON.stringify({ error: error instanceof Error ? error.message : String(error) }),
+        "application/json; charset=utf-8"
+      );
+    }
+    return;
+  }
+
+  if (urlPath === "/api/validation/records") {
+    if (!requireValidationAuth(request, response)) {
+      return;
+    }
+
+    try {
+      const data = await getRawValidationRecords({
+        page: queryValue(requestUrl.searchParams, "page"),
+        pageSize: queryValue(requestUrl.searchParams, "pageSize"),
+        query: queryValue(requestUrl.searchParams, "q"),
+        sourceName: queryValue(requestUrl.searchParams, "source") ?? ""
+      });
+      send(response, 200, JSON.stringify(data, null, 2), "application/json; charset=utf-8");
+    } catch (error) {
+      send(
+        response,
+        400,
+        JSON.stringify({ error: error instanceof Error ? error.message : String(error) }),
+        "application/json; charset=utf-8"
+      );
+    }
+    return;
+  }
+
+  if (urlPath === "/api/validation/export.csv") {
+    if (!requireValidationAuth(request, response)) {
+      return;
+    }
+
+    try {
+      const exported = await getRawValidationExport({
+        query: queryValue(requestUrl.searchParams, "q"),
+        sourceName: queryValue(requestUrl.searchParams, "source") ?? ""
+      });
+      sendDownload(
+        response,
+        200,
+        rowsToCsvWithColumns(exported.rows, exported.columns),
+        "text/csv; charset=utf-8",
+        exported.fileName
+      );
+    } catch (error) {
+      send(
+        response,
+        400,
+        error instanceof Error ? error.message : String(error),
+        "text/plain; charset=utf-8"
+      );
+    }
+    return;
+  }
+
   if (urlPath.startsWith("/api/export/") && urlPath.endsWith(".csv")) {
     try {
       const exportKey = path.basename(urlPath, ".csv");
@@ -168,6 +279,39 @@ async function handleRequest(request: IncomingMessage, response: ServerResponse)
       send(response, 200, renderQuality(data), "text/html; charset=utf-8");
     } catch (error) {
       send(response, 500, renderError(error), "text/html; charset=utf-8");
+    }
+    return;
+  }
+
+  if (urlPath === "/validacion") {
+    if (!requireValidationAuth(request, response)) {
+      return;
+    }
+
+    try {
+      const sources = await getRawValidationSources();
+      send(response, 200, renderRawValidationSources(sources), "text/html; charset=utf-8");
+    } catch (error) {
+      send(response, 500, renderError(error), "text/html; charset=utf-8");
+    }
+    return;
+  }
+
+  if (urlPath === "/validacion/fuente") {
+    if (!requireValidationAuth(request, response)) {
+      return;
+    }
+
+    try {
+      const data = await getRawValidationRecords({
+        page: queryValue(requestUrl.searchParams, "page"),
+        pageSize: queryValue(requestUrl.searchParams, "pageSize"),
+        query: queryValue(requestUrl.searchParams, "q"),
+        sourceName: queryValue(requestUrl.searchParams, "source") ?? ""
+      });
+      send(response, 200, renderRawValidationRecords(data), "text/html; charset=utf-8");
+    } catch (error) {
+      send(response, 400, renderError(error), "text/html; charset=utf-8");
     }
     return;
   }
