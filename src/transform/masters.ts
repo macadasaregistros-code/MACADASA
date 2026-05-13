@@ -1100,8 +1100,66 @@ function buildUserCandidates(ctx: TransformContext): TransformCandidate[] {
 
 type ThirdPartyCandidate = TransformCandidate & {
   externalCode: string;
+  identityCode: string;
   roles: string[];
 };
+
+function normalizeTaxId(value: unknown): string | null {
+  const text = asText(value);
+  if (!text) {
+    return null;
+  }
+
+  const normalized = text.replace(/[^0-9A-Za-z]/g, "").toUpperCase();
+  return normalized.length > 0 ? normalized : null;
+}
+
+function applyThirdPartyAliases(ctx: TransformContext, candidates: ThirdPartyCandidate[]): void {
+  for (const candidate of candidates) {
+    const entityId = ctx.thirdPartyIds.get(candidate.identityCode);
+    if (entityId) {
+      ctx.thirdPartyIds.set(candidate.externalCode, entityId);
+    }
+  }
+}
+
+async function upsertThirdPartyExternalReferences(
+  ctx: TransformContext,
+  candidates: ThirdPartyCandidate[]
+): Promise<number> {
+  const references: EntityReference[] = [];
+
+  for (const candidate of candidates) {
+    const entityId = ctx.thirdPartyIds.get(candidate.externalCode);
+    if (!entityId || !candidate.sourceReference) {
+      continue;
+    }
+
+    references.push({
+      ...candidate.sourceReference,
+      entityTable: "third_parties",
+      entityId
+    });
+  }
+
+  const uniqueReferences = dedupeReferences(references);
+  const count = await upsertExternalReferences(ctx.supabase, ctx.dryRun, uniqueReferences, ctx.now);
+  ctx.entityReferences.push(...uniqueReferences);
+  return count;
+}
+
+function dedupeReferences(references: EntityReference[]): EntityReference[] {
+  const deduped = new Map<string, EntityReference>();
+
+  for (const reference of references) {
+    deduped.set(
+      `${reference.entityTable}::${reference.sourceName}::${reference.sourcePrimaryKey}`,
+      reference
+    );
+  }
+
+  return [...deduped.values()];
+}
 
 function buildThirdPartyCandidates(ctx: TransformContext): ThirdPartyCandidate[] {
   const candidates: ThirdPartyCandidate[] = [];
@@ -1121,28 +1179,32 @@ function buildThirdPartyCandidates(ctx: TransformContext): ThirdPartyCandidate[]
   }): void {
     const rawId = asText(params.rawId);
     const externalCode = masterCode(params.prefix, rawId);
+    const taxId = normalizeTaxId(params.taxId);
+    const identityCode = taxId ? masterCode("tax_id", taxId) : externalCode;
     const name = asText(params.name);
 
-    if (!rawId || !externalCode || !name) {
+    if (!rawId || !externalCode || !identityCode || !name) {
       return;
     }
 
     candidates.push({
-      key: externalCode,
+      key: identityCode,
       externalCode,
+      identityCode,
       roles: params.roles,
       payload: compactRecord({
-        external_code: externalCode,
+        external_code: identityCode,
         third_party_type: params.thirdPartyType,
         name,
         legal_name: asText(params.legalName) ?? name,
-        tax_id: asText(params.taxId),
+        tax_id: taxId,
         phone: asText(params.phone),
         email: inferEmail(params.email) ?? asText(params.email),
         address: asText(params.address),
         is_active: true,
         source_record_id: params.record.id,
         metadata: mergeMetadata(rawLineageMetadata(params.record), {
+          original_external_code: externalCode,
           original_id: rawId
         })
       }),
@@ -1585,10 +1647,14 @@ export async function transformMasters(
 
   if (shouldRun(options, "third_parties")) {
     const result = await upsertCandidates(ctx, "third_parties", "third_parties", ["external_code"], thirdPartyCandidates);
+    await refreshLookups(ctx);
+    applyThirdPartyAliases(ctx, thirdPartyCandidates);
+    result.referencesUpserted = await upsertThirdPartyExternalReferences(ctx, thirdPartyCandidates);
     stages.push(compactStageSummary(result));
     printStage(result);
-    await refreshLookups(ctx);
   }
+
+  applyThirdPartyAliases(ctx, thirdPartyCandidates);
 
   if (shouldRun(options, "third_party_roles")) {
     const result = await upsertCandidates(
@@ -1601,9 +1667,13 @@ export async function transformMasters(
     stages.push(compactStageSummary(result));
     printStage(result);
     await refreshLookups(ctx);
+    applyThirdPartyAliases(ctx, thirdPartyCandidates);
   }
 
+  applyThirdPartyAliases(ctx, thirdPartyCandidates);
+
   await runStage("stores", "stores", ["source_uid"], () => buildStoreCandidates(ctx));
+  applyThirdPartyAliases(ctx, thirdPartyCandidates);
   await runStage("third_party_details", "third_party_details", ["source_uid"], () =>
     buildThirdPartyDetailCandidates(ctx)
   );

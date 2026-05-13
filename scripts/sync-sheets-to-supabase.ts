@@ -427,18 +427,53 @@ async function getExistingRecords(
   return existing;
 }
 
-async function upsertRecords(
+async function insertRecords(
   supabase: SupabaseClient,
   records: RawAppSheetRecordPayload[]
 ): Promise<void> {
   for (const recordChunk of chunkArray(records, UPSERT_BATCH_SIZE)) {
     const { error } = await supabase
       .from("raw_appsheet_records")
-      .upsert(recordChunk, { onConflict: "source_uid" });
+      .insert(recordChunk);
 
     if (error) {
-      throw new Error(`Could not upsert raw records: ${formatSupabaseError(error)}`);
+      throw new Error(`Could not insert raw records: ${formatSupabaseError(error)}`);
     }
+  }
+}
+
+async function updateRecords(
+  supabase: SupabaseClient,
+  records: RawAppSheetRecordPayload[]
+): Promise<void> {
+  for (const recordChunk of chunkArray(records, FETCH_BATCH_SIZE)) {
+    await Promise.all(recordChunk.map(async (record) => {
+      const { first_synced_at: _firstSyncedAt, source_uid: _sourceUid, ...updatePayload } = record;
+      const { error } = await supabase
+        .from("raw_appsheet_records")
+        .update(updatePayload)
+        .eq("source_uid", record.source_uid);
+
+      if (error) {
+        throw new Error(`Could not update raw record ${record.source_uid}: ${formatSupabaseError(error)}`);
+      }
+    }));
+  }
+}
+
+async function upsertRecords(
+  supabase: SupabaseClient,
+  params: {
+    recordsToInsert: RawAppSheetRecordPayload[];
+    recordsToUpdate: RawAppSheetRecordPayload[];
+  }
+): Promise<void> {
+  if (params.recordsToInsert.length > 0) {
+    await insertRecords(supabase, params.recordsToInsert);
+  }
+
+  if (params.recordsToUpdate.length > 0) {
+    await updateRecords(supabase, params.recordsToUpdate);
   }
 }
 
@@ -607,14 +642,15 @@ async function syncSource(params: {
     assertNoDuplicateSourceUids(sourceUids, params.source.sourceName);
     stats.attachmentsFound = attachmentPayloads.length;
     const existingRecords = await getExistingRecords(params.supabase, sourceUids);
-    const recordsToUpsert: RawAppSheetRecordPayload[] = [];
+    const recordsToInsert: RawAppSheetRecordPayload[] = [];
+    const recordsToUpdate: RawAppSheetRecordPayload[] = [];
 
     for (const payload of payloads) {
       const existing = existingRecords.get(payload.source_uid);
 
       if (!existing) {
         stats.rowsInserted += 1;
-        recordsToUpsert.push({
+        recordsToInsert.push({
           ...payload,
           first_synced_at: now
         });
@@ -623,15 +659,15 @@ async function syncSource(params: {
 
       if (existing.row_hash !== payload.row_hash) {
         stats.rowsUpdated += 1;
-        recordsToUpsert.push(payload);
+        recordsToUpdate.push(payload);
         continue;
       }
 
       stats.rowsUnchanged += 1;
     }
 
-    if (!params.dryRun && recordsToUpsert.length > 0) {
-      await upsertRecords(params.supabase, recordsToUpsert);
+    if (!params.dryRun && (recordsToInsert.length > 0 || recordsToUpdate.length > 0)) {
+      await upsertRecords(params.supabase, { recordsToInsert, recordsToUpdate });
     }
 
     if (!params.dryRun && attachmentPayloads.length > 0) {
