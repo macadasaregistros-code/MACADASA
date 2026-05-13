@@ -1,0 +1,68 @@
+name: MACADASA hourly sync
+
+on:
+  schedule:
+    # GitHub cron runs in UTC. Colombia is UTC-5, so this is 6:00-22:00 America/Bogota.
+    - cron: "0 0-3,11-23 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: macadasa-hourly-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Sync Sheets to Supabase
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
+      GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Apply migrations when database URL is available
+        run: |
+          if [ -n "$SUPABASE_DB_URL" ]; then
+            npm run db:migrate
+          else
+            echo "SUPABASE_DB_URL is not configured; skipping migrations."
+          fi
+
+      - name: Sync raw Google Sheets data
+        run: npm run sync:sheets
+
+      - name: Transform masters
+        run: npm run transform:masters
+
+      - name: Transform inventory
+        run: npm run transform:inventory
+
+      - name: Transform finance
+        run: npm run transform:finance
+
+      - name: Transform feed plant
+        run: npm run transform:feed
+
+      - name: Transform layer farms
+        run: npm run transform:layer
+
+      - name: Transform egg grading
+        run: npm run transform:egg
+
+      - name: Transform store and marketing
+        run: npm run transform:store
