@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { config } from "dotenv";
 import { rowsToCsv, rowsToCsvWithColumns } from "../src/appServer/csv";
+import { getAttachmentImage } from "../src/appServer/attachmentImage";
 import { getDashboardData } from "../src/appServer/dashboardData";
 import { getExportRows, getQualityData } from "../src/appServer/qualityData";
 import {
@@ -10,7 +11,7 @@ import {
   getRawValidationRecords,
   getRawValidationSources
 } from "../src/appServer/rawValidationData";
-import { renderDashboard, renderError } from "../src/appServer/renderDashboard";
+import { renderDashboard, renderError, resolveDashboardModule } from "../src/appServer/renderDashboard";
 import { renderQuality } from "../src/appServer/renderQuality";
 import { renderRawValidationRecords, renderRawValidationSources } from "../src/appServer/renderValidation";
 import { checkValidationAuth } from "../src/appServer/validationAuth";
@@ -165,6 +166,30 @@ async function handleRequest(request: IncomingMessage, response: ServerResponse)
     return;
   }
 
+  if (urlPath === "/api/attachment-image") {
+    try {
+      const attachmentId = queryValue(requestUrl.searchParams, "id");
+
+      if (!attachmentId) {
+        send(response, 400, "Missing attachment id.", "text/plain; charset=utf-8");
+        return;
+      }
+
+      const image = await getAttachmentImage(attachmentId);
+      send(response, 200, image.body, image.contentType, {
+        "Cache-Control": "public, max-age=86400"
+      });
+    } catch (error) {
+      send(
+        response,
+        404,
+        error instanceof Error ? error.message : String(error),
+        "text/plain; charset=utf-8"
+      );
+    }
+    return;
+  }
+
   if (urlPath === "/api/validation/sources") {
     if (!requireValidationAuth(request, response)) {
       return;
@@ -266,7 +291,12 @@ async function handleRequest(request: IncomingMessage, response: ServerResponse)
   if (urlPath === "/" || urlPath === "/index.html") {
     try {
       const data = await getDashboardData();
-      send(response, 200, renderDashboard(data), "text/html; charset=utf-8");
+      send(
+        response,
+        200,
+        renderDashboard(data, resolveDashboardModule(requestUrl.searchParams.get("modulo"))),
+        "text/html; charset=utf-8"
+      );
     } catch (error) {
       send(response, 500, renderError(error), "text/html; charset=utf-8");
     }

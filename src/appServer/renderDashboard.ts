@@ -2,14 +2,53 @@ import type {
   CashMonthly,
   DashboardData,
   DataQualityAlert,
+  DailySales,
   EggGradingDaily,
+  FeedCostMonthly,
   FeedProductionDaily,
   FinanceMonthly,
   InventoryBalance,
+  LayerDailyKpi,
   LayerLotSummary,
+  PlantActivity,
   ProcessHealth,
-  StoreDaily
+  StoreDaily,
+  VaccinationTimeline
 } from "./dashboardData";
+
+export type DashboardModule = "resumen" | "planta" | "gallinas" | "macadasa" | "inventario";
+
+type UiIcon =
+  | "summary"
+  | "plant"
+  | "hens"
+  | "macadasa"
+  | "inventory"
+  | "raw"
+  | "in"
+  | "production"
+  | "out"
+  | "cost";
+
+const dashboardModules: Array<{
+  id: DashboardModule;
+  label: string;
+  detail: string;
+  icon: UiIcon;
+}> = [
+  { id: "resumen", label: "RESUMEN", detail: "Gerencia", icon: "summary" },
+  { id: "planta", label: "PLANTA", detail: "Costo y movimientos", icon: "plant" },
+  { id: "gallinas", label: "GALLINAS", detail: "Postura y clasificadora", icon: "hens" },
+  { id: "macadasa", label: "MACADASA", detail: "Finanzas, caja y ventas", icon: "macadasa" },
+  { id: "inventario", label: "INVENTARIO", detail: "Comida y huevo", icon: "inventory" }
+];
+
+export function resolveDashboardModule(value: string | null | undefined): DashboardModule {
+  const normalized = String(value ?? "").toLowerCase();
+  return dashboardModules.some((module) => module.id === normalized)
+    ? (normalized as DashboardModule)
+    : "resumen";
+}
 
 function escapeHtml(value: unknown): string {
   return String(value ?? "")
@@ -36,6 +75,13 @@ function formatCurrency(value: number | null | undefined): string {
   }).format(Number(value ?? 0));
 }
 
+function formatPercent(value: number | null | undefined, digits = 1): string {
+  const number = Number(value ?? 0);
+  const normalized = Math.abs(number) <= 1 && number !== 0 ? number * 100 : number;
+
+  return `${formatNumber(normalized, digits)}%`;
+}
+
 function formatDate(value: string | null | undefined): string {
   if (!value) {
     return "-";
@@ -60,6 +106,18 @@ function formatDateTime(value: string | null | undefined): string {
   }).format(new Date(value));
 }
 
+function normalizeText(value: string | null | undefined): string {
+  return String(value ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function containsAny(value: string | null | undefined, words: string[]): boolean {
+  const normalized = normalizeText(value);
+  return words.some((word) => normalized.includes(word));
+}
+
 function statusClass(status: string | null | undefined): string {
   if (status === "success") {
     return "is-ok";
@@ -82,9 +140,79 @@ function renderMetric(label: string, value: string, detail: string, tone = ""): 
   `;
 }
 
+function renderUiIcon(name: UiIcon, className = "ui-icon"): string {
+  const paths: Record<UiIcon, string> = {
+    summary:
+      '<path d="M4 13h6V4H4v9Zm10 7h6V4h-6v16ZM4 20h6v-4H4v4Z"></path>',
+    plant:
+      '<path d="M5 20V9l7-4 7 4v11"></path><path d="M8 20v-6h8v6"></path><path d="M10 9h4"></path>',
+    hens:
+      '<path d="M7 17c-2-1-3-3-3-5 0-4 3-7 7-7 3 0 6 2 7 5l2 1-2 2c0 4-3 7-7 7-2 0-3-1-4-3Z"></path><path d="M9 9h.01"></path><path d="M13 20v2"></path>',
+    macadasa:
+      '<path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 15l3-4 3 2 4-7"></path>',
+    inventory:
+      '<path d="M4 7l8-4 8 4-8 4-8-4Z"></path><path d="M4 7v10l8 4 8-4V7"></path><path d="M12 11v10"></path>',
+    raw:
+      '<path d="M12 3c4 3 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7 6-10Z"></path><path d="M12 8v9"></path>',
+    in:
+      '<path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path>',
+    production:
+      '<path d="M4 20V9l5 3V9l5 3V7h6v13H4Z"></path><path d="M8 16h2"></path><path d="M13 16h2"></path>',
+    out:
+      '<path d="M12 21V9"></path><path d="M7 14l5-5 5 5"></path><path d="M5 3h14"></path>',
+    cost:
+      '<path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"></path>'
+  };
+
+  return `<svg class="${escapeHtml(className)}" viewBox="0 0 24 24" aria-hidden="true">${paths[name]}</svg>`;
+}
+
+function renderItemIcon(params: {
+  item_icon_url?: string | null;
+  item_icon_label?: string | null;
+  item_type?: string | null;
+}): string {
+  const label = escapeHtml(params.item_icon_label ?? "IT");
+  const typeClass = params.item_type ? ` item-icon-${escapeHtml(params.item_type)}` : "";
+  const image = params.item_icon_url
+    ? `<img src="${escapeHtml(params.item_icon_url)}" alt="" loading="lazy" onerror="this.remove()" />`
+    : "";
+
+  return `<span class="item-icon${typeClass}" aria-hidden="true"><span>${label}</span>${image}</span>`;
+}
+
+function renderItemIdentity(row: {
+  item_name?: string | null;
+  item_code?: string | null;
+  item_type?: string | null;
+  item_icon_url?: string | null;
+  item_icon_label?: string | null;
+}): string {
+  return `
+    <span class="item-identity">
+      ${renderItemIcon(row)}
+      <span>
+        <strong>${escapeHtml(row.item_name ?? row.item_code ?? "Item")}</strong>
+        <small>${escapeHtml(row.item_code ?? row.item_type ?? "")}</small>
+      </span>
+    </span>
+  `;
+}
+
+function renderSheetIntro(title: string, subtitle: string): string {
+  return `
+    <section class="sheet-intro">
+      <div>
+        <h2>${escapeHtml(title)}</h2>
+        <p>${escapeHtml(subtitle)}</p>
+      </div>
+    </section>
+  `;
+}
+
 function renderRows<T>(rows: T[], emptyText: string, render: (row: T) => string): string {
   if (rows.length === 0) {
-    return `<tr><td colspan="8" class="empty">${escapeHtml(emptyText)}</td></tr>`;
+    return `<tr><td colspan="12" class="empty">${escapeHtml(emptyText)}</td></tr>`;
   }
 
   return rows.map(render).join("");
@@ -122,6 +250,7 @@ function renderPostureRows(rows: LayerLotSummary[]): string {
       <td class="number">${formatNumber(row.latest_week_number)}</td>
       <td class="number">${formatNumber(row.estimated_birds_alive)}</td>
       <td class="number">${formatNumber(row.total_egg_production_count)}</td>
+      <td class="number">${formatPercent(row.avg_reported_pp)}</td>
       <td class="number">${formatNumber(row.total_mortality_pct, 2)}%</td>
     </tr>
   `);
@@ -131,8 +260,10 @@ function renderInventoryRows(rows: InventoryBalance[]): string {
   return renderRows(rows, "Sin saldos para mostrar", (row) => `
     <tr>
       <td>${escapeHtml(row.warehouse_name)}</td>
-      <td>${escapeHtml(row.item_name ?? row.item_code)}</td>
+      <td>${renderItemIdentity(row)}</td>
       <td>${escapeHtml(row.lot_code ?? "-")}</td>
+      <td class="number">${formatNumber(row.total_in_quantity, 2)}</td>
+      <td class="number">${formatNumber(row.total_out_quantity, 2)}</td>
       <td class="number">${formatNumber(row.current_quantity, 2)}</td>
       <td>${formatDate(row.last_movement_date)}</td>
     </tr>
@@ -147,7 +278,9 @@ function renderFeedRows(rows: FeedProductionDaily[]): string {
       <td>${escapeHtml(row.output_item_name)}</td>
       <td class="number">${formatNumber(row.production_orders_count)}</td>
       <td class="number">${formatNumber(row.practical_bags)}</td>
+      <td class="number">${formatNumber(row.output_quantity_kg, 1)}</td>
       <td class="number">${formatNumber(row.material_quantity_kg, 1)}</td>
+      <td class="number">${formatNumber(materialKgPerBag(row), 2)}</td>
     </tr>
   `);
 }
@@ -203,12 +336,187 @@ function renderStoreRows(rows: StoreDaily[]): string {
   `);
 }
 
-function renderSection(id: string, title: string, subtitle: string, table: string, actionHtml = ""): string {
+function materialKgPerBag(row: FeedProductionDaily): number {
+  return Number(row.material_quantity_kg ?? 0) / Math.max(Number(row.practical_bags ?? 0), 1);
+}
+
+function costPerBag(cost: FeedCostMonthly | undefined): number {
+  return Number(cost?.combined_cost_per_kg ?? 0) * 40;
+}
+
+function renderFeedCostRows(rows: FeedCostMonthly[]): string {
+  return renderRows(rows, "Sin costos de planta", (row) => `
+    <tr>
+      <td>${formatDate(row.month_start)}</td>
+      <td class="number">${formatCurrency(row.admin_cost_per_kg)}</td>
+      <td class="number">${formatCurrency(row.maquila_cost_per_kg)}</td>
+      <td class="number">${formatCurrency(row.combined_cost_per_kg)}</td>
+      <td class="number">${formatCurrency(costPerBag(row))}</td>
+      <td class="number">${formatCurrency(row.combined_total_amount)}</td>
+    </tr>
+  `);
+}
+
+function renderDailySalesRows(rows: DailySales[]): string {
+  return renderRows(rows, "Sin ventas diarias", (row) => `
+    <tr>
+      <td>${formatDate(row.sales_date)}</td>
+      <td class="number">${formatNumber(row.documents_count)}</td>
+      <td class="number">${formatCurrency(row.total_amount)}</td>
+      <td class="number">${formatNumber(row.open_documents_count)}</td>
+      <td class="number">${formatCurrency(row.open_amount)}</td>
+    </tr>
+  `);
+}
+
+function relationName<T extends { name: string | null }>(
+  value: T | T[] | null | undefined
+): string | null {
+  if (Array.isArray(value)) {
+    return value[0]?.name ?? null;
+  }
+
+  return value?.name ?? null;
+}
+
+function farmNameForRow(data: DashboardData, row: LayerDailyKpi): string {
+  const house = data.poultryHouseFarms.find((item) => item.name === row.poultry_house_name);
+  return relationName(house?.locations) ?? row.business_unit_name ?? "Granja";
+}
+
+function curveForWeek(data: DashboardData, weekNumber: number | null | undefined): {
+  gad: number | null;
+  haa: number | null;
+} {
+  const curve = data.layerStandardCurves.find((item) => item.week_number === weekNumber);
+  return {
+    gad: curve?.gad ?? null,
+    haa: curve?.haa ?? null
+  };
+}
+
+function posturePct(row: LayerDailyKpi): number | null {
+  return row.pp ?? row.calculated_daily_lay_rate_pct ?? null;
+}
+
+function latestLayerRows(rows: LayerDailyKpi[]): LayerDailyKpi[] {
+  const byHouse = new Map<string, LayerDailyKpi>();
+
+  for (const row of rows) {
+    const key = `${row.poultry_house_name ?? ""}::${row.lot_code ?? ""}`;
+    if (!byHouse.has(key)) {
+      byHouse.set(key, row);
+    }
+  }
+
+  return [...byHouse.values()];
+}
+
+function renderLayerCurrentRows(data: DashboardData): string {
+  return renderRows(latestLayerRows(data.layerDaily), "Sin galpones actuales", (row) => {
+    const curve = curveForWeek(data, row.week_number);
+
+    return `
+      <tr>
+        <td>${escapeHtml(farmNameForRow(data, row))}</td>
+        <td>${escapeHtml(row.poultry_house_name)}</td>
+        <td>${escapeHtml(row.lot_name ?? row.lot_code)}</td>
+        <td>${formatDate(row.record_date)}</td>
+        <td class="number">${formatNumber(row.week_number)}</td>
+        <td class="number">${formatNumber(row.egg_production_count)}</td>
+        <td class="number">${formatPercent(posturePct(row))}</td>
+        <td class="number">${formatNumber(curve.haa, 2)}</td>
+        <td class="number">${formatNumber(curve.gad, 2)}</td>
+      </tr>
+    `;
+  });
+}
+
+function renderVaccinationRows(rows: VaccinationTimeline[]): string {
+  return renderRows(rows, "Sin vacunas o tratamientos recientes", (row) => `
+    <tr>
+      <td>${formatDate(row.vaccination_date)}</td>
+      <td>${escapeHtml(row.poultry_houses?.name ?? "-")}</td>
+      <td>${escapeHtml(row.production_lots?.name ?? row.production_lots?.lot_code ?? "-")}</td>
+      <td>${escapeHtml(row.items?.name ?? row.commercial_name ?? row.categories?.name ?? "-")}</td>
+      <td>${escapeHtml(row.administration_route ?? "-")}</td>
+      <td>${escapeHtml(row.veterinarian ?? "-")}</td>
+    </tr>
+  `);
+}
+
+function renderPostureChart(rows: LayerDailyKpi[]): string {
+  const byDate = new Map<string, { total: number; count: number }>();
+
+  for (const row of rows) {
+    const value = posturePct(row);
+
+    if (!row.record_date || value === null) {
+      continue;
+    }
+
+    const current = byDate.get(row.record_date) ?? { total: 0, count: 0 };
+    current.total += Math.abs(value) <= 1 && value !== 0 ? value * 100 : value;
+    current.count += 1;
+    byDate.set(row.record_date, current);
+  }
+
+  const points = [...byDate.entries()]
+    .map(([date, value]) => ({ date, value: value.total / Math.max(value.count, 1) }))
+    .sort((left, right) => left.date.localeCompare(right.date))
+    .slice(-30);
+
+  if (points.length < 2) {
+    return `<div class="empty chart-empty">Sin datos suficientes para graficar</div>`;
+  }
+
+  const width = 640;
+  const height = 220;
+  const padX = 28;
+  const padY = 24;
+  const values = points.map((point) => point.value);
+  const min = Math.min(...values, 0);
+  const max = Math.max(...values, 100);
+  const span = Math.max(max - min, 1);
+  const polyline = points
+    .map((point, index) => {
+      const x = padX + (index / Math.max(points.length - 1, 1)) * (width - padX * 2);
+      const y = height - padY - ((point.value - min) / span) * (height - padY * 2);
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(" ");
+
+  const last = points[points.length - 1];
+
+  return `
+    <div class="chart-shell">
+      <svg role="img" aria-label="Grafica de porcentaje de postura" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none">
+        <line x1="${padX}" y1="${height - padY}" x2="${width - padX}" y2="${height - padY}" class="chart-axis"></line>
+        <line x1="${padX}" y1="${padY}" x2="${padX}" y2="${height - padY}" class="chart-axis"></line>
+        <polyline points="${escapeHtml(polyline)}" class="chart-line"></polyline>
+      </svg>
+      <div class="chart-caption">
+        <span>${formatDate(points[0].date)}</span>
+        <strong>${formatPercent(last.value)}</strong>
+        <span>${formatDate(last.date)}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderSection(
+  id: string,
+  title: string,
+  subtitle: string,
+  table: string,
+  actionHtml = "",
+  icon?: UiIcon
+): string {
   return `
     <section class="panel" id="${escapeHtml(id)}">
       <div class="panel-heading">
         <div>
-          <h2>${escapeHtml(title)}</h2>
+          <h2>${icon ? renderUiIcon(icon, "heading-icon") : ""}${escapeHtml(title)}</h2>
           <p>${escapeHtml(subtitle)}</p>
         </div>
         ${actionHtml}
@@ -220,22 +528,472 @@ function renderSection(id: string, title: string, subtitle: string, table: strin
   `;
 }
 
-export function renderDashboard(data: DashboardData): string {
+function plantInventoryRows(rows: InventoryBalance[]): InventoryBalance[] {
+  const rawMaterials = rows.filter((row) => row.item_type === "raw_material");
+  const sourceRows = rawMaterials.length > 0 ? rawMaterials : rows;
+  const filtered = sourceRows.filter((row) =>
+    containsAny(`${row.warehouse_name ?? ""} ${row.item_name ?? ""} ${row.item_code ?? ""}`, [
+      "planta",
+      "materia prima",
+      "maquila",
+      "mp"
+    ])
+  );
+
+  return (filtered.length > 0 ? filtered : sourceRows).slice(0, 30);
+}
+
+function feedInventoryRows(rows: InventoryBalance[]): InventoryBalance[] {
+  return rows.filter((row) =>
+    containsAny(`${row.item_name ?? ""} ${row.item_code ?? ""} ${row.warehouse_name ?? ""}`, [
+      "alimento",
+      "concentrado",
+      "comida",
+      "bulto",
+      "btos",
+      "bto"
+    ])
+  );
+}
+
+function eggInventoryRows(rows: InventoryBalance[]): InventoryBalance[] {
+  return rows.filter((row) =>
+    containsAny(`${row.item_name ?? ""} ${row.item_code ?? ""} ${row.warehouse_name ?? ""}`, [
+      "huevo",
+      "paca",
+      "cubeta",
+      "carton"
+    ])
+  );
+}
+
+function sumInventory(rows: InventoryBalance[], field: keyof InventoryBalance): number {
+  return rows.reduce((total, row) => total + (Number(row[field] ?? 0) || 0), 0);
+}
+
+function sumFeedProduction(rows: FeedProductionDaily[], field: keyof FeedProductionDaily): number {
+  return rows.reduce((total, row) => total + (Number(row[field] ?? 0) || 0), 0);
+}
+
+function averageLayer(rows: LayerDailyKpi[], getter: (row: LayerDailyKpi) => number | null): number {
+  const values = rows.map(getter).filter((value): value is number => value !== null);
+  return values.reduce((total, value) => total + value, 0) / Math.max(values.length, 1);
+}
+
+function sumPlantActivity(rows: PlantActivity[]): number {
+  return rows.reduce((total, row) => total + (Number(row.quantity ?? 0) || 0), 0);
+}
+
+function renderPlantCostCards(data: DashboardData): string {
+  return `
+    <section class="cost-strip" aria-label="Costo por bulto">
+      <article class="cost-card">
+        <span class="cost-card-icon">${renderUiIcon("raw")}</span>
+        <div>
+          <span>Costo materia prima</span>
+          <strong>${formatCurrency(data.plantCost.material_cost_per_bag)}</strong>
+          <small>${escapeHtml(data.plantCost.material_cost_basis)}</small>
+        </div>
+      </article>
+      <article class="cost-card is-main">
+        <span class="cost-card-icon">${renderUiIcon("cost")}</span>
+        <div>
+          <span>Costo bulto total</span>
+          <strong>${formatCurrency(data.plantCost.total_cost_per_bag)}</strong>
+          <small>Materia prima + maquila</small>
+        </div>
+      </article>
+      <article class="cost-card">
+        <span class="cost-card-icon">${renderUiIcon("plant")}</span>
+        <div>
+          <span>Costo maquila</span>
+          <strong>${formatCurrency(data.plantCost.maquila_cost_per_bag)}</strong>
+          <small>${escapeHtml(data.plantCost.maquila_cost_basis)}</small>
+        </div>
+      </article>
+    </section>
+  `;
+}
+
+function formatActivityQuantity(row: PlantActivity): string {
+  const digits = row.unit.toLowerCase().includes("kg") ? 1 : 0;
+  return `${formatNumber(row.quantity, digits)} ${escapeHtml(row.unit)}`;
+}
+
+function renderActivityItems(rows: PlantActivity[], emptyText: string): string {
+  if (rows.length === 0) {
+    return `<div class="activity-empty">${escapeHtml(emptyText)}</div>`;
+  }
+
+  return rows
+    .map(
+      (row) => `
+        <article class="activity-item">
+          ${renderItemIcon(row)}
+          <div class="activity-copy">
+            <strong>${escapeHtml(row.title)}</strong>
+            <span>${escapeHtml(row.detail)}</span>
+            <small>${formatDate(row.date)}</small>
+          </div>
+          <b>${formatActivityQuantity(row)}</b>
+        </article>
+      `
+    )
+    .join("");
+}
+
+function renderPlantActivityColumn(params: {
+  title: string;
+  subtitle: string;
+  icon: UiIcon;
+  rows: PlantActivity[];
+  emptyText: string;
+}): string {
+  return `
+    <section class="activity-column">
+      <header>
+        <span class="activity-column-icon">${renderUiIcon(params.icon)}</span>
+        <div>
+          <h2>${escapeHtml(params.title)}</h2>
+          <p>${escapeHtml(params.subtitle)}</p>
+        </div>
+      </header>
+      <div class="activity-list">
+        ${renderActivityItems(params.rows, params.emptyText)}
+      </div>
+    </section>
+  `;
+}
+
+function renderPlantActivityGrid(data: DashboardData): string {
+  return `
+    <section class="activity-grid" aria-label="Movimientos de planta">
+      ${renderPlantActivityColumn({
+        title: "Entradas",
+        subtitle: "Materia prima, de ultimo a primero",
+        icon: "in",
+        rows: data.plantEntries,
+        emptyText: "Sin entradas recientes"
+      })}
+      ${renderPlantActivityColumn({
+        title: "Produccion",
+        subtitle: "Bultos producidos, de ultimo a primero",
+        icon: "production",
+        rows: data.plantProductionActivities,
+        emptyText: "Sin produccion reciente"
+      })}
+      ${renderPlantActivityColumn({
+        title: "Salidas",
+        subtitle: "Consumos y despachos MP, de ultimo a primero",
+        icon: "out",
+        rows: data.plantExits,
+        emptyText: "Sin salidas recientes"
+      })}
+    </section>
+  `;
+}
+
+function renderSummaryModule(data: DashboardData): string {
   const latestCashMonth = data.cash[0]?.month_start ? formatDate(data.cash[0].month_start) : "-";
   const latestStoreDate = data.store[0]?.summary_date ? formatDate(data.store[0].summary_date) : "-";
+  const latestSales = data.dailySales[0];
+  const currentLayerRows = latestLayerRows(data.layerDaily);
+  const avgPosture = averageLayer(currentLayerRows, posturePct);
 
-  const navItems = [
-    ["Resumen", "top"],
-    ["Postura", "postura"],
-    ["Inventario", "inventario"],
-    ["Planta", "planta"],
-    ["Clasificadora", "clasificadora"],
-    ["Finanzas", "finanzas"],
-    ["Tienda", "tienda"],
-    ["Alertas", "alertas"],
-    ["Calidad", "/calidad"],
-    ["Validacion", "/validacion"]
-  ];
+  return `
+    ${renderSheetIntro("RESUMEN", "Vista ejecutiva de produccion, caja, ventas, inventario y alertas.")}
+    <section class="metrics-grid" aria-label="Indicadores principales">
+      ${renderMetric("Alertas activas", formatNumber(data.metrics.activeAlerts), `${formatNumber(data.metrics.highAlerts)} altas`, data.metrics.highAlerts > 0 ? "tone-danger" : "")}
+      ${renderMetric("Aves estimadas", formatNumber(data.metrics.estimatedBirdsAlive), "Postura activa")}
+      ${renderMetric("Postura actual", formatPercent(avgPosture), `${formatNumber(currentLayerRows.length)} galpones`)}
+      ${renderMetric("Huevos acumulados", formatNumber(data.metrics.totalLayerEggs), "Registros de postura")}
+      ${renderMetric("Inventario negativo", formatNumber(data.metrics.negativeInventoryItems), "Derivado de movimientos", data.metrics.negativeInventoryItems > 0 ? "tone-warn" : "")}
+      ${renderMetric("Caja neta", formatCurrency(data.metrics.latestCashNet), latestCashMonth)}
+      ${renderMetric("Ventas dia", formatCurrency(latestSales?.total_amount), latestSales ? formatDate(latestSales.sales_date) : "-")}
+      ${renderMetric("Compras tienda", formatNumber(data.metrics.latestStorePurchaseQuantity), latestStoreDate)}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "resumen-planta",
+        "Planta",
+        "Produccion reciente por formula",
+        `<table>
+          <thead><tr><th>Fecha</th><th>Formula</th><th>Producto</th><th>Ordenes</th><th>Bultos</th><th>Kg prod.</th><th>Kg MP</th><th>Kg/Bto</th></tr></thead>
+          <tbody>${renderFeedRows(data.feedProduction.slice(0, 6))}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/?modulo=planta">Abrir</a>`
+      )}
+      ${renderSection(
+        "resumen-gallinas",
+        "Gallinas",
+        "Galpones actuales",
+        `<table>
+          <thead><tr><th>Granja</th><th>Galpon</th><th>Lote</th><th>Fecha</th><th>Semana</th><th>Produccion</th><th>% Postura</th><th>HAA</th><th>GAD</th></tr></thead>
+          <tbody>${renderLayerCurrentRows(data)}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/?modulo=gallinas">Abrir</a>`
+      )}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "resumen-macadasa",
+        "MACADASA",
+        "Ventas diarias y caja",
+        `<table>
+          <thead><tr><th>Fecha</th><th>Docs.</th><th>Ventas</th><th>Abiertos</th><th>Saldo</th></tr></thead>
+          <tbody>${renderDailySalesRows(data.dailySales.slice(0, 7))}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/?modulo=macadasa">Abrir</a>`
+      )}
+      ${renderSection(
+        "resumen-inventario",
+        "Inventario",
+        "Saldos recientes",
+        `<table>
+          <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Entradas</th><th>Salidas</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
+          <tbody>${renderInventoryRows((data.negativeInventory.length > 0 ? data.negativeInventory : data.inventory).slice(0, 8))}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/?modulo=inventario">Abrir</a>`
+      )}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "alertas",
+        "Alertas de datos",
+        "Pendientes que afectan lectura gerencial",
+        `<table>
+          <thead><tr><th>Nivel</th><th>Area</th><th>Codigo</th><th>Cant.</th><th>Detalle</th></tr></thead>
+          <tbody>${renderAlertRows(data.alerts)}</tbody>
+        </table>`,
+        `<div class="actions"><a class="ghost-button" href="/calidad">Ver</a><a class="ghost-button" href="/api/export/dashboard_alerts.csv">CSV</a></div>`
+      )}
+      ${renderSection(
+        "salud",
+        "Sincronizacion y transformaciones",
+        "Ultima ejecucion por proceso",
+        `<table>
+          <thead><tr><th>Proceso</th><th>Estado</th><th>Fecha</th><th>Procesados</th><th>Fallos</th></tr></thead>
+          <tbody>${renderHealthRows(data.health)}</tbody>
+        </table>`
+      )}
+    </section>
+  `;
+}
+
+function renderPlantModule(data: DashboardData): string {
+  const inventoryRows = plantInventoryRows(data.inventory);
+
+  return `
+    ${renderSheetIntro("PLANTA", "Costo por bulto, entradas, produccion, salidas e inventario.")}
+    ${renderPlantCostCards(data)}
+
+    ${renderSection(
+      "inventario-planta",
+      "Inventario MP",
+      `Materia prima en planta: ${formatNumber(sumInventory(inventoryRows, "current_quantity"), 2)} kg visibles`,
+      `<table>
+        <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Entradas</th><th>Salidas</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
+        <tbody>${renderInventoryRows(inventoryRows)}</tbody>
+      </table>`,
+      `<a class="ghost-button" href="/api/export/inventory_current.csv">CSV</a>`,
+      "raw"
+    )}
+
+    ${renderPlantActivityGrid(data)}
+  `;
+}
+
+function renderGallinasModule(data: DashboardData): string {
+  const currentLayerRows = latestLayerRows(data.layerDaily);
+  const avgPosture = averageLayer(currentLayerRows, posturePct);
+  const latestEggs = currentLayerRows.reduce(
+    (total, row) => total + (Number(row.egg_production_count ?? 0) || 0),
+    0
+  );
+
+  return `
+    ${renderSheetIntro("GALLINAS", "Galpones por granja, postura, clasificadora y linea sanitaria.")}
+    <section class="metrics-grid compact" aria-label="Indicadores de gallinas">
+      ${renderMetric("Aves actuales", formatNumber(data.metrics.estimatedBirdsAlive), "Estimadas")}
+      ${renderMetric("Produccion", formatNumber(latestEggs), "Huevos ultimo registro")}
+      ${renderMetric("% postura", formatPercent(avgPosture), `${formatNumber(currentLayerRows.length)} galpones`)}
+      ${renderMetric("Clasificadora", formatNumber(data.eggGrading.reduce((total, row) => total + (Number(row.quantity ?? 0) || 0), 0)), "Cantidad reciente")}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "galpones",
+        "Galpones actuales",
+        "Produccion, postura, HAA y GAD",
+        `<table>
+          <thead><tr><th>Granja</th><th>Galpon</th><th>Lote</th><th>Fecha</th><th>Semana</th><th>Produccion</th><th>% Postura</th><th>HAA</th><th>GAD</th></tr></thead>
+          <tbody>${renderLayerCurrentRows(data)}</tbody>
+        </table>`
+      )}
+      ${renderSection(
+        "postura-grafica",
+        "% postura",
+        "Promedio diario de los registros recientes",
+        renderPostureChart(data.layerDaily)
+      )}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "clasificadora",
+        "Clasificadora",
+        "Clasificacion reciente por item",
+        `<table>
+          <thead><tr><th>Fecha</th><th>Galpon</th><th>Item</th><th>Lote</th><th>Cantidad</th></tr></thead>
+          <tbody>${renderEggRows(data.eggGrading)}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/api/export/egg_grading.csv">CSV</a>`
+      )}
+      ${renderSection(
+        "vacunas",
+        "Vacunas y tratamientos",
+        "Linea de tiempo reciente",
+        `<table>
+          <thead><tr><th>Fecha</th><th>Galpon</th><th>Lote</th><th>Producto</th><th>Via</th><th>Veterinario</th></tr></thead>
+          <tbody>${renderVaccinationRows(data.vaccinations)}</tbody>
+        </table>`
+      )}
+    </section>
+  `;
+}
+
+function renderMacadasaModule(data: DashboardData): string {
+  const latestCashMonth = data.cash[0]?.month_start ? formatDate(data.cash[0].month_start) : "-";
+  const latestSales = data.dailySales[0];
+
+  return `
+    ${renderSheetIntro("MACADASA", "Ventas diarias, finanzas, caja y tienda.")}
+    <section class="metrics-grid compact" aria-label="Indicadores MACADASA">
+      ${renderMetric("Ventas dia", formatCurrency(latestSales?.total_amount), latestSales ? formatDate(latestSales.sales_date) : "-")}
+      ${renderMetric("Docs venta", formatNumber(latestSales?.documents_count), "Ultimo dia")}
+      ${renderMetric("Caja neta", formatCurrency(data.metrics.latestCashNet), latestCashMonth)}
+      ${renderMetric("Documentos vencidos", formatNumber(data.metrics.openOverdueDocuments), "Finanzas", data.metrics.openOverdueDocuments > 0 ? "tone-warn" : "")}
+    </section>
+
+    ${renderSection(
+      "ventas-diarias",
+      "Ventas diarias",
+      "Documentos por fecha",
+      `<table>
+        <thead><tr><th>Fecha</th><th>Docs.</th><th>Ventas</th><th>Abiertos</th><th>Saldo</th></tr></thead>
+        <tbody>${renderDailySalesRows(data.dailySales)}</tbody>
+      </table>`
+    )}
+
+    <section class="grid-two">
+      ${renderSection(
+        "finanzas",
+        "Finanzas",
+        "Documentos, pagos y saldo abierto",
+        `<table>
+          <thead><tr><th>Mes</th><th>Tipo</th><th>Doc.</th><th>Estado</th><th>Cant.</th><th>Total</th><th>Abierto</th></tr></thead>
+          <tbody>${renderFinanceRows(data.financeDocuments)}</tbody>
+        </table>`,
+        `<a class="ghost-button" href="/api/export/finance_documents.csv">CSV</a>`
+      )}
+      ${renderSection(
+        "caja",
+        "Caja",
+        "Ingresos, gastos y neto",
+        `<table>
+          <thead><tr><th>Mes</th><th>Ingresos</th><th>Gastos</th><th>Neto</th><th>Mov.</th></tr></thead>
+          <tbody>${renderCashRows(data.cash)}</tbody>
+        </table>`
+      )}
+    </section>
+
+    ${renderSection(
+      "tienda",
+      "Tienda",
+      "Compras, conteos y pesaje de pollo",
+      `<table>
+        <thead><tr><th>Fecha</th><th>Compras</th><th>Tiendas</th><th>Cantidad</th><th>Inventario</th><th>Kg pollo</th></tr></thead>
+        <tbody>${renderStoreRows(data.store)}</tbody>
+      </table>`,
+      `<a class="ghost-button" href="/api/export/store_daily.csv">CSV</a>`
+    )}
+  `;
+}
+
+function renderInventoryModule(data: DashboardData): string {
+  const feedRows = feedInventoryRows(data.inventory);
+  const eggRows = eggInventoryRows(data.inventory);
+
+  return `
+    ${renderSheetIntro("INVENTARIO", "Comida en bultos, huevo en pacas y saldos actuales.")}
+    <section class="metrics-grid compact" aria-label="Indicadores de inventario">
+      ${renderMetric("Comida btos", formatNumber(sumInventory(feedRows, "current_quantity"), 2), `${formatNumber(feedRows.length)} saldos`)}
+      ${renderMetric("Huevo pacas", formatNumber(sumInventory(eggRows, "current_quantity"), 2), `${formatNumber(eggRows.length)} saldos`)}
+      ${renderMetric("Entradas", formatNumber(sumInventory(data.inventory, "total_in_quantity"), 2), "Total visible")}
+      ${renderMetric("Salidas", formatNumber(sumInventory(data.inventory, "total_out_quantity"), 2), "Total visible")}
+      ${renderMetric("Negativos", formatNumber(data.negativeInventory.length), "Saldos en alerta", data.negativeInventory.length > 0 ? "tone-warn" : "")}
+    </section>
+
+    <section class="grid-two">
+      ${renderSection(
+        "comida-bultos",
+        "Comida btos",
+        "Alimento y concentrado",
+        `<table>
+          <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Entradas</th><th>Salidas</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
+          <tbody>${renderInventoryRows(feedRows)}</tbody>
+        </table>`
+      )}
+      ${renderSection(
+        "huevo-pacas",
+        "Huevo pacas",
+        "Huevo clasificado y conteos",
+        `<table>
+          <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Entradas</th><th>Salidas</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
+          <tbody>${renderInventoryRows(eggRows)}</tbody>
+        </table>`
+      )}
+    </section>
+
+    ${renderSection(
+      "inventario-general",
+      "Inventario general",
+      "Saldo derivado desde movimientos normalizados",
+      `<table>
+        <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Entradas</th><th>Salidas</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
+        <tbody>${renderInventoryRows(data.negativeInventory.length > 0 ? data.negativeInventory : data.inventory)}</tbody>
+      </table>`,
+      `<a class="ghost-button" href="/api/export/inventory_current.csv">CSV</a>`
+    )}
+  `;
+}
+
+function renderModuleContent(data: DashboardData, activeModule: DashboardModule): string {
+  if (activeModule === "planta") {
+    return renderPlantModule(data);
+  }
+
+  if (activeModule === "gallinas") {
+    return renderGallinasModule(data);
+  }
+
+  if (activeModule === "macadasa") {
+    return renderMacadasaModule(data);
+  }
+
+  if (activeModule === "inventario") {
+    return renderInventoryModule(data);
+  }
+
+  return renderSummaryModule(data);
+}
+
+export function renderDashboard(data: DashboardData, activeModule: DashboardModule = "resumen"): string {
+  const active = resolveDashboardModule(activeModule);
+  const activeMeta = dashboardModules.find((module) => module.id === active) ?? dashboardModules[0];
 
   return `<!doctype html>
 <html lang="es">
@@ -259,12 +1017,16 @@ export function renderDashboard(data: DashboardData): string {
           </div>
         </div>
         <nav aria-label="Modulos">
-          ${navItems
-            .map(([label, href]) =>
-              href.startsWith("/")
-                ? `<a href="${escapeHtml(href)}">${escapeHtml(label)}</a>`
-                : `<a href="#${escapeHtml(href)}">${escapeHtml(label)}</a>`
-            )
+          ${dashboardModules
+            .map((module) => `
+              <a href="/?modulo=${escapeHtml(module.id)}" class="${module.id === active ? "active" : ""}">
+                <span class="nav-icon">${renderUiIcon(module.icon)}</span>
+                <span class="nav-copy">
+                  <span>${escapeHtml(module.label)}</span>
+                  <small>${escapeHtml(module.detail)}</small>
+                </span>
+              </a>
+            `)
             .join("")}
         </nav>
       </aside>
@@ -272,7 +1034,7 @@ export function renderDashboard(data: DashboardData): string {
       <main class="content">
         <header class="topbar">
           <div>
-            <h1>Panel gerencial</h1>
+            <h1>${escapeHtml(activeMeta.label)}</h1>
             <p>Actualizado ${formatDateTime(data.generatedAt)}</p>
           </div>
           <div class="actions">
@@ -282,115 +1044,7 @@ export function renderDashboard(data: DashboardData): string {
           </div>
         </header>
 
-        <section class="metrics-grid" aria-label="Indicadores principales">
-          ${renderMetric("Alertas activas", formatNumber(data.metrics.activeAlerts), `${formatNumber(data.metrics.highAlerts)} altas`, data.metrics.highAlerts > 0 ? "tone-danger" : "")}
-          ${renderMetric("Aves estimadas", formatNumber(data.metrics.estimatedBirdsAlive), "Postura activa")}
-          ${renderMetric("Huevos acumulados", formatNumber(data.metrics.totalLayerEggs), "Registros de postura")}
-          ${renderMetric("Inventario negativo", formatNumber(data.metrics.negativeInventoryItems), "Derivado de movimientos", data.metrics.negativeInventoryItems > 0 ? "tone-warn" : "")}
-          ${renderMetric("Documentos vencidos", formatNumber(data.metrics.openOverdueDocuments), "Finanzas", data.metrics.openOverdueDocuments > 0 ? "tone-warn" : "")}
-          ${renderMetric("Caja neta", formatCurrency(data.metrics.latestCashNet), latestCashMonth)}
-          ${renderMetric("Compras tienda", formatNumber(data.metrics.latestStorePurchaseQuantity), latestStoreDate)}
-        </section>
-
-        <section class="grid-two">
-          ${renderSection(
-            "postura",
-            "Postura por lote",
-            "Aves, produccion y mortalidad acumulada",
-            `<table>
-              <thead><tr><th>Lote</th><th>Galpon</th><th>Semana</th><th>Aves</th><th>Huevos</th><th>Mortalidad</th></tr></thead>
-              <tbody>${renderPostureRows(data.posture)}</tbody>
-            </table>`,
-            `<a class="ghost-button" href="/api/export/layer_lot_summary.csv">CSV</a>`
-          )}
-          ${renderSection(
-            "alertas",
-            "Alertas de datos",
-            "Pendientes que afectan lectura gerencial",
-            `<table>
-              <thead><tr><th>Nivel</th><th>Area</th><th>Codigo</th><th>Cant.</th><th>Detalle</th></tr></thead>
-              <tbody>${renderAlertRows(data.alerts)}</tbody>
-            </table>`,
-            `<div class="actions"><a class="ghost-button" href="/calidad">Ver</a><a class="ghost-button" href="/api/export/dashboard_alerts.csv">CSV</a></div>`
-          )}
-        </section>
-
-        ${renderSection(
-          "inventario",
-          "Inventario actual",
-          "Saldo derivado desde movimientos normalizados",
-          `<table>
-            <thead><tr><th>Bodega</th><th>Item</th><th>Lote</th><th>Saldo</th><th>Ultimo mov.</th></tr></thead>
-            <tbody>${renderInventoryRows(data.negativeInventory.length > 0 ? data.negativeInventory : data.inventory)}</tbody>
-          </table>`,
-          `<a class="ghost-button" href="/api/export/inventory_current.csv">CSV</a>`
-        )}
-
-        <section class="grid-two">
-          ${renderSection(
-            "planta",
-            "Planta de concentrado",
-            "Produccion diaria por formula",
-            `<table>
-              <thead><tr><th>Fecha</th><th>Formula</th><th>Producto</th><th>Ordenes</th><th>Bultos</th><th>Kg MP</th></tr></thead>
-              <tbody>${renderFeedRows(data.feedProduction)}</tbody>
-            </table>`,
-            `<a class="ghost-button" href="/api/export/feed_production.csv">CSV</a>`
-          )}
-          ${renderSection(
-            "clasificadora",
-            "Clasificadora",
-            "Clasificacion reciente por item",
-            `<table>
-              <thead><tr><th>Fecha</th><th>Galpon</th><th>Item</th><th>Lote</th><th>Cantidad</th></tr></thead>
-              <tbody>${renderEggRows(data.eggGrading)}</tbody>
-            </table>`,
-            `<a class="ghost-button" href="/api/export/egg_grading.csv">CSV</a>`
-          )}
-        </section>
-
-        <section class="grid-two">
-          ${renderSection(
-            "finanzas",
-            "Finanzas documentales",
-            "Documentos, pagos y saldo abierto",
-            `<table>
-              <thead><tr><th>Mes</th><th>Tipo</th><th>Doc.</th><th>Estado</th><th>Cant.</th><th>Total</th><th>Abierto</th></tr></thead>
-              <tbody>${renderFinanceRows(data.financeDocuments)}</tbody>
-            </table>`,
-            `<a class="ghost-button" href="/api/export/finance_documents.csv">CSV</a>`
-          )}
-          ${renderSection(
-            "caja",
-            "Caja mensual",
-            "Ingresos, gastos y neto",
-            `<table>
-              <thead><tr><th>Mes</th><th>Ingresos</th><th>Gastos</th><th>Neto</th><th>Mov.</th></tr></thead>
-              <tbody>${renderCashRows(data.cash)}</tbody>
-            </table>`
-          )}
-        </section>
-
-        ${renderSection(
-          "tienda",
-          "Tienda y mercadeo",
-          "Compras, conteos y pesaje de pollo",
-          `<table>
-            <thead><tr><th>Fecha</th><th>Compras</th><th>Tiendas</th><th>Cantidad</th><th>Inventario</th><th>Kg pollo</th></tr></thead>
-            <tbody>${renderStoreRows(data.store)}</tbody>
-          </table>`,
-          `<a class="ghost-button" href="/api/export/store_daily.csv">CSV</a>`
-        )}
-
-        ${renderSection(
-          "salud",
-          "Sincronizacion y transformaciones",
-          "Ultima ejecucion por proceso",
-          `<table>
-            <thead><tr><th>Proceso</th><th>Estado</th><th>Fecha</th><th>Procesados</th><th>Fallos</th></tr></thead>
-            <tbody>${renderHealthRows(data.health)}</tbody>
-          </table>`
-        )}
+        ${renderModuleContent(data, active)}
       </main>
     </div>
     <script>

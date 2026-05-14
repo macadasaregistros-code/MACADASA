@@ -37,7 +37,7 @@ export function getGoogleDriveClient(): drive_v3.Drive {
   const auth = new google.auth.JWT({
     email,
     key: privateKey,
-    scopes: ["https://www.googleapis.com/auth/drive.metadata.readonly"]
+    scopes: ["https://www.googleapis.com/auth/drive.readonly"]
   });
 
   cachedDriveClient = google.drive({ version: "v3", auth });
@@ -110,4 +110,38 @@ export async function findDriveFoldersByName(folderName: string): Promise<DriveF
       `name = '${escapeDriveQueryValue(folderName)}'`
     ].join(" and ")
   );
+}
+
+export async function findDriveFilesByName(fileName: string): Promise<DriveFile[]> {
+  return listDriveFiles(
+    [
+      "trashed = false",
+      `name = '${escapeDriveQueryValue(fileName)}'`
+    ].join(" and ")
+  );
+}
+
+export async function downloadDriveFile(fileId: string): Promise<{
+  buffer: Buffer;
+  mimeType: string | null;
+}> {
+  const drive = getGoogleDriveClient();
+  const metadata = await drive.files.get({
+    fileId,
+    fields: "id,name,mimeType",
+    supportsAllDrives: true
+  });
+  const response = await drive.files.get(
+    {
+      fileId,
+      alt: "media",
+      supportsAllDrives: true
+    },
+    { responseType: "arraybuffer" }
+  );
+
+  return {
+    buffer: Buffer.from(response.data as ArrayBuffer),
+    mimeType: metadata.data.mimeType ?? null
+  };
 }
