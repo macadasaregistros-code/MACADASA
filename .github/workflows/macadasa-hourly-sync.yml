@@ -21,6 +21,7 @@ jobs:
       SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
       GOOGLE_SERVICE_ACCOUNT_EMAIL: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_EMAIL }}
       GOOGLE_PRIVATE_KEY: ${{ secrets.GOOGLE_PRIVATE_KEY }}
+      RUN_MIGRATIONS: ${{ vars.RUN_MIGRATIONS }}
 
     steps:
       - name: Checkout
@@ -35,12 +36,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Apply migrations when database URL is available
+      - name: Apply migrations when explicitly enabled
         run: |
-          if [ -n "$SUPABASE_DB_URL" ]; then
+          if [ "$RUN_MIGRATIONS" = "true" ] && [ -n "$SUPABASE_DB_URL" ]; then
             npm run db:migrate
           else
-            echo "SUPABASE_DB_URL is not configured; skipping migrations."
+            echo "Skipping migrations for scheduled sync. Set repository variable RUN_MIGRATIONS=true to enable."
           fi
 
       - name: Sync raw Google Sheets data
