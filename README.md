@@ -83,3 +83,5 @@ En Vercel se deben configurar como Environment Variables:
 - `MACADASA_VALIDATION_PASSWORD`
 
 Las credenciales de Google solo son necesarias en Vercel si se van a correr sincronizaciones desde funciones/cron. Para despliegue inicial del panel gerencial, basta con Supabase.
+
+Redeploy Vercel
