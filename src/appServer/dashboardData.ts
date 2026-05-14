@@ -41,8 +41,11 @@ export type LayerLotSummary = {
 };
 
 export type InventoryBalance = {
+  warehouse_id: string | null;
   item_id: string | null;
   warehouse_name: string | null;
+  warehouse_icon_url?: string | null;
+  warehouse_icon_label?: string | null;
   item_code: string | null;
   item_name: string | null;
   item_type?: string | null;
@@ -172,17 +175,28 @@ export type ItemCatalog = {
   id: string;
   code: string | null;
   name: string | null;
+  category_id: string | null;
   item_type: string | null;
   metadata: Record<string, unknown> | null;
 };
 
-export type ItemAttachment = {
+export type EntityAttachment = {
   id: string;
+  entity_table: string;
   entity_id: string;
   file_kind: string | null;
   file_name: string | null;
   file_ref: string | null;
   mime_type: string | null;
+};
+
+export type WarehouseCatalog = {
+  id: string;
+  code: string | null;
+  name: string | null;
+  warehouse_type: string | null;
+  category_id: string | null;
+  metadata: Record<string, unknown> | null;
 };
 
 type ItemRelation = {
@@ -406,24 +420,45 @@ function itemIconLabel(item: {
   return String(item.name ?? "IT").slice(0, 2).toUpperCase();
 }
 
+function entityIconLabel(entity: { code?: string | null; name?: string | null }, fallback: string): string {
+  const code = String(entity.code ?? "").split(":").pop()?.replace(/[^a-z0-9]/gi, "") ?? "";
+  if (code.length > 0) {
+    return code.slice(0, 2).toUpperCase();
+  }
+
+  return String(entity.name ?? fallback).slice(0, 2).toUpperCase();
+}
+
 function attachmentImageUrl(attachmentId: string): string {
   return `/api/attachment-image?id=${encodeURIComponent(attachmentId)}`;
 }
 
+function attachmentsByTableAndEntity(
+  attachments: EntityAttachment[],
+  tableName: string
+): Map<string, EntityAttachment> {
+  const byEntityId = new Map<string, EntityAttachment>();
+
+  for (const attachment of attachments) {
+    if (attachment.entity_table !== tableName || byEntityId.has(attachment.entity_id)) {
+      continue;
+    }
+
+    byEntityId.set(attachment.entity_id, attachment);
+  }
+
+  return byEntityId;
+}
+
 function buildItemLookup(
   items: ItemCatalog[],
-  attachments: ItemAttachment[]
+  attachments: EntityAttachment[]
 ): {
   byId: Map<string, ItemCatalog & { item_icon_url: string | null; item_icon_label: string }>;
   byCode: Map<string, ItemCatalog & { item_icon_url: string | null; item_icon_label: string }>;
 } {
-  const attachmentByItemId = new Map<string, ItemAttachment>();
-
-  for (const attachment of attachments) {
-    if (!attachmentByItemId.has(attachment.entity_id)) {
-      attachmentByItemId.set(attachment.entity_id, attachment);
-    }
-  }
+  const attachmentByItemId = attachmentsByTableAndEntity(attachments, "items");
+  const attachmentByCategoryId = attachmentsByTableAndEntity(attachments, "categories");
 
   const byId = new Map<
     string,
@@ -435,7 +470,8 @@ function buildItemLookup(
   >();
 
   for (const item of items) {
-    const attachment = attachmentByItemId.get(item.id);
+    const attachment = attachmentByItemId.get(item.id) ??
+      (item.category_id ? attachmentByCategoryId.get(item.category_id) : undefined);
     const decorated = {
       ...item,
       item_icon_url: attachment ? attachmentImageUrl(attachment.id) : null,
@@ -451,19 +487,72 @@ function buildItemLookup(
   return { byId, byCode };
 }
 
+function buildWarehouseLookup(
+  warehouses: WarehouseCatalog[],
+  attachments: EntityAttachment[]
+): {
+  byId: Map<
+    string,
+    WarehouseCatalog & { warehouse_icon_url: string | null; warehouse_icon_label: string }
+  >;
+  byName: Map<
+    string,
+    WarehouseCatalog & { warehouse_icon_url: string | null; warehouse_icon_label: string }
+  >;
+} {
+  const attachmentByWarehouseId = attachmentsByTableAndEntity(attachments, "warehouses");
+  const attachmentByCategoryId = attachmentsByTableAndEntity(attachments, "categories");
+  const byId = new Map<
+    string,
+    WarehouseCatalog & { warehouse_icon_url: string | null; warehouse_icon_label: string }
+  >();
+  const byName = new Map<
+    string,
+    WarehouseCatalog & { warehouse_icon_url: string | null; warehouse_icon_label: string }
+  >();
+
+  for (const warehouse of warehouses) {
+    const attachment =
+      attachmentByWarehouseId.get(warehouse.id) ??
+      (warehouse.category_id ? attachmentByCategoryId.get(warehouse.category_id) : undefined);
+    const decorated = {
+      ...warehouse,
+      warehouse_icon_url: attachment ? attachmentImageUrl(attachment.id) : null,
+      warehouse_icon_label: entityIconLabel(warehouse, "BD")
+    };
+
+    byId.set(warehouse.id, decorated);
+    if (warehouse.name) {
+      byName.set(warehouse.name, decorated);
+    }
+  }
+
+  return { byId, byName };
+}
+
 function decorateInventoryRows(
   rows: InventoryBalance[],
-  lookup: ReturnType<typeof buildItemLookup>
+  itemLookup: ReturnType<typeof buildItemLookup>,
+  warehouseLookup: ReturnType<typeof buildWarehouseLookup>
 ): InventoryBalance[] {
   return rows.map((row) => {
     const item = row.item_id
-      ? lookup.byId.get(row.item_id)
+      ? itemLookup.byId.get(row.item_id)
       : row.item_code
-        ? lookup.byCode.get(row.item_code)
+        ? itemLookup.byCode.get(row.item_code)
+        : undefined;
+    const warehouse = row.warehouse_id
+      ? warehouseLookup.byId.get(row.warehouse_id)
+      : row.warehouse_name
+        ? warehouseLookup.byName.get(row.warehouse_name)
         : undefined;
 
     return {
       ...row,
+      warehouse_icon_url: warehouse?.warehouse_icon_url ?? null,
+      warehouse_icon_label: warehouse?.warehouse_icon_label ?? entityIconLabel({
+        name: row.warehouse_name
+      }, "BD"),
       item_type: item?.item_type ?? row.item_type ?? null,
       item_icon_url: item?.item_icon_url ?? null,
       item_icon_label: item?.item_icon_label ?? itemIconLabel(row)
@@ -719,7 +808,8 @@ export async function getDashboardData(): Promise<DashboardData> {
     feedProduction,
     feedCosts,
     itemCatalog,
-    itemAttachments,
+    warehouses,
+    entityAttachments,
     rawMaterialReceipts,
     feedProductionOrders,
     plantExitMovements,
@@ -768,12 +858,15 @@ export async function getDashboardData(): Promise<DashboardData> {
       view.select("*").order("month_start", { ascending: false }).limit(12)
     ),
     selectOptionalRows<ItemCatalog>("items", (view) =>
-      view.select("id,code,name,item_type,metadata").limit(2000)
+      view.select("id,code,name,category_id,item_type,metadata").limit(2000)
     ),
-    selectOptionalRows<ItemAttachment>("attachments", (view) =>
+    selectOptionalRows<WarehouseCatalog>("warehouses", (view) =>
+      view.select("id,code,name,warehouse_type,category_id,metadata").limit(1000)
+    ),
+    selectOptionalRows<EntityAttachment>("attachments", (view) =>
       view
-        .select("id,entity_id,file_kind,file_name,file_ref,mime_type")
-        .eq("entity_table", "items")
+        .select("id,entity_table,entity_id,file_kind,file_name,file_ref,mime_type")
+        .in("entity_table", ["items", "categories", "warehouses"])
         .eq("file_kind", "image")
         .limit(2000)
     ),
@@ -825,9 +918,14 @@ export async function getDashboardData(): Promise<DashboardData> {
 
   const latestCash = cash[0];
   const latestStore = store[0];
-  const itemLookup = buildItemLookup(itemCatalog, itemAttachments);
-  const decoratedInventory = decorateInventoryRows(inventory, itemLookup);
-  const decoratedNegativeInventory = decorateInventoryRows(negativeInventory, itemLookup);
+  const itemLookup = buildItemLookup(itemCatalog, entityAttachments);
+  const warehouseLookup = buildWarehouseLookup(warehouses, entityAttachments);
+  const decoratedInventory = decorateInventoryRows(inventory, itemLookup, warehouseLookup);
+  const decoratedNegativeInventory = decorateInventoryRows(
+    negativeInventory,
+    itemLookup,
+    warehouseLookup
+  );
   const plantMaterialExits = buildPlantMaterialExits(feedProductionOrders, itemLookup);
   const plantMovementExits = buildPlantExits(plantExitMovements, itemLookup);
 

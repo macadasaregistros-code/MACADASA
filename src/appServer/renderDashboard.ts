@@ -171,27 +171,17 @@ function renderItemIcon(params: {
   item_icon_url?: string | null;
   item_icon_label?: string | null;
   item_type?: string | null;
+  icon_class?: string | null;
 }): string {
   const label = escapeHtml(params.item_icon_label ?? "IT");
   const typeClass = params.item_type ? ` item-icon-${escapeHtml(params.item_type)}` : "";
-  const iconByType: Record<string, UiIcon> = {
-    raw_material: "raw",
-    feed: "production",
-    egg: "hens",
-    medicine: "cost",
-    packaging: "inventory"
-  };
-  const fallbackIcon = renderUiIcon(
-    params.item_type ? iconByType[params.item_type] ?? "inventory" : "inventory",
-    "ui-icon item-type-svg"
-  );
+  const extraClass = params.icon_class ? ` ${escapeHtml(params.icon_class)}` : "";
   const image = params.item_icon_url
     ? `<img src="${escapeHtml(params.item_icon_url)}" alt="" loading="lazy" onerror="this.remove()" />`
     : "";
 
   return `
-    <span class="item-icon${typeClass}" aria-hidden="true">
-      <span class="item-icon-symbol">${fallbackIcon}</span>
+    <span class="item-icon${typeClass}${extraClass}" aria-hidden="true">
       <span class="item-icon-label">${label}</span>
       ${image}
     </span>
@@ -212,6 +202,23 @@ function renderItemIdentity(row: {
         <strong>${escapeHtml(row.item_name ?? row.item_code ?? "Item")}</strong>
         <small>${escapeHtml(row.item_code ?? row.item_type ?? "")}</small>
       </span>
+    </span>
+  `;
+}
+
+function renderWarehouseIdentity(row: {
+  warehouse_name?: string | null;
+  warehouse_icon_url?: string | null;
+  warehouse_icon_label?: string | null;
+}): string {
+  return `
+    <span class="entity-identity">
+      ${renderItemIcon({
+        item_icon_url: row.warehouse_icon_url,
+        item_icon_label: row.warehouse_icon_label ?? "BD",
+        icon_class: "warehouse-icon"
+      })}
+      <span>${escapeHtml(row.warehouse_name ?? "Bodega")}</span>
     </span>
   `;
 }
@@ -276,7 +283,7 @@ function renderPostureRows(rows: LayerLotSummary[]): string {
 function renderInventoryRows(rows: InventoryBalance[]): string {
   return renderRows(rows, "Sin saldos para mostrar", (row) => `
     <tr>
-      <td>${escapeHtml(row.warehouse_name)}</td>
+      <td>${renderWarehouseIdentity(row)}</td>
       <td>${renderItemIdentity(row)}</td>
       <td>${escapeHtml(row.lot_code ?? "-")}</td>
       <td class="number">${formatNumber(row.total_in_quantity, 2)}</td>
