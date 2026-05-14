@@ -26,13 +26,26 @@ function getRequiredEnv(name: string): string {
   return value;
 }
 
+function normalizePrivateKey(value: string): string {
+  let privateKey = value.trim();
+
+  if (
+    (privateKey.startsWith('"') && privateKey.endsWith('"')) ||
+    (privateKey.startsWith("'") && privateKey.endsWith("'"))
+  ) {
+    privateKey = privateKey.slice(1, -1);
+  }
+
+  return privateKey.replace(/\\n/g, "\n").replace(/\r\n/g, "\n");
+}
+
 export function getGoogleDriveClient(): drive_v3.Drive {
   if (cachedDriveClient) {
     return cachedDriveClient;
   }
 
   const email = getRequiredEnv("GOOGLE_SERVICE_ACCOUNT_EMAIL");
-  const privateKey = getRequiredEnv("GOOGLE_PRIVATE_KEY").replace(/\\n/g, "\n");
+  const privateKey = normalizePrivateKey(getRequiredEnv("GOOGLE_PRIVATE_KEY"));
 
   const auth = new google.auth.JWT({
     email,

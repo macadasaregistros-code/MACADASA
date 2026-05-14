@@ -363,6 +363,32 @@ h1 {
   width: 34px;
 }
 
+.item-icon-symbol {
+  align-items: center;
+  display: inline-flex;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
+}
+
+.item-type-svg {
+  height: 20px;
+  width: 20px;
+}
+
+.item-icon-label {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 5px 0 0 0;
+  bottom: 0;
+  color: inherit;
+  font-size: 8px;
+  line-height: 1;
+  padding: 2px 3px;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
 .item-icon img {
   display: block;
   height: 100%;
@@ -370,6 +396,7 @@ h1 {
   object-fit: cover;
   position: absolute;
   width: 100%;
+  z-index: 2;
 }
 
 .item-icon-feed {
